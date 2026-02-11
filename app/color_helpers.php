@@ -29,7 +29,7 @@ if (! function_exists('color_contrast')) {
         [$r, $g, $b] = hex2rgb($hex);
         $yiq = (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
 
-        return ($yiq >= 128) ? '#000' : '#fff';
+        return ($yiq >= 128) ? '#000000' : '#ffFFFf';
     }
 }
 
