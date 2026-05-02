@@ -31,14 +31,14 @@ services:
             - app
 
     db:
-        image: postgres:latest
+        image: postgres:18
         container_name: azuriom_db
         environment:
             POSTGRES_DB: azuriom
             POSTGRES_USER: azuriom
             POSTGRES_PASSWORD: password
         volumes:
-            - db_data:/var/lib/postgresql/data
+            - db_data:/var/lib/postgresql
         networks:
             - azuriom
 

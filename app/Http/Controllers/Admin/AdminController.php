@@ -31,7 +31,7 @@ class AdminController extends Controller
     {
         $updates = $this->app->make(UpdateManager::class);
         $newVersion = $updates->hasUpdate() ? $updates->getLastVersion() : null;
-        $userCount = User::whereNull('deleted_at')->count();
+        $userCount = User::registered()->count();
 
         return view('admin.dashboard', [
             'secure' => $request->secure() || ! $this->app->isProduction(),
@@ -39,8 +39,8 @@ class AdminController extends Controller
             'postCount' => Post::count(),
             'pageCount' => Page::count(),
             'imageCount' => Image::count(),
-            'newUsersPerMonths' => Charts::countByMonths(User::whereNull('deleted_at')),
-            'newUsersPerDays' => Charts::countByDays(User::whereNull('deleted_at')),
+            'newUsersPerMonths' => Charts::countByMonths(User::registered()),
+            'newUsersPerDays' => Charts::countByDays(User::registered()),
             'activeUsers' => $this->getActiveUsers($userCount),
             'newVersion' => $newVersion,
             'apiAlerts' => $updates->getApiAlerts(),

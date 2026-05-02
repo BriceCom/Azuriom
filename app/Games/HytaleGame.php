@@ -28,7 +28,7 @@ class HytaleGame extends Game
 
     public function getUserUniqueId(string $name): ?string
     {
-        return Cache::remember('games.minecraft.uuid.'.$name, now()->addMinutes(30), function () use ($name) {
+        return Cache::remember('games.hytale.uuid.'.$name, now()->addMinutes(30), function () use ($name) {
             return Http::get(self::PLAYER_LOOKUP.$name)
                 ->throw()
                 ->json('data.player.id');

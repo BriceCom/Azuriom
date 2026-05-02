@@ -83,8 +83,16 @@ class ThemeController extends Controller
 
                 if ($oldConfig !== null) {
                     $newConfig = $this->themes->readConfig($theme) ?? [];
+                    $migratePath = $this->themes->path('config/migrate.php', $theme);
+                    $mergeStrategy = $this->files->exists($migratePath)
+                        ? $this->files->getRequire($migratePath)
+                        : null;
 
-                    $this->themes->updateConfig($theme, array_merge($newConfig, $oldConfig));
+                    $mergedConfig = is_callable($mergeStrategy)
+                        ? $mergeStrategy($oldConfig, $newConfig)
+                        : array_merge($newConfig, $oldConfig);
+
+                    $this->themes->updateConfig($theme, $mergedConfig);
                 }
 
                 if ($this->themes->isLegacy($theme)) {
@@ -210,12 +218,28 @@ class ThemeController extends Controller
             ->with('success', trans('admin.themes.updated'));
     }
 
-    protected static function appendConfig(array $config, array $replacement)
+    protected static function appendConfig(array $config, array $replacement): array
     {
         foreach ($replacement as $key => $value) {
-            $config[$key] = is_array($value)
-                ? static::appendConfig($config[$key], $value)
-                : $value;
+            if (! is_array($value)) {
+                $config[$key] = $value;
+                continue;
+            }
+
+            // Replace instead of merge when `$replace` key is set to true
+            if ($value['$replace'] ?? false) {
+                unset($value['$replace']);
+                $config[$key] = $value;
+                continue;
+            }
+
+            // Replace numeric arrays (lists) instead of merging
+            if (array_is_list($value)) {
+                $config[$key] = $value;
+                continue;
+            }
+
+            $config[$key] = static::appendConfig($config[$key] ?? [], $value);
         }
 
         return $config;

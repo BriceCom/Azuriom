@@ -175,6 +175,11 @@ class UpdateManager
         Cache::flush();
 
         Artisan::call('migrate', ['--force' => true, '--seed' => true]);
+
+        if ($this->files->isFile($postUpgrade = base_path('post_upgrade.php'))) {
+            include $postUpgrade;
+            $this->files->delete($postUpgrade);
+        }
     }
 
     public function extract(array $info, string $targetDir, string $tempDir = ''): void

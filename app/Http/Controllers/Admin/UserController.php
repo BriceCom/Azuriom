@@ -27,7 +27,7 @@ class UserController extends Controller
         $search = $request->input('search');
 
         $users = User::with('ban')
-            ->whereNull('deleted_at')
+            ->scopes('registered')
             ->when($search, fn (Builder $q) => $q->scopes(['search' => $search]))
             ->paginate();
 
@@ -51,7 +51,7 @@ class UserController extends Controller
             'content' => ['required', 'string', 'max:100'],
         ]);
 
-        $users = $user !== null ? [$user] : User::lazy();
+        $users = $user !== null ? [$user] : User::registered()->lazy();
         $notification = (new AlertNotification($request->input('content')))
             ->level($request->input('level'))
             ->from($request->user());

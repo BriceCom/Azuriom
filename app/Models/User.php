@@ -11,6 +11,8 @@ use Azuriom\Notifications\ResetPassword as ResetPasswordNotification;
 use Azuriom\Notifications\VerifyEmail as VerifyEmailNotification;
 use Azuriom\Support\Discord\LinkedRoles;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Attributes\Scope;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -47,6 +49,8 @@ use Illuminate\Support\Str;
  * @property \Illuminate\Support\Collection|\Azuriom\Models\Notification[] $unreadNotifications
  * @property \Azuriom\Models\Role $role
  * @property \Azuriom\Models\Ban|null $ban
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder registered()
  */
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -314,5 +318,14 @@ class User extends Authenticatable implements MustVerifyEmail
     public function sendEmailVerificationNotification(): void
     {
         $this->notify(new VerifyEmailNotification());
+    }
+
+    /**
+     * Scope a query to only include registered non-deleted users.
+     */
+    #[Scope]
+    protected function registered(Builder $query): void
+    {
+        $query->whereNull('deleted_at');
     }
 }

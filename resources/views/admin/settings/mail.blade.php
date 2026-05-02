@@ -12,10 +12,15 @@
 
             axios.post('{{ route('admin.settings.mail.send') }}')
                 .then(function (response) {
-                    createAlert('success', response.data.message, true)
+                    createAlert('success', response.data.message, true);
                 })
                 .catch(function (error) {
-                    createAlert('danger', error.response.data.message ? error.response.data.message : error, true)
+                    if (error.response && error.response.status === 504) {
+                        createAlert('danger', 'Request timed out, please verify SMTP host address and port.');
+                        return;
+                    }
+
+                    createAlert('danger', error.response.data.message ? error.response.data.message : error, true);
                 })
                 .finally(function () {
                     sendTestMailButton.removeAttribute('disabled');

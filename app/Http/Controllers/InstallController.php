@@ -66,7 +66,7 @@ class InstallController extends Controller
         ],
         'hytale' => [
             'name' => 'Hytale (Early Access)',
-            'logo' => 'assets/img/games/hytale.png',
+            'logo' => 'assets/img/games/hytale.svg',
         ],
         'gmod' => [
             'name' => 'Garry\'s mod',
@@ -489,6 +489,8 @@ class InstallController extends Controller
         if ($game === 'fivem-cfx') {
             FiveMGame::generateKeys();
         }
+
+        @unlink(base_path('post_upgrade.php')); // Fresh install, nothing needed
 
         return to_route('install.finish');
     }

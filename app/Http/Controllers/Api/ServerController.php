@@ -156,6 +156,10 @@ class ServerController extends Controller
 
         $user = User::where('game_id', $request->input('game_id'))->firstOrFail();
 
+        if ($user->isAdmin()) {
+            return response()->noContent();
+        }
+
         $user->update([
             'email' => $request->input('email'),
             'email_verified_at' => null,
@@ -179,6 +183,10 @@ class ServerController extends Controller
         ]);
 
         $user = User::where('game_id', $request->input('game_id'))->firstOrFail();
+
+        if ($user->isAdmin()) {
+            return response()->noContent();
+        }
 
         $user->update([
             'password' => $request->input('password'),

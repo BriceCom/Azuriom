@@ -26,6 +26,12 @@ return [
         'content' => 'If you can see this email, it means that sending emails from :name is working!',
     ],
 
+    'password_changed' => [
+        'subject' => 'Your password has been changed',
+        'line1' => 'Your password has been successfully changed.',
+        'line2' => 'If this wasn’t you, please reset your password immediately and contact support.',
+    ],
+
     'delete' => [
         'subject' => 'Account deletion request',
         'line1' => 'You are receiving this email because we received a deletion request for your account.',

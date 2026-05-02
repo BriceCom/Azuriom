@@ -15,7 +15,10 @@ class UserController extends Controller
     {
         $name = $request->input('q');
 
-        $users = User::search($name, 'name')->with('role')->get();
+        $users = User::search($name, 'name')
+            ->scopes('registered')
+            ->with('role')
+            ->get();
 
         return UserResource::collection($users);
     }

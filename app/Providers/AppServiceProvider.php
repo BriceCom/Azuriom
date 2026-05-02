@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Translation\Translator;
+use Illuminate\Validation\Rules\Password;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -45,6 +46,10 @@ class AppServiceProvider extends ServiceProvider
         // TODO : change default string length only on incompatible
         //  database versions (MySQL < 5.7.7 & MariaDB < 10.2)?
         Schema::defaultStringLength(191);
+
+        if ($this->app->isProduction()) {
+            Password::defaults(Password::min(12));
+        }
 
         Relation::enforceMorphMap([
             'posts' => Post::class,

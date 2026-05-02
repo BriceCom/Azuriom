@@ -26,6 +26,12 @@ return [
         'content' => 'Comme vous voyez ce mail, cela veut dire que l\'envoie des mails sur :name fonctionne!',
     ],
 
+    'password_changed' => [
+        'subject' => 'Votre mot de passe a été changé',
+        'line1' => 'Votre mot de passe a été changé avec succès.',
+        'line2' => 'Si ce n\'était pas vous, veuillez réinitialiser votre mot de passe immédiatement et contacter le support.',
+    ],
+
     'delete' => [
         'subject' => 'Demande de suppression de compte',
         'line1' => 'Vous recevez cet email parce que nous avons reçu une demande de suppression de votre compte.',

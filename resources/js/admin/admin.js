@@ -27,11 +27,7 @@ document.querySelectorAll('[data-theme-value]').forEach(function (el) {
         document.querySelectorAll('[data-theme-value]').forEach(function (child) {
             const childTheme = child.getAttribute('data-theme-value')
 
-            if (childTheme === theme) {
-                child.classList.add('d-none')
-            } else {
-                child.classList.remove('d-none')
-            }
+            child.classList.toggle('d-none', childTheme === theme)
         })
 
         axios.post(el.href, { theme: theme })

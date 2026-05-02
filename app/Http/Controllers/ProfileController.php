@@ -371,9 +371,8 @@ class ProfileController extends Controller
         $user = $request->user();
         $money = $request->input('money');
 
-        $receiver = User::where('game_id', $request->input('name'))
-            ->orWhere('name', $request->input('name'))
-            ->first();
+        $column = game()->userPrimaryAttribute()->value;
+        $receiver = User::where($column, $request->input('name'))->first();
 
         if ($receiver === null || $user->is($receiver)) {
             throw ValidationException::withMessages([
