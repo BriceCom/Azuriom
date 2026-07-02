@@ -1,0 +1,104 @@
+.header {
+
+    .navbar-brand{
+        width: 248px;
+    }
+
+    .navbar-collapse {
+        .navbar-nav {
+            padding: 0.75rem 1rem;
+
+
+            .nav-link {
+                position: relative;
+                padding: 0 1.8rem 0 1.8rem;
+
+                &:before {
+                    position: absolute;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    opacity: 0;
+                    pointer-events: none;
+                    content: "";
+                    height: 26px;
+                    width: 100px;
+                    left: calc(50% - 50px);
+                    bottom: -18px;
+                    background-image: url("#{$image-path}petits/menu-current.png");
+                    background-position: bottom;
+                    transition: all .2s;
+                }
+
+                &:hover {
+                    &:before {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar-collapse {
+        @include media-breakpoint-down(xl) {
+            .shadow-2xl {
+                box-shadow: none;
+            }
+            background-color: rgba(26, 32, 44, .6);
+            border-image: linear-gradient(180deg, #c3a758, #6b521e) stretch;
+            border-image-slice: 1;
+            border-width: 2px;
+            border-style: solid;
+        }
+
+        .navbar-nav {
+            @include media-breakpoint-up(xl) {
+                background-image: url("#{$image-path}petits/ornament-nav-left.svg"), url("#{$image-path}petits/ornament-nav-right.svg");
+                background-repeat: no-repeat;
+                background-position: 0, 100%;
+                background-size: auto 101%;
+                background-color: rgba(26, 32, 44, .6);
+                //Not extend border-gradient
+                border-image: linear-gradient(180deg, #c3a758, #6b521e) stretch;
+                border-image-slice: 1;
+                border-width: 2px;
+                border-style: solid;
+
+                .nav-item {
+                    &:first-child {
+                        .nav-link {
+                            padding-left: 0;
+                        }
+                    }
+
+                    &:last-child {
+                        .nav-link {
+                            padding-right: 0;
+
+                            &.border-separator {
+                                border: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(xl) {
+                .border-separator {
+                    border: none;
+                }
+
+                .nav-item {
+                    text-align: center;
+                }
+                .nav-link {
+                    padding: 0.5rem 0;
+                    display: inline-block;
+
+                    &:before {
+                        bottom: 5px
+                    }
+                }
+            }
+        }
+    }
+}

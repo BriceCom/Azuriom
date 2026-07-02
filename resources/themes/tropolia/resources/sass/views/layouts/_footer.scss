@@ -1,0 +1,5 @@
+.nav-link {
+    &:hover{
+        @extend .anim_text-up;
+    }
+}

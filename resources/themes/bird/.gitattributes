@@ -1,0 +1,7 @@
+views/theme-editor/resources export-ignore
+views/theme-editor/resources/** export-ignore
+tools export-ignore
+tools/** export-ignore
+start-to-publish.md export-ignore
+next_features.md export-ignore
+use-theme-editor.md export-ignore

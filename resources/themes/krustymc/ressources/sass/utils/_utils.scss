@@ -1,0 +1,48 @@
+/* Utilitaire pour development */
+body{
+    &::after {
+        z-index: 99999;
+        position: absolute;
+        top: 0;
+        right: 50%;
+        height: 100%;
+        width: 3px;
+        //background: red;
+        content: " ";
+    }
+}
+
+.text{
+    &-xl{
+        font-size: 18px;
+    }
+    &-m{
+        font-size: 15px;
+    }
+    &-sm{
+        font-size: 14px;
+    }
+    &-xs{
+        font-size: 12px;
+    }
+    &-xxs{
+        font-size: 10px;
+    }
+}
+
+.text{
+    &-white{
+        color: white;
+    }
+}
+
+
+.typewriter {
+    min-width: 230px;
+
+    &::after {
+        content: "|";
+        display: inline-block;
+        animation: blink 0.7s steps(5, start) infinite;
+    }
+}

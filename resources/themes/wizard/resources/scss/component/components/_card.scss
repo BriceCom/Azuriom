@@ -1,0 +1,11 @@
+.card{
+    //@extend .border-gradient;
+    .card-text{
+
+    }
+
+    .card-title {
+        text-align: start;
+        font-size: map-get($font-sizes, 4);
+    }
+}

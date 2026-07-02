@@ -1,0 +1,17 @@
+{
+    "id": "seolite",
+    "name": "Seo Lite",
+    "description": "Free version of SEO Pro for Azuriom",
+    "version": "1.0.4",
+    "url": "https://market.azuriom.com/resources/190",
+    "authors": [
+        "Bricec6",
+        "Sprinbox",
+        "Bryx Agency"
+    ],
+    "azuriom_api": "1.1.0",
+    "providers": [
+        "\\Azuriom\\Plugin\\SeoLite\\Providers\\SeoLiteServiceProvider",
+        "\\Azuriom\\Plugin\\SeoLite\\Providers\\RouteServiceProvider"
+    ]
+}

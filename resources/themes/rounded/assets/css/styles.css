@@ -1,0 +1,169 @@
+.oauth-spacer {
+  position: relative;
+  overflow: visible;
+  opacity: 1;
+  border-color: var(--bs-border-color);
+}
+.oauth-spacer:after {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: attr(data-content);
+  color: var(--bs-card-color);
+  background: var(--bs-light);
+  padding: 4px 8px;
+  text-transform: lowercase;
+}
+
+.social {
+  height: 32px;
+  width: 32px;
+  padding: 4px;
+  background: var(--social-color);
+  border-radius: 4px;
+  color: #fff;
+  transition: transform 0.1s linear;
+}
+.social:hover {
+  background: var(--social-color-opacity);
+  transform: translateY(-2%);
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--bs-body-bg);
+}
+
+:root {
+  --show-btn: #000;
+}
+
+html[data-bs-theme=dark] #sunlight {
+  filter: invert(1);
+}
+
+#sunlight {
+  top: 5%;
+  right: 5%;
+}
+
+body:not([data-bs-theme=dark]) #sunlight {
+  top: 5%;
+  right: 5%;
+}
+body:not([data-bs-theme=dark]) #sunlight li a i {
+  color: var(--bs-primary) !important;
+}
+
+.hero-logo {
+  max-height: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition: transform ease-out 150ms;
+}
+.hero-logo:is(:hover, :active, :focus) {
+  transform: scale(1.03);
+}
+
+#moon path {
+  fill: var(--bs-primary) !important;
+}
+
+.navigation .custom-link {
+  color: var(--bs-white);
+  transition: transform ease-in 150ms;
+}
+.navigation .custom-link:is(:hover, :active, :focus) {
+  position: relative;
+  transform: translateY(-5%);
+  color: rgba(var(--bs-white-rgb), 0.85);
+}
+@media (min-width: 1400px) {
+  .navigation .nav-link:not(.custom-link) {
+    padding: 26px 8px !important;
+    position: relative;
+  }
+  .navigation .nav-link:not(.custom-link):is(:hover, :active, :focus):before {
+    width: 80%;
+    filter: var(--bs-primary);
+  }
+  .navigation .nav-link:not(.custom-link):before {
+    background: var(--bs-primary);
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    transition: 0.2s ease-out;
+    border-radius: 5px;
+    transform: translateX(-50%);
+  }
+  .navigation a.nav-link.active:not(.custom-link):before, .navigation a.nav-link.show:not(.custom-link):before {
+    background: var(--bs-primary);
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 80%;
+    height: 3px;
+    transition: 0.2s ease-out;
+    border-radius: 5px;
+    filter: var(--bs-primary);
+  }
+}
+
+.post-main-title {
+  z-index: 3;
+}
+
+.post-image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform ease-out 150ms;
+}
+.post-image:is(:hover, :active, :focus) {
+  transform: scale(1.02);
+}
+
+footer a, footer p {
+  font-size: 14px;
+}
+
+@media (max-width: 767px) {
+  .hero-logo {
+    max-width: 260px;
+    max-height: 170px;
+  }
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bs-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--bs-dark-rgb), 0.95);
+  -webkit-transition: background 0.123s linear;
+  transition: background 0.123s linear;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--bs-dark-rgb), 1);
+}
+
+/* FIX PLUGINS FRONT */
+#wiki_category_page .card-body {
+  overflow: hidden;
+}
+#wiki_category_page .card-body img[width="17"][height="17"] {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+}
+
+/*# sourceMappingURL=styles.css.map*/

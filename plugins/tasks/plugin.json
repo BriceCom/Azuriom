@@ -1,0 +1,16 @@
+{
+    "id": "tasks",
+    "name": "Tasks",
+    "description": "A plugin for Azuriom that allows staff members to manage tasks",
+    "version": "1.0.8",
+    "url": "https://market.azuriom.com/resources/188",
+    "authors": [
+        "Bricec6"
+    ],
+    "azuriom_api": "1.1.0",
+    "providers": [
+        "\\Azuriom\\Plugin\\Tasks\\Providers\\TasksServiceProvider",
+        "\\Azuriom\\Plugin\\Tasks\\Providers\\RouteServiceProvider"
+    ],
+    "apiId": 178
+}

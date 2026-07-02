@@ -1,0 +1,40 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+@import "./_override/variables";
+
+@import "~bootstrap/scss/bootstrap";
+
+$image-path: '../image/';
+.table-responsive {
+    overflow-y: hidden;
+}
+
+/* Width */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    //border-top-left-radius: 5px;
+    //border-bottom-left-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ebebeb;
+    //border-top-left-radius: 5px;
+    //border-bottom-left-radius: 5px;
+    transition: background 0.123s linear;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(235, 235, 235, 0.95);
+}
+
+
+
+

@@ -1,0 +1,49 @@
+$self: '.project';
+
+.project{
+    z-index: 0;
+    background: linear-gradient(var(--linear-end), var(--linear-start));
+
+    &-bg{
+        z-index: -1;
+        width: 120%;
+        opacity: .03;
+        filter: saturate(0);
+    }
+
+    &-img{
+        max-width: 80%;
+        filter: saturate(0);
+        transition: all ease-in-out .3s;
+    }
+
+    &-ip{
+        padding: 12px 16px;
+        font-size: 1.125rem;
+        border-radius: 8px;
+        text-transform: uppercase;
+    }
+
+    &:hover{
+        #{$self}{
+            &-img{
+                filter: saturate(1);
+            }
+        }
+    }
+}
+
+
+[data-bs-theme=light]{
+    #{$self}-ip {
+        background: black;
+        color: white;
+    }
+}
+
+[data-bs-theme=dark]{
+    #{$self}-ip {
+        background: white;
+        color: black;
+    }
+}

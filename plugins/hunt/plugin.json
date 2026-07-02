@@ -1,0 +1,15 @@
+{
+    "id": "hunt",
+    "name": "Hunt",
+    "description": "A hunt plugin where small images appear randomly on pages for players to click and win rewards.",
+    "version": "1.0.4",
+    "url": "https://market.azuriom.com/resources/199",
+    "authors": [
+        "Bricec6"
+    ],
+    "azuriom_api": "1.0.0",
+    "providers": [
+        "\\Azuriom\\Plugin\\Hunt\\Providers\\HuntServiceProvider",
+        "\\Azuriom\\Plugin\\Hunt\\Providers\\RouteServiceProvider"
+    ]
+}

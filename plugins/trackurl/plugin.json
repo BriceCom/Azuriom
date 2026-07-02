@@ -1,0 +1,16 @@
+{
+    "id": "trackurl",
+    "name": "Trackurl",
+    "description": "A plugin for Azuriom that allows users to create and track URLs",
+    "version": "1.0.5",
+    "url": "https:\/\/market.azuriom.com\/resources\/183",
+    "authors": [
+        "Bricec6"
+    ],
+    "azuriom_api": "1.1.0",
+    "providers": [
+        "\\Azuriom\\Plugin\\Trackurl\\Providers\\TrackurlServiceProvider",
+        "\\Azuriom\\Plugin\\Trackurl\\Providers\\RouteServiceProvider"
+    ],
+    "apiId": 183
+}

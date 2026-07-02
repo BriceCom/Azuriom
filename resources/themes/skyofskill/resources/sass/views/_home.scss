@@ -1,0 +1,35 @@
+$self: '.carousel';
+
+#{$self}{
+    &-btn{
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        display: grid;
+        place-items: center;
+        border-radius: 8px;
+
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+}
+
+[data-bs-theme=light]{
+    .carousel{
+        #{$self}-btn {
+            background: black;
+            color: white;
+        }
+    }
+}
+
+[data-bs-theme=dark]{
+    .carousel{
+        #{$self}-btn {
+            background: white;
+            color: black;
+        }
+    }
+}

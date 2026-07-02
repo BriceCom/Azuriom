@@ -1,0 +1,11 @@
+{
+    "id": "pagebuilder",
+    "name": "PageBuilder",
+    "description": "Visual page builder theme for Azuriom with in-page editing.",
+    "version": "1.0.0",
+    "url": "https://azuriom.com",
+    "authors": [
+        "Azuriom"
+    ],
+    "azuriom_api": "1.1.0"
+}

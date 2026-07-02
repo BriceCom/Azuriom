@@ -1,0 +1,21 @@
+{
+    "name": "azuriom/achievement",
+    "type": "azuriom-plugin",
+    "description": "A gamification plugin to create objectives and rewards for players.",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Azuriom\\Plugin\\Achievement\\": "src/"
+        },
+        "files": [
+            "src/Helpers/helpers.php"
+        ]
+    },
+    "require": {
+        "php": ">=8.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "platform-check": false
+    }
+}

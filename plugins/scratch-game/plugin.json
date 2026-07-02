@@ -1,0 +1,15 @@
+{
+    "id": "scratch-game",
+    "name": "Scratch Game",
+    "description": "A scratch card game with role-based access and customizable rewards.",
+    "version": "1.0.5",
+    "url": "",
+    "authors": [
+        "Azuriom"
+    ],
+    "azuriom_api": "1.0.0",
+    "providers": [
+        "\\Azuriom\\Plugin\\ScratchGame\\Providers\\ScratchGameServiceProvider",
+        "\\Azuriom\\Plugin\\ScratchGame\\Providers\\RouteServiceProvider"
+    ]
+}

@@ -1,0 +1,82 @@
+<?php
+
+return [
+    'title' => 'Sugerencias',
+    'description' => 'Envía tus sugerencias para mejorar el servidor o el sitio.',
+    'create' => 'Crear una sugerencia',
+    'back' => 'Volver a las sugerencias',
+    'empty' => 'Aún no hay sugerencias.',
+    'by' => 'Por :user',
+    'votes' => ':count voto|:count votos',
+    'vote' => 'Votar',
+    'upvote' => 'Voto positivo',
+    'downvote' => 'Voto negativo',
+    'upvoted' => 'Has dado un voto positivo',
+    'downvoted' => 'Has dado un voto negativo',
+    'voted' => 'Has votado por esta sugerencia.',
+    'voted_up' => 'Has dado un voto positivo a esta sugerencia.',
+    'voted_down' => 'Has dado un voto negativo a esta sugerencia.',
+    'unvoted_up' => 'Has quitado tu voto positivo.',
+    'unvoted_down' => 'Has quitado tu voto negativo.',
+    'already_voted' => 'Ya has votado por esta sugerencia.',
+    'already_voted_type' => 'Ya has votado de esta manera por esta sugerencia.',
+    'invalid_vote_type' => 'Tipo de voto no válido.',
+    'login_to_vote' => 'Debes iniciar sesión para votar en las sugerencias.',
+    'created' => 'Tu sugerencia ha sido creada con éxito.',
+    'edit' => 'Editar sugerencia',
+    'edit_own' => 'Editar tu sugerencia',
+    'updated' => 'Tu sugerencia ha sido actualizada con éxito.',
+    'cannot_edit' => 'No puedes editar esta sugerencia.',
+    'cannot_edit_votes' => 'No puedes editar una sugerencia que ya tiene votos.',
+    'max_suggestions_reached' => 'Has alcanzado el número máximo de sugerencias que puedes crear (:max).',
+    'read_more' => 'Leer más',
+    'info' => 'Información',
+
+    'actions' => [
+        'filter' => 'Filtrar',
+    ],
+
+    'filter' => [
+        'all' => 'Todas las sugerencias',
+        'all_categories' => 'Todas las categorías',
+        'recent' => 'Más recientes',
+        'oldest' => 'Más antiguas',
+        'popular' => 'Más populares',
+        'unpopular' => 'Menos populares',
+        'mine' => 'Mis sugerencias',
+        'approved' => 'Aprobadas',
+        'rejected' => 'Rechazadas',
+        'pending' => 'Pendientes',
+    ],
+
+    'fields' => [
+        'title' => 'Título',
+        'title_help' => 'Máximo 80 caracteres',
+        'description' => 'Descripción',
+        'description_help' => 'Máximo :max caracteres',
+        'category' => 'Categoría',
+        'select_category' => 'Selecciona una categoría',
+    ],
+
+    'status' => [
+        'pending' => 'Pendiente',
+        'approved' => 'Aprobada',
+        'rejected' => 'Rechazada',
+    ],
+
+    'comments' => [
+        'title' => 'Comentarios',
+        'empty' => 'Aún no hay comentarios.',
+        'add' => 'Añadir comentario',
+        'content' => 'Comentario',
+        'submit' => 'Enviar comentario',
+        'created' => 'Tu comentario ha sido agregado con éxito.',
+        'deleted' => 'El comentario ha sido eliminado con éxito.',
+        'not_allowed' => 'No se permiten comentarios en esta sugerencia.',
+        'closed' => 'Los comentarios están cerrados para esta sugerencia (solo disponible para sugerencias pendientes).',
+        'login_required' => 'Debes iniciar sesión para comentar.',
+        'confirm_delete' => '¿Estás seguro de que deseas eliminar este comentario?',
+    ],
+
+    'deleted' => 'La sugerencia ha sido eliminada con éxito.',
+];

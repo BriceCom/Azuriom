@@ -1,0 +1,21 @@
+{
+    "name": "azuriom/hunt",
+    "type": "azuriom-plugin",
+    "description": "A hunt plugin where small images appear randomly on pages for players to click and win rewards.",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Azuriom\\Plugin\\Hunt\\": "src/"
+        },
+        "files": [
+            "src/Helpers/helpers.php"
+        ]
+    },
+    "require": {
+        "php": ">=8.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "platform-check": false
+    }
+}

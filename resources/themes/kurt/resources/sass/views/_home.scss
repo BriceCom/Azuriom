@@ -1,0 +1,73 @@
+.post {
+    $self: &;
+    display: block;
+
+    .post-gradient::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        display: block;
+        background: linear-gradient(35deg, var(--di-body-bg) -20%, transparent 85%)
+    }
+
+    &-img {
+
+        &__wrapper{
+
+            @media (max-width: 767px) {
+                width: 100%
+            }
+        }
+
+        overflow: hidden;
+        max-height: 348px;
+
+        img {
+            transition: transform .3s ease-in-out;
+        }
+    }
+
+    &-content {
+        pointer-events: none;
+        transition: transform .3s ease-in-out;
+    }
+
+    &:hover {
+        #{$self}{
+            &-img {
+                img {
+                    transform: scale(1.03);
+                }
+            }
+        }
+    }
+
+    &-main{
+        &:hover{
+
+            #{$self}{
+                &-content  {
+                        transform: translateY(-1%);
+                }
+            }
+        }
+    }
+}
+
+.trailer{
+    aspect-ratio: 16 / 9;
+
+    iframe{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.gap-md-30{
+    gap: var(--di-main-gap) !important;
+}
+
+.my-md-30{
+    margin-bottom: var(--di-main-gap) !important;
+    margin-top: var(--di-main-gap) !important;
+}

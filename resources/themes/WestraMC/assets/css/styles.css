@@ -1,0 +1,153 @@
+body {
+  letter-spacing: 0.5px;
+}
+
+:root {
+  --bs-body-secondary-bg: #f4f4f4;
+}
+
+[data-bs-theme=dark] .btn-primary, [data-bs-theme=dark] .nav-link.btn {
+  color: #22142c !important;
+}
+[data-bs-theme=dark] .card {
+  --bs-body-secondary-bg: #110b16;
+}
+[data-bs-theme=dark] tbody tr, [data-bs-theme=dark] tbody th, [data-bs-theme=dark] tbody td {
+  color: #110b16;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--bs-body-bg);
+}
+
+.custom-underline {
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+}
+.custom-underline::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 70%;
+  height: 16px;
+  background-color: var(--bs-primary);
+  right: 50%;
+  bottom: -24px;
+  transform: translateX(50%);
+}
+
+.font-base {
+  font-family: sans-serif !important;
+}
+
+.font-paytone {
+  font-family: "Paytone One", sans-serif !important;
+}
+
+h1 {
+  font-family: "Paytone One", sans-serif;
+}
+
+h2 {
+  font-family: "Paytone One", sans-serif;
+}
+
+h3 {
+  font-family: "Paytone One", sans-serif;
+}
+
+h4 {
+  font-family: "Paytone One", sans-serif;
+}
+
+#vote .btn {
+  margin: 0 6px;
+}
+
+.vote__site-card {
+  position: relative;
+  width: 33.3333%;
+  max-width: 279px;
+  height: 156px;
+  background: gray;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 3px solid transparent;
+}
+.vote__site-card > * {
+  position: relative;
+  z-index: 1;
+  color: var(--bs-white);
+}
+.vote__site-card:after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: -4px;
+  background: rgba(0, 0, 0, 0.53);
+  border: 3px solid transparent;
+  border-radius: 12px;
+}
+.vote__site-card [data-vote-url] {
+  pointer-events: none;
+}
+.vote__site-card:has([data-vote-time]:not([data-vote-time=""])):after {
+  background: rgba(0, 0, 0, 0.8);
+}
+.vote__site-card.active:after {
+  border-color: var(--bs-primary);
+}
+
+/* FIX PLUGINS FRONT */
+#wiki_category_page .card-body {
+  overflow: hidden;
+}
+#wiki_category_page .card-body img[width="17"][height="17"] {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+
+.table > :not(caption) > * > * {
+  color: var(--bs-body-color);
+}
+
+thead, tbody, tfoot, tr, td, th {
+  border: unset !important;
+}
+
+thead {
+  position: relative;
+}
+thead tr th {
+  background: unset !important;
+}
+thead tr th:first-child {
+  padding-left: 24px;
+}
+
+tbody {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+thead tr td:first-child, thead tr th:first-child, tbody tr td:first-child, tbody tr th:first-child {
+  padding-left: 24px;
+  border-bottom-left-radius: 500px;
+  border-top-left-radius: 500px;
+}
+thead tr td:last-child, thead tr th:last-child, tbody tr td:last-child, tbody tr th:last-child {
+  border-bottom-right-radius: 500px;
+  border-top-right-radius: 500px;
+}
+
+/*# sourceMappingURL=styles.css.map*/

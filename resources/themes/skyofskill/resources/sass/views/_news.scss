@@ -1,0 +1,14 @@
+.post-preview{
+    min-height: 300px;
+
+    img{
+        transition: scale .24s linear
+    }
+
+    &:hover{
+        img{
+            scale: 1.05;
+            background: red
+        }
+    }
+}

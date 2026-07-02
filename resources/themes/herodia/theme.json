@@ -1,0 +1,11 @@
+{
+    "id": "herodia",
+    "name": "Herodia",
+    "version": "1.2.4",
+    "authors": [
+        "Antoine Coll#1253",
+        "Edit: Bricec6"
+    ],
+    "azuriom_api": "1.0.0",
+    "apiId": 15
+}

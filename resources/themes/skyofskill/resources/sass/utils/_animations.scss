@@ -1,0 +1,11 @@
+.anim-up{
+    transform: translateY(-4%);
+}
+
+.anim-hover-up{
+    transition: all .2s ease-in-out;
+
+    &:hover{
+        @extend .anim-up;
+    }
+}

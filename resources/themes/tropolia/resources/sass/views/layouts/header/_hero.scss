@@ -1,0 +1,54 @@
+body {
+    &:has(#plug){
+        .hero{
+            height: calc(50lvh);
+        }
+    }
+}
+
+.hero{
+    height: calc(50lvh);
+    border-bottom: var(--di-dark) 16px solid;
+
+    &-carousel, .carousel, .carousel-inner, .carousel-item{
+        width: 100%;
+        height: 100%;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &-join{
+        &__button{
+            border-radius: 8px;
+            background-color: var(--di-dark);
+            padding: 16px;
+        }
+    }
+
+    &-connected {
+        display: inline-flex;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #A1FB23;
+        animation: flash ease-in-out 2.5s infinite;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+
+        @keyframes flash {
+            0% {
+                box-shadow: 0 0 0 0 #BEFF62;
+            }
+
+            75% {
+                box-shadow: 0 0 0 4px rgba(190, 255, 98, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 rgba(190, 255, 98, 0);
+            }
+        }
+    }
+}

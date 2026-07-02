@@ -1,0 +1,116 @@
+body {
+  background-color: var(--bs-body-bg);
+}
+
+main {
+  margin-top: 200px;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+.text-sm {
+  font-size: 14px;
+}
+
+.home-background {
+  z-index: -1;
+  height: 450px;
+  border-bottom-left-radius: 25%;
+  border-bottom-right-radius: 25%;
+}
+
+footer {
+  overflow: hidden;
+}
+footer .footer-background {
+  height: 100%;
+  z-index: -1;
+}
+
+main {
+  margin-top: 235px;
+  min-height: 50dvh;
+}
+
+#news img {
+  max-height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#news .card {
+  height: 100%;
+}
+#news .card-body {
+  display: flex;
+  flex-direction: column;
+}
+#news .card-body p {
+  height: 100%;
+}
+#news .card-body a {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.text-decoration-underline {
+  text-underline-offset: 3px;
+}
+
+h2.card-title {
+  font-size: 18px;
+  color: rgba(var(--bs-white-rgb), 0.8);
+  border-bottom: 1px solid black;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+}
+
+@media (max-width: 576px) {
+  .home-background {
+    height: 230px;
+    border-bottom-left-radius: 13%;
+    border-bottom-right-radius: 13%;
+  }
+  main {
+    margin-top: 70px;
+  }
+  .shop-profil {
+    width: 50px;
+    height: 50px;
+  }
+}
+/* Width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ebebeb;
+  -webkit-transition: background 0.123s linear;
+  transition: background 0.123s linear;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(235, 235, 235, 0.95);
+}
+
+/* FIX PLUGINS FRONT */
+#wiki_category_page .card-body {
+  overflow: hidden;
+}
+#wiki_category_page .card-body img[width="17"][height="17"] {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+}
+
+.breadcrumb.bg-opacity-25 {
+  background-color: rgba(var(--bs-secondary-rgb), 1) !important;
+}
+
+/*# sourceMappingURL=styles.css.map*/

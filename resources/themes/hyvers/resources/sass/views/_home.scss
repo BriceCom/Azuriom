@@ -1,0 +1,59 @@
+.post {
+    $self: &;
+    height: 460px;
+    box-shadow: inset 0 0 0 6px rgb(255 255 255 / 10%);
+    background: linear-gradient(0deg, var(--di-dark) -20%, transparent 60%);
+    text-decoration: none;
+
+    @media (min-width: 576px){
+        min-width: 320px;
+        width: 320px;
+    }
+
+    &-wrapper{
+
+        @media (max-width: 576px){
+            padding: 0 16px
+        }
+    }
+
+    &-splide{
+        &__arrow{
+            width: 40px; height: 40px;
+
+            &:is(:hover, :active, :focus){
+                transform: translateY(-50%);
+            }
+
+            &:hover{
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    &-img {
+        img {
+            transition: transform .4s linear;
+        }
+    }
+
+    &-content {
+        pointer-events: none;
+        transition: transform 0.3s linear ;
+    }
+
+    &:hover {
+        #{$self}{
+            &-img {
+                img {
+                    transform: scale(1.04);
+                }
+            }
+
+
+            &-content {
+                transform: translateY(-3%);
+            }
+        }
+    }
+}

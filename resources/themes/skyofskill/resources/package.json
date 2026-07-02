@@ -1,0 +1,18 @@
+{
+  "name": "theme-template",
+  "version": "1.0.0",
+  "description": "Theme template for Azuriom",
+  "devDependencies": {
+    "postcss": "^8.2.6",
+      "sass": "^1.32.7",
+      "sass-loader": "^13.3.2"
+  },
+  "scripts": {
+    "build": "mix build",
+    "development": "mix dev",
+    "watch": "mix watch",
+    "prod": "mix --production"
+  },
+  "author": "Bricec6 (Bricec6#6204)",
+  "license": "ISC"
+}

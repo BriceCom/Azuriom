@@ -1,0 +1,15 @@
+{
+    "id": "alternative-currency",
+    "name": "alternative-currency",
+    "description": "Plugin for Plutonia",
+    "version": "1.0.0",
+    "url": "https://azuriom.com",
+    "authors": [
+        "Bricec6"
+    ],
+    "azuriom_api": "1.1.0",
+    "providers": [
+        "\\Azuriom\\Plugin\\AlternativeCurrency\\Providers\\AlternativeCurrencyServiceProvider",
+        "\\Azuriom\\Plugin\\AlternativeCurrency\\Providers\\RouteServiceProvider"
+    ]
+}

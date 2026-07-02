@@ -1,0 +1,85 @@
+// LIST GROUP
+.list-group-item {
+
+    &:hover{
+        background-color: rgba(var(--di-secondary-rgb), 0.05);
+    }
+
+    &.active {
+        background-color: var(--di-secondary);
+        border-color: rgba(var(--di-secondary-rgb), 1);
+        color: var(--di-secondary-text-emphasis);
+    }
+}
+
+// DROPDOWN
+.dropdown-item:active {
+    background-color: var(--di-secondary);
+}
+
+// LINKS
+header{
+    .nav-link{
+        color: var(--di-white) !important;
+
+
+        @media (min-width: 991px) {
+            color: var(--di-dark) !important;
+        }
+
+        &:hover, &:focus, &:active{
+            opacity: .75 !important;
+        }
+    }
+}
+
+// BACKGROUND
+.bg-white{
+    background-color: rgba(var(--di-white-rgb), var(--di-bg-opacity));
+}
+
+.bg-body-secondary{
+    background-color: var(--di-tertiary-bg) !important;
+}
+
+//modal
+.modal{
+    color: var(--di-white)
+}
+
+
+// BODY
+.bg-body-tertiary{
+    background-color: var(--di-light) !important;
+}
+
+// SEARCH BTN WITH INPUT
+.input-group{
+    &:has([type="search"]){
+        .btn{
+            border-radius: var(--di-border-radius);
+            padding: 12px !important;
+        }
+    }
+}
+
+// SLIDER
+[data-bs-theme=dark] .carousel-control-prev-icon, [data-bs-theme=dark] .carousel-control-next-icon {
+    filter: unset !important;
+}
+[data-bs-theme=light] .carousel-control-prev-icon, [data-bs-theme=light] .carousel-control-next-icon {
+    filter: invert(1) grayscale(100) !important;
+}
+
+
+//badge
+
+.bg-secondary.text-white{
+    color: var(--di-secondary-text-emphasis) !important;
+}
+
+//progress
+
+.progress-bar{
+    background-color: var(--di-tertiary);
+}

@@ -1,0 +1,58 @@
+.stats{
+
+    &__card{
+        position: relative;
+        min-height: 74.39px;
+        width: 100%;
+        max-width: 327px;
+        background: linear-gradient(180deg, rgba(69, 244, 255, 0.44) 0%, rgba(0, 209, 255, 0.44) 100%);
+        border-radius: 26px;
+
+        @media (min-width: 767px) {
+            min-height: 80px;
+            max-width: 589px;
+        }
+
+        b{
+            font-size: 26px;
+            line-height: 30px;
+            font-weight: 700;
+            text-shadow: 0 1px 8px rgba(19, 224, 52, 0.3098039216);
+        }
+
+        p{
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        i{
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(-130%, -50%);
+            font-size: 24px;
+
+            @media (min-width: 767px) {
+                font-size: 36px
+            }
+        }
+    }
+
+    &>*{
+        &:first-child{
+            b{
+                color: #13E034;
+            }
+        }
+        &:nth-child(2){
+            b{
+                color: #1CFFF1;
+            }
+        }
+        &:last-child{
+            b{
+                color: #B7E013;
+            }
+        }
+    }
+}

@@ -1,0 +1,342 @@
+@import "page/home";
+@import "page/app";
+@import "page/vote/vote";
+@import "page/page/page";
+@import "layouts/header";
+@import "layouts/footer";
+@import url(https://fonts.bunny.net/css?family=alexandria:100,200,300,400,500,600,700,800,900|bakbak-one:400);
+body{
+    font-family: "alexandria", sans-serif;
+    background-color: #121212
+}
+
+body, #app{
+    //z-index: -1;
+}
+
+hr {
+    border-width: 2px;
+    border-color: #444444;
+    opacity: .2;
+}
+
+.d-contents{
+    display: contents;
+}
+
+.text{
+    &-xs{
+        font-size: 12px;
+    }
+    &-sm{
+        font-size: 14px;
+    }
+}
+
+.cursot{
+    &-pointer{
+        cursor: pointer;
+    }
+}
+
+h1 {
+    font-size: clamp(28px, 10vw, 36px);
+    font-weight: 600;
+    letter-spacing: 0.45px;
+}
+h2 {
+    font-size: clamp(20px, 5vw, 24px);
+    font-weight: 600;
+    line-height: clamp(28px, 5vw, 48px);
+}
+h3 {
+    font-size: clamp(17px, 4vw, 18px);
+    font-weight: 600 !important;
+    line-height: clamp(18px, 4vw, 20px);
+}
+h4 {
+    font-size: clamp(16px, 3vw, 18px);
+    font-weight: 400;
+    line-height: clamp(16px, 3vw, 18px);
+}
+h5 {
+    font-size: clamp(16px, 3vw, 18px);
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+.h6 {
+    font-size: clamp(16px, 3vw, 18px);
+}
+p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.w-fit {
+    width: fit-content;
+}
+
+.tooltip-inner{
+    color: white;
+}
+
+.text{
+    &-white{
+        &-25{
+            color : rgba(255, 255, 255, 0.25) !important;
+
+            a{
+                color : rgba(255, 255, 255, 0.25) !important;
+
+                &:hover{
+                    color : rgba(255, 255, 255, .5) !important;
+
+                }
+            }
+        }
+    }
+}
+
+.youtube-player{
+    box-shadow: 0px 4px 20px 6px rgb(255 255 255 / 4%);
+}
+
+.accordion{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    &-header{
+        background: rgba(33, 37, 41, 0.50);
+        border-top: 1px solid rgba(52, 58, 64, 0.50);
+        border-radius: var(--bs-accordion-inner-border-radius);
+        border-bottom: unset;
+    }
+    &-body{
+        p {
+            opacity: 0.6
+        }
+    }
+    &-button {
+        display: flex;
+        gap: 40px;
+        background-color: unset;
+        &::after {
+            background-size: 11px;
+        }
+
+        &::after{
+            background-image: url("../images/ic_chevron_up.svg");
+        }
+
+        &:not(.collapsed){
+            background-color: unset;
+            box-shadow: unset;
+            &::after{
+                background-image: url("../images/ic_chevron_down.svg");
+                transform: unset;
+            }
+        }
+    }
+    &-item{
+        border: 1.146px solid rgba(52, 58, 64, 0.50);
+        border-radius: var(--bs-accordion-inner-border-radius);
+        &:first-child{
+            .accordion-header{
+                border-top: unset;
+            }
+        }
+    }
+    @media (max-width: 767px) {
+        gap: 23px;
+    }
+}
+
+@media (max-width: 1200px) {
+    h2 {
+        font-size: 29.07px;
+        line-height: 34.884px;
+    }
+    p {
+        font-size: 13.76px;
+    }
+}
+
+.container {
+    @media (max-width: 767px) {
+        padding: 0 52px;
+    }
+}
+
+#shop{
+    .category-links{
+        a{
+            @media (max-width: 767px) {
+                font-size: 16px;
+            }
+        }
+    }
+    .cat-grade{
+        @media (max-width: 991px) {
+            flex-wrap: wrap;
+        }
+        a:first-child{
+            display: none;
+            width: fit-content !important;
+            @media (max-width: 991px) {
+                display: block;
+            }
+        }
+    }
+    .card-comparate{
+        background-color: rgba(var(--bs-secondary-rgb), .1) !important;
+        //background-color: var(--bs-secondary) !important;
+        border-top: 6px solid !important
+    }
+    @media (max-width: 991px) {
+        a:has(.card-img-top){
+            width: 100% !important;
+            position: unset !important;
+            transform: unset !important;
+
+
+            img{
+                height: auto !important;
+            }
+        }
+        .card-body{
+            margin: 0 !important;
+            border: unset !important;
+        }
+    }
+}
+#shop_categories_category{
+    .modal-body{
+        table{
+            display: none;
+        }
+    }
+}
+
+.modal{
+    del{
+        color: var(--bs-danger)
+    }
+}
+
+.article-card-wrapper{
+    width: calc(50% - 0.5rem) !important;
+}
+
+@media (max-width: 1400px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 767px) {
+    .article-card-wrapper{
+        width: 100% !important;
+    }
+}
+@media (max-width: 576px){
+}
+
+/* Width */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    //border-top-left-radius: 5px;
+    //border-bottom-left-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ebebeb;
+    //border-top-left-radius: 5px;
+    //border-bottom-left-radius: 5px;
+    transition: background 0.123s linear;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(235, 235, 235, 0.95);
+}
+
+/* FIX PLUGINS FRONT */
+//WIKI
+#wiki_category_page{
+    .card-body{
+        overflow: hidden;
+        // AUX IMAGES DANS LE WIKI METTRE w:17 h:17 pour le responsive (si grosse image)
+        img[width='17'][height='17']{
+            object-fit: contain;
+            height: fit-content;
+            width: 100%;
+        }
+    }
+}
+
+// TABLE
+table {
+    border-collapse: separate;
+    border-spacing:  0 12px;
+}
+thead, tbody, tfoot, tr, td, th{
+    border: unset !important;
+}
+thead{
+    position: relative;
+
+    tr{
+        th{
+            background: unset !important;
+
+            &:first-child{
+                padding-left: 24px;
+            }
+        }
+    }
+}
+
+tbody{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+thead, tbody {
+    tr{
+        td,th{
+            &:first-child{
+                padding-left: 24px;
+                border-bottom-left-radius: 500px;
+                border-top-left-radius: 500px;
+            }
+            &:last-child{
+                border-bottom-right-radius: 500px;
+                border-top-right-radius: 500px;
+            }
+        }
+    }
+}
+
+tbody > tr:nth-of-type(odd) {
+    td,th{
+        //background-color: rgba(var(--bs-body-bg-rgb), 1) !important;
+    }
+    &:hover{
+        td,th{
+            //background-color: rgba(var(--bs-body-bg-rgb), 1) !important;
+        }
+    }
+}
+tbody > tr:nth-of-type(even) {
+    td,th{
+        //background-color: rgba(var(--bs-body-bg-rgb), 1) !important;
+    }
+    &:hover{
+        td,th{
+            //background-color: rgba(var(--bs-body-bg-rgb), 1) !important;
+        }
+    }
+}

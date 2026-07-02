@@ -1,0 +1,109 @@
+#_{
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    @media (max-height: 750px) {
+        overflow-y: scroll;
+
+        #footer {
+            &-small {
+                padding-bottom: 16px;
+            }
+        }
+    }
+
+    #app {
+        padding-bottom: 50px;
+    }
+
+    #home {
+        min-height: calc(100vh - 211.36px);
+        color: white;
+
+        p {
+            opacity: 0.8;
+        }
+
+        .btn-ip{
+            font-weight: 600;
+            line-height: 28px;
+            letter-spacing: 0.4px;
+        }
+
+        .connected-player{
+            gap: 6.14px;
+        }
+
+        @media (max-width: 1200px) {
+            min-height: calc(100vh - 216px);
+        }
+        @media (max-width: 767px) {
+            min-height: calc(100vh - 258.54px);
+            .logo {
+                max-height: 142.421px;
+            }
+            .btn-ip{
+                font-size: 13.814px;
+            }
+            h1 {
+                font-size: 45.865px;
+                line-height: 55.038px;
+            }
+            p{
+                font-size: 13.76px;
+                line-height: 21.404px;
+            }
+            .connected-player{
+                font-size: 12.279px;
+            }
+        }
+
+        .circle {
+            display: inline-block;
+            content: "";
+            width: 4.6px;
+            height: 4.6px;
+            background-color: #00FF38;
+        }
+
+        hgroup {
+
+             p{
+                width: 80%;
+            }
+        }
+
+        .background {
+            z-index:-1;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+
+            &-wrapper {
+                position: relative;
+                height: unset;
+            }
+
+            &-gradient {
+                z-index: 2;
+                position: absolute;
+                content: "";
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                background: radial-gradient(100% 100% at 50% 0%, transparent 0%, #101010 100%), transparent 50% / cover no-repeat;
+
+            }
+
+            img {
+                position: relative;
+                width: unset;
+                height: unset;
+                z-index: 1;
+            }
+        }
+    }
+}

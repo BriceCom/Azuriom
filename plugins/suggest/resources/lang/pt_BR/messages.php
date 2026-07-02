@@ -1,0 +1,82 @@
+<?php
+
+return [
+    'title' => 'Sugestões',
+    'description' => 'Envie suas sugestões para melhorar o servidor ou o site.',
+    'create' => 'Criar uma sugestão',
+    'back' => 'Voltar às sugestões',
+    'empty' => 'Nenhuma sugestão ainda.',
+    'by' => 'Por :user',
+    'votes' => ':count voto|:count votos',
+    'vote' => 'Votar',
+    'upvote' => 'Curtir',
+    'downvote' => 'Não curtir',
+    'upvoted' => 'Curtiu',
+    'downvoted' => 'Não curtiu',
+    'voted' => 'Você votou nesta sugestão.',
+    'voted_up' => 'Você curtiu esta sugestão.',
+    'voted_down' => 'Você não curtiu esta sugestão.',
+    'unvoted_up' => 'Você removeu sua curtida.',
+    'unvoted_down' => 'Você removeu seu "não curtir".',
+    'already_voted' => 'Você já votou nesta sugestão.',
+    'already_voted_type' => 'Você já votou desta forma nesta sugestão.',
+    'invalid_vote_type' => 'Tipo de voto inválido.',
+    'login_to_vote' => 'Você precisa estar logado para votar nas sugestões.',
+    'created' => 'Sua sugestão foi criada com sucesso.',
+    'edit' => 'Editar sugestão',
+    'edit_own' => 'Editar sua sugestão',
+    'updated' => 'Sua sugestão foi atualizada com sucesso.',
+    'cannot_edit' => 'Você não pode editar esta sugestão.',
+    'cannot_edit_votes' => 'Você não pode editar uma sugestão que já possui votos.',
+    'max_suggestions_reached' => 'Você atingiu o número máximo de sugestões que pode criar (:max).',
+    'read_more' => 'Leia mais',
+    'info' => 'Informações',
+
+    'actions' => [
+        'filter' => 'Filtrar',
+    ],
+
+    'filter' => [
+        'all' => 'Todas as sugestões',
+        'all_categories' => 'Todas as categorias',
+        'recent' => 'Mais recentes',
+        'oldest' => 'Mais antigas',
+        'popular' => 'Mais populares',
+        'unpopular' => 'Menos populares',
+        'mine' => 'Minhas sugestões',
+        'approved' => 'Aprovadas',
+        'rejected' => 'Rejeitadas',
+        'pending' => 'Pendentes',
+    ],
+
+    'fields' => [
+        'title' => 'Título',
+        'title_help' => 'Máximo de 80 caracteres',
+        'description' => 'Descrição',
+        'description_help' => 'Máximo de :max caracteres',
+        'category' => 'Categoria',
+        'select_category' => 'Selecione uma categoria',
+    ],
+
+    'status' => [
+        'pending' => 'Pendente',
+        'approved' => 'Aprovada',
+        'rejected' => 'Rejeitada',
+    ],
+
+    'comments' => [
+        'title' => 'Comentários',
+        'empty' => 'Nenhum comentário ainda.',
+        'add' => 'Adicionar comentário',
+        'content' => 'Comentário',
+        'submit' => 'Enviar comentário',
+        'created' => 'Seu comentário foi adicionado com sucesso.',
+        'deleted' => 'O comentário foi excluído com sucesso.',
+        'not_allowed' => 'Comentários não são permitidos nesta sugestão.',
+        'closed' => 'Comentários estão fechados para esta sugestão (disponível apenas para sugestões pendentes).',
+        'login_required' => 'Você deve estar logado para comentar.',
+        'confirm_delete' => 'Tem certeza de que deseja excluir este comentário?',
+    ],
+
+    'deleted' => 'A sugestão foi excluída com sucesso.',
+];

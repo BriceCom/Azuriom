@@ -1,0 +1,56 @@
+#app {
+    .background {
+        z-index:-1;
+        position: absolute;
+        inset: 0;
+
+        &-img{
+            height: 100%;
+            width: 100%;
+            opacity: .2;
+            filter: blur(3px);
+        }
+
+        &-content{
+            z-index: 2;
+            position: absolute;
+            top: 70px;
+            right: 0;
+            width: 100%;
+
+
+            &>div:first-child{
+                min-height: 480px;
+            }
+
+            @media (min-width: 767px) {
+                top: 280px;
+            }
+        }
+
+        &-wrapper {
+            position: relative;
+            height: 100%;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                height: 100%;
+                background: radial-gradient(130% 105% at 50% 0%, rgba(16, 16, 16, 0) 60%, #121212 90%), transparent 50% / cover no-repeat;
+            }
+
+            div:has(.logo){
+                img{
+                    width: 50%;
+                    @media (min-width: 767px) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

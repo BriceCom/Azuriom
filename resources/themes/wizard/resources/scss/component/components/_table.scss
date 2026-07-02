@@ -1,0 +1,41 @@
+table,
+.table {
+    //& > :not(caption) > * > * {
+    //    border-bottom-width: 0;
+    //}
+    //
+    //> :not(:first-child) {
+    //    border-top: 0;
+    //}
+    //
+    //td,
+    //th {
+    //    padding: 0.5rem 1rem;
+    //    border-color: transparent;
+    //    font-size: 1.25rem;
+    //}
+    //
+    //td {
+    //    padding: 1rem 1rem;
+    //}
+
+    thead {
+        th {
+            background-color: $purple-1000;
+            font-weight: $font-weight-bold;
+        }
+    }
+
+    th {
+        font-weight: $font-weight-medium;
+    }
+
+
+    tr {
+        border-bottom: 4px solid $purple-900;
+
+        > * {
+            background-color: $purple-800;
+        }
+    }
+}

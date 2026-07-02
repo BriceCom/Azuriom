@@ -1,0 +1,51 @@
+
+.h1{
+    font-size: 48px;
+    line-height: 48px;
+    font-weight: 900;
+
+    @media (max-width: 767px) {
+        line-height: 46px;
+    }
+}
+
+.h2{
+    font-size: 36px;
+    line-height: 56px;
+    font-weight: 900;
+
+    @media (max-width: 767px) {
+        line-height: 42px;
+    }
+}
+
+.h4{
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 900;
+}
+
+.h3{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 900;
+}
+
+.h5{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 900;
+}
+
+hgroup{
+    p{
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        @extend .h#{$i} !optional;
+    }
+}

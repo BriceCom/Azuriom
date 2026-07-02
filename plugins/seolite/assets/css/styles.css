@@ -1,0 +1,26 @@
+:root{
+    --seo-primary-color-500: #9CDB5B;
+    --seo-primary-color-200: #C5E163;
+    --seo-primary-gradient: linear-gradient(270deg, var(--seo-primary-color-500) 0%, var(--seo-primary-color-200) 100%);
+}
+
+[data-seolite="trigger"]{
+    z-index: 50;
+    background: var(--seo-primary-color-500);
+    background: var(--seo-primary-gradient);
+    border-color: var(--seo-primary-color-500);
+
+    &:hover,
+    &:active,
+    &:focus{
+        background: var(--seo-primary-color-200) !important;
+        border-color: var(--seo-primary-color-200) !important;
+    }
+
+    color: black;
+}
+
+.badge-brand{
+    background: var(--seo-primary-gradient);
+    color: black;
+}

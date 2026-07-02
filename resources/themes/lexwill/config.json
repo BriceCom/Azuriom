@@ -1,0 +1,275 @@
+{
+    "home": {
+        "index": {
+            "fontSize": "0.53",
+            "newsletter": {
+                "title": "zdadd",
+                "text": "<p>dazdzdadz<strong>dzadz</strong></p>"
+            }
+        }
+    },
+    "header": {
+        "index": {
+            "fontSize": "0.53",
+            "link": {
+                "text": null,
+                "url": null
+            }
+        }
+    },
+    "slider": {
+        "index": {
+            "fontSize": "0.57",
+            "title": "Hello",
+            "sliders": {
+                "1": {
+                    "img": "samusia-v2-spawn-2024.jpg",
+                    "title": "Bonjour le titre",
+                    "subtitle": "Sous titre",
+                    "text": "<p>azdzdadz</p>\r\n<p>zdazdd\u00a0<strong>azdazdzddzazdazddz</strong></p>",
+                    "link": {
+                        "url": "lien",
+                        "text": "TEXT BOUTON",
+                        "blank": "on"
+                    }
+                },
+                "2": {
+                    "img": "samusia-v2-spawn-2024.jpg",
+                    "title": null,
+                    "subtitle": null,
+                    "text": null,
+                    "link": {
+                        "url": null,
+                        "text": null
+                    }
+                },
+                "3": {
+                    "img": null,
+                    "title": null,
+                    "subtitle": null,
+                    "text": null,
+                    "link": {
+                        "url": null,
+                        "text": null
+                    }
+                }
+            }
+        }
+    },
+    "staff": {
+        "index": {
+            "fontSize": "0.53",
+            "title": "Bonjour",
+            "players": {
+                "1": {
+                    "img": null,
+                    "name": "dzaz",
+                    "date": "21 /12"
+                },
+                "2": {
+                    "img": null,
+                    "name": "staf 2",
+                    "date": "aaa"
+                },
+                "3": {
+                    "img": null,
+                    "name": null,
+                    "date": null
+                },
+                "4": {
+                    "img": null,
+                    "name": null,
+                    "date": null
+                },
+                "5": {
+                    "img": null,
+                    "name": null,
+                    "date": null
+                },
+                "6": {
+                    "img": null,
+                    "name": null,
+                    "date": null
+                },
+                "7": {
+                    "img": null,
+                    "name": null,
+                    "date": null
+                },
+                "8": {
+                    "img": null,
+                    "name": null,
+                    "date": null
+                },
+                "9": {
+                    "img": null,
+                    "name": null,
+                    "date": null
+                },
+                "10": {
+                    "img": null,
+                    "name": null,
+                    "date": null
+                }
+            }
+        }
+    },
+    "block": {
+        "index": {
+            "fontSize": "0.53",
+            "tags": {
+                "1": {
+                    "text": "1111z"
+                },
+                "2": {
+                    "text": "ZDZ"
+                },
+                "3": {
+                    "text": null
+                }
+            },
+            "date": "1/2/23",
+            "title": "titre de fo",
+            "text": "<p>texteeee</p>",
+            "img": null,
+            "button": {
+                "text": null,
+                "url": null
+            },
+            "rating": "1"
+        }
+    },
+    "avis": {
+        "index": {
+            "fontSize": "0.53",
+            "title": "adadzaad",
+            "players": {
+                "1": {
+                    "name": "zdzaddz",
+                    "tag": "le tag",
+                    "text": "le texteeee"
+                },
+                "2": {
+                    "name": "ad",
+                    "tag": "dzzdd",
+                    "text": "zdzddzdzdz"
+                },
+                "3": {
+                    "name": "adzad",
+                    "tag": null,
+                    "text": "zdaddzdadz"
+                },
+                "4": {
+                    "name": "adzdddzdd",
+                    "tag": null,
+                    "text": "dzdzdzd"
+                },
+                "5": {
+                    "name": null,
+                    "tag": null,
+                    "text": null
+                },
+                "6": {
+                    "name": null,
+                    "tag": null,
+                    "text": null
+                },
+                "7": {
+                    "name": null,
+                    "tag": null,
+                    "text": null
+                },
+                "8": {
+                    "name": null,
+                    "tag": null,
+                    "text": null
+                },
+                "9": {
+                    "name": null,
+                    "tag": null,
+                    "text": null
+                },
+                "10": {
+                    "name": null,
+                    "tag": null,
+                    "text": null
+                },
+                "11": {
+                    "name": null,
+                    "tag": null,
+                    "text": null
+                },
+                "12": {
+                    "name": null,
+                    "tag": null,
+                    "text": null
+                },
+                "13": {
+                    "name": null,
+                    "tag": null,
+                    "text": null
+                },
+                "14": {
+                    "name": null,
+                    "tag": null,
+                    "text": null
+                },
+                "15": {
+                    "name": null,
+                    "tag": null,
+                    "text": null
+                },
+                "16": {
+                    "name": null,
+                    "tag": null,
+                    "text": null
+                }
+            }
+        }
+    },
+    "vote": {
+        "index": {
+            "fontSize": "0.53",
+            "vote": {
+                "title": "azdazdazdda",
+                "text": "<p>dazd adza\u00a0<strong>dadadazd</strong><em>. dazddaazdddazd\u00a0<span style=\"color: #e03e2d;\">azdazdazddaz</span></em><span style=\"color: #e03e2d;\">azdadadaddz\u00a0</span></p>"
+            },
+            "top": {
+                "title": "coucou",
+                "text": "<p>addzz</p>"
+            }
+        }
+    },
+    "footer": {
+        "index": {
+            "fontSize": "0.53",
+            "text": "<p>adada,dadl;zdzadzdz</p>\r\n<p>\u00a0</p>\r\n<p>ad</p>",
+            "links": [
+                {
+                    "text": "adzaa",
+                    "url": "lien"
+                },
+                {
+                    "text": null,
+                    "url": null
+                },
+                {
+                    "text": null,
+                    "url": null
+                },
+                {
+                    "text": null,
+                    "url": null
+                },
+                {
+                    "text": "azddz",
+                    "url": "zdzad"
+                },
+                {
+                    "text": null,
+                    "url": null
+                }
+            ]
+        }
+    }
+}

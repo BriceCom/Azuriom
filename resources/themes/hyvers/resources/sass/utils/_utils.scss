@@ -1,0 +1,84 @@
+/* Utilitaire pour development */
+body{
+    &::after {
+        z-index: 99999;
+        position: absolute;
+        top: 0;
+        right: 50%;
+        height: 100%;
+        width: 3px;
+        //background: red;
+        content: " ";
+    }
+}
+
+.text{
+    &-white{
+        color: var(--di-body-color);
+    }
+}
+
+.w-fit{
+    width: fit-content;
+}
+
+// Z-index
+@for $i from 1 through 10 {
+    .z-#{$i} {
+        z-index: $i;
+    }
+}
+@for $i from 1 through 10 {
+    .-z-#{$i} {
+        z-index: -#{$i};
+    }
+}
+
+// after
+.after-none::after{
+    content: none;
+}
+
+.typewriter {
+    min-width: 230px;
+
+    &::after {
+        content: "|";
+        display: inline-block;
+        animation: blink 0.7s steps(5, start) infinite;
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+
+/* Width */
+::-webkit-scrollbar:hover {
+    //width: var(--di-scrollbar-width);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    //background-color: var(--di-scrollbar-track-bg);
+    //transition: background .2s linear;
+    //border-radius: var(--di-scrollbar-border-radius)
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    //background-color: var(--di-scrollbar-thumb-bg);
+    //border-radius: var(--di-scrollbar-border-radius);
+    //transition: background .2s linear;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    //background: var(--di-scrollbar-thumb-bg-hover);
+}
+
+

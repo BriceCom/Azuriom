@@ -1,0 +1,57 @@
+@import
+'posts',
+'hero',
+'servers',
+'article',
+'textimage';
+
+.join{
+    @media (max-width: 767px) {
+        div{
+            &:first-child{
+                order: 1;
+            }
+            &:last-child{
+                order: 0;
+            }
+        }
+    }
+}
+
+.stats{
+    hr{
+        rotate: 90deg;
+        width: 26px;
+        margin: 0;
+    }
+
+    p{
+        @media (max-width: 1440px) {
+            font-size: 16px
+        }
+        @media (max-width: 991px) {
+            font-size: 20px
+        }
+    }
+}
+
+
+
+.tag{
+    &-wrapper{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    border-radius: 6px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, 0.20);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+}

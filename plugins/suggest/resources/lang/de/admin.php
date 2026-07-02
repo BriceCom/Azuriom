@@ -1,0 +1,132 @@
+<?php
+
+return [
+    'plugin' => [
+        'name' => 'Vorschläge',
+    ],
+
+    'index' => [
+        'title' => 'Vorschläge',
+    ],
+
+    'suggestions' => [
+        'title' => 'Vorschläge',
+        'updated' => 'Der Vorschlag wurde aktualisiert.',
+        'deleted' => 'Der Vorschlag wurde gelöscht.',
+        'status_updated' => 'Der Status des Vorschlags wurde aktualisiert.',
+    ],
+
+    'categories' => [
+        'title' => 'Kategorien',
+        'create' => 'Kategorie erstellen',
+        'edit' => 'Kategorie bearbeiten',
+        'created' => 'Die Kategorie wurde erstellt.',
+        'updated' => 'Die Kategorie wurde aktualisiert.',
+        'deleted' => 'Die Kategorie wurde gelöscht.',
+        'delete_error' => 'Du kannst keine Kategorie löschen, die Vorschläge enthält.',
+    ],
+
+    'permissions' => [
+        'create' => 'Vorschläge erstellen',
+        'delete' => 'Vorschläge löschen',
+        'edit' => 'Vorschläge bearbeiten',
+        'settings' => 'Einstellungen verwalten',
+        'comments' => [
+            'delete' => 'Kommentare auf Vorschläge löschen',
+        ],
+    ],
+
+    'settings' => [
+        'title' => 'Einstellungen',
+        'max_suggestions' => 'Maximale Vorschläge pro Benutzer',
+        'max_suggestions_info' => 'Maximale Anzahl offener Vorschläge pro Benutzer (0 = unbegrenzt)',
+        'max_description_length' => 'Maximale Beschreibungslänge',
+        'max_description_length_info' => 'Maximale Zeichenanzahl für Vorschlagsbeschreibungen (50–4000)',
+        'index_title' => 'Titel der Übersichtsseite',
+        'index_subtitle' => 'Untertitel der Übersichtsseite',
+        'enable_comments' => 'Kommentare aktivieren',
+        'active_title' => 'Aktive Vorschläge (In Bearbeitung)',
+        'archive_title' => 'Archivierte Vorschläge',
+        'archived' => 'Archiviert',
+        'all_archived' => 'Alle archivierten',
+        'visible_filters' => 'Sichtbare Filter',
+        'visible_filters_info' => 'Wähle aus, welche Filter für Benutzer auf der Vorschlagsseite sichtbar sein sollen. Nicht ausgewählte Filter werden aus der Filterliste ausgeblendet.',
+        'disable_category_filters' => 'Kategoriefilter deaktivieren',
+    ],
+
+    'discord' => [
+        'title' => 'Discord Webhook',
+        'webhook_url' => 'Discord Webhook URL',
+        'webhook_url_info' => 'Gib die URL deines Discord Webhooks ein. Erstelle einen in den Servereinstellungen unter Integrationen > Webhooks.',
+        'enabled' => 'Aktiviert',
+        'send_on_create' => 'Webhook beim Erstellen eines Vorschlags senden',
+        'send_on_accept' => 'Webhook beim Akzeptieren eines Vorschlags senden',
+        'send_on_refuse' => 'Webhook beim Ablehnen eines Vorschlags senden',
+        'test' => 'Testen',
+        'test_success' => 'Webhook-Test erfolgreich!',
+        'test_failed' => 'Webhook-Test fehlgeschlagen',
+        'how_it_works' => 'Funktionsweise:',
+        'feature_list' => [
+            'Webhooks werden nach ausgewählten Optionen gesendet',
+            'Nachrichten enthalten Vorschlagsdetails, Autor, Status, Kategorie und Stimmenanzahl',
+            'Farben unterscheiden verschiedene Aktionen (grün = neu, blau = akzeptiert, rot = abgelehnt)',
+        ],
+        'customization' => 'Webhook-Anpassung',
+        'color_created' => 'Farbe für erstellt',
+        'color_accepted' => 'Farbe für akzeptiert',
+        'color_refused' => 'Farbe für abgelehnt',
+        'custom_templates' => 'Eigene Vorlagen',
+        'template_variables_help' => 'Verwende Variablen wie {title}, {author}, {category}, {status}, {votes}, {url}, {refusal_reason}',
+        'template_created' => 'Vorlage für erstellt',
+        'template_accepted' => 'Vorlage für akzeptiert',
+        'template_refused' => 'Vorlage für abgelehnt',
+        'custom_username' => 'Benutzerdefinierter Name',
+        'custom_avatar_url' => 'Benutzerdefinierte Avatar-URL',
+        'display_options' => 'Anzeigeoptionen',
+        'show_author' => 'Autor anzeigen',
+        'show_category' => 'Kategorie anzeigen',
+        'show_votes' => 'Stimmen anzeigen',
+        'show_description' => 'Beschreibung anzeigen',
+        'description_length' => 'Beschreibungslänge',
+        'description_length_help' => 'Maximale Zeichenanzahl für Vorschlagsbeschreibungen (50–4000)',
+    ],
+
+    'statistics' => [
+        'title' => 'Statistiken',
+        'total_suggestions' => 'Gesamtanzahl Vorschläge',
+        'pending' => 'In Bearbeitung',
+        'accepted' => 'Akzeptiert',
+        'refused' => 'Abgelehnt',
+        'total_votes' => 'Gesamtanzahl Stimmen',
+        'upvotes' => 'Positive Stimmen',
+        'downvotes' => 'Negative Stimmen',
+        'recent_activity' => 'Aktivität letzte 30 Tage',
+        'new_suggestions' => 'Neue Vorschläge',
+        'new_votes' => 'Neue Stimmen',
+        'top_categories' => 'Top-Kategorien',
+        'most_voted_suggestions' => 'Meistbewertete Vorschläge',
+        'monthly_activity' => 'Monatliche Aktivität',
+        'status_distribution' => 'Statusverteilung',
+        'author' => 'Autor',
+        'category' => 'Kategorie',
+        'status' => 'Status',
+        'net_score' => 'Nettopunktzahl',
+        'no_categories' => 'Keine Kategorien gefunden.',
+        'no_suggestions' => 'Keine Vorschläge gefunden.',
+        'table_title' => 'Titel',
+        'suggestions' => 'Vorschläge',
+        'votes' => 'Stimmen',
+        'none' => 'Keine',
+    ],
+
+    'logs' => [
+        'suggest' => [
+            'created' => 'Vorschlag erstellt: :title',
+            'deleted' => 'Vorschlag gelöscht: :title von :author',
+            'edited' => 'Vorschlag bearbeitet: :title',
+        ],
+    ],
+
+    'support' => 'Discord-Support',
+    'serveurliste' => 'Top-Server-Liste',
+];

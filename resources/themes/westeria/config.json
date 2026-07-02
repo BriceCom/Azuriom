@@ -1,0 +1,71 @@
+{
+    "home": {
+        "ip": {
+            "text": null
+        }
+    },
+    "footer": {
+        "about_us": {
+            "title": null,
+            "paragraph": null
+        },
+        "web": {
+            "title": "azdazddazdz",
+            "links": {
+                "link-1": {
+                    "text": null,
+                    "icon": null,
+                    "url": null
+                },
+                "link-2": {
+                    "text": null,
+                    "icon": null,
+                    "url": null
+                },
+                "link-3": {
+                    "text": null,
+                    "icon": null,
+                    "url": null
+                },
+                "link-4": {
+                    "text": null,
+                    "icon": null,
+                    "url": null
+                },
+                "link-5": {
+                    "text": null,
+                    "icon": null,
+                    "url": null
+                }
+            }
+        },
+        "support": {
+            "title": null,
+            "paragraph": null,
+            "links": {
+                "link-1": {
+                    "text": null,
+                    "icon": null,
+                    "url": null
+                }
+            }
+        }
+    },
+    "vote": {
+        "top-vote-reward": {
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "6": null,
+            "7": null,
+            "8": null,
+            "9": null,
+            "10": null
+        }
+    },
+    "shop": {
+        "img": "logo.png"
+    }
+}

@@ -1,0 +1,13 @@
+.social {
+    position: relative;
+
+    i{
+        transition: transform .1s linear;
+    }
+
+    &:hover {
+        i{
+            transform: translateY(-4%);
+        }
+    }
+}

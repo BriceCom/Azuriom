@@ -1,0 +1,60 @@
+$opacitys: (
+    'opacity-5': 0.05,
+    'opacity-10': 0.1,
+    'opacity-20': 0.2,
+    'opacity-30': 0.3,
+    'opacity-40': 0.4,
+    'opacity-50': 0.5,
+    'opacity-60': 0.6,
+    'opacity-70': 0.7,
+    'opacity-80': 0.8,
+    'opacity-90': 0.9,
+);
+
+@each $color, $value in $opacitys {
+    .#{$color} {
+        --#{$prefix}bg-opacity: #{$value};
+    }
+}
+
+// Background Grays
+@each $key, $value in $grays {
+    .bg-gray-#{$key} {
+        background-color: #{$value};
+    }
+    .bg-opacity-25-gray-#{$key} {
+        background-color: #{$value};
+        opacity: 0.25;
+    }
+    .bg-opacity-50-gray-#{$key} {
+        background-color: #{$value};
+        opacity: 0.5;
+    }
+    .bg-opacity-75-gray-#{$key} {
+        background-color: #{$value};
+        opacity: 0.75;
+    }
+}
+
+.bg-gradient{
+    background-image: radial-gradient(at 50% 50%,#004d40 0,#17102c 100%);
+}
+
+// Background Colors
+@each $key, $value in $colors {
+    .bg-#{$key} {
+        background-color: #{$value};
+    }
+}
+
+@each $key, $value in $purples {
+    .bg-#{$key} {
+        background-color: #{$value};
+    }
+}
+
+@each $key, $value in $cyans {
+    .bg-#{$key} {
+        background-color: #{$value};
+    }
+}

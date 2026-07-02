@@ -1,0 +1,63 @@
+<?php
+return [
+    'none' => 'Nenhum',
+    'title' => 'Título',
+    'picture' => 'Imagem',
+    'text' => 'Texto',
+    'paragraph' => 'Parágrafo',
+    'url' => 'Link',
+    'icon' => 'Ícone',
+    'color' => 'Cor',
+    'colors' => 'Cores',
+    'secondary' => 'Secundário',
+    'primary' => 'Primário',
+    'main' => 'Principal',
+    'body' => 'Body',
+    'discord' => 'Discord',
+    'twitter' => 'Twitter',
+    'server' => 'Servidor',
+    'userBar' => 'Barra de usuário',
+    'hero' => 'Hero',
+    'show' => 'Mostrar',
+    'add' => 'Adicionar',
+    'dont_show' => 'Não mostrar',
+    'button' => 'Botão',
+    'theme' => 'Tema',
+    'black' => 'Preto',
+    'white' => 'Branco',
+    'footer' => 'Footer',
+    'middle' => 'Meio',
+    'left' => 'Esquerda',
+    'right' => 'Direita',
+    'news' => 'Notícias',
+    'other_page' => 'Abrir em outra página',
+    'ip_when_copied' => 'Texto quando o copiar o IP',
+    'online' => 'Online',
+    'join' => 'Entrar',
+    'amount_to_show' => 'Quantidade a ser mostrada',
+    'online_variable' => 'Use {online} em seu texto para colocar o número de conexões como desejar!',
+    'form' => [
+        'hero' => [
+            'discord_show_online' => 'Configure seu ID do Discord abaixo para exibir o número de conexões que você tem.',
+            'discord_iframe' => 'Desculpe, você pode usar {online} para usar as configurações de iframe do Discord.'
+        ],
+        'colors' => [
+            'desc' => 'Coloque cores aleatórias para ter mais conhecimento das cores que mudam',
+            'color_of_primary_buttons' => 'Cor do texto para botões primários',
+            'color_of_secondary_buttons' => 'Cor do texto para botões secundários',
+        ],
+        'color' => [
+            'default_color' => 'Cor padrão',
+        ],
+        'footer' => [
+            'showing_serveurliste' => 'Não exibir que seu servidor está listado em serveurliste.com',
+            'link_of_your_serveur_on_serveurliste' => 'Link para a página do seu Servidor na Serveurliste. <a href="https://serveurliste.com/faq" target="_blank">Documentação</a>'
+        ],
+    ],
+    'config' => [
+        'our_discord' => 'Nosso Discord',
+        'serveurliste' => 'Liste seus servidores em serveurliste.com',
+        'don' => 'Faça uma doação',
+        'donation' => 'Somos honrados com o seu apoio e agradecemos muito sua generosa contribuição, Dixept ❤.',
+    ],
+];

@@ -1,0 +1,238 @@
+{
+    "styles": {
+        "theme_dark_disabled": "0",
+        "theme_priority": "dark",
+        "bg_light": null,
+        "bg_dark": null,
+        "font_custom_enabled": "0",
+        "font_body_url": null,
+        "font_body_name": null,
+        "font_heading_url": null,
+        "font_heading_name": null,
+        "colors": {
+            "light": {
+                "primary": "#00b7ff",
+                "secondary": "#c8cccd",
+                "tertiary": "#f8ca47",
+                "quaternary": "#ecaf2d",
+                "background": "#f2f2f2",
+                "dark_tone_1": "#e3e2e2",
+                "dark_tone_2": "#d7d7d7",
+                "light_tone_1": "#fafafa",
+                "light_tone_2": "#ffffff",
+                "text": "#111111",
+                "text_background": "#ffffff",
+                "alert_success": "#bbf24b",
+                "alert_info": "#0dcaf0",
+                "alert_warning": "#f88934",
+                "alert_error": "#dc3545"
+            },
+            "dark": {
+                "primary": "#00b7ff",
+                "secondary": "#3e404d",
+                "tertiary": "#f8ca47",
+                "quaternary": "#ff6cba",
+                "background": "#111111",
+                "dark_tone_1": "#070606",
+                "dark_tone_2": "#17191b",
+                "light_tone_1": "#21262c",
+                "light_tone_2": "#2b3036",
+                "text": "#ffffff",
+                "text_background": "#21262c",
+                "alert_success": "#bbf24b",
+                "alert_info": "#3499f8",
+                "alert_warning": "#f88934",
+                "alert_error": "#f83434"
+            }
+        }
+    },
+    "global": {
+        "particles_enabled": "0",
+        "particles_count": "80",
+        "particles_density": "50",
+        "particles_image": null,
+        "particles_speed": "3",
+        "particles_size": "3",
+        "discord_link": null,
+        "discord_id": null,
+        "server_launcher": "0",
+        "server_launcher_url": null,
+        "server_launcher_button_text": null,
+        "server_address": null
+    },
+    "advanced": {
+        "advanced_mode": "0",
+        "serveurliste_link": null,
+        "serveurliste_token": null
+    },
+    "modules": {
+        "announce_bar": {
+            "enabled": "0",
+            "text": null,
+            "background_color": "#1a1a2e"
+        },
+        "scroll_progress": {
+            "enabled": "0",
+            "height": "8",
+            "background_color": "#1a1a2e",
+            "color": "#6c63ff"
+        }
+    },
+    "page": {
+        "blocks": {
+            "r_c78b4570aae8cfb5": [
+                {
+                    "id": "header",
+                    "order": "1",
+                    "params": {
+                        "sticky": "0",
+                        "show_shadow": "1"
+                    }
+                },
+                {
+                    "id": "hero",
+                    "order": "2",
+                    "params": {
+                        "badge_text": "{servers_online_count} joueurs en ligne maintenant",
+                        "title": "Le serveur Minecraft",
+                        "highlight": "sans compromis.",
+                        "subtitle": "Survie, PvP, Skyblock \u2014 un seul serveur, une communaut\u00e9 francophone active.",
+                        "primary_button_text": "Commencer \u00e0 jouer",
+                        "primary_button_url": "#join",
+                        "primary_button_variant": "primary",
+                        "secondary_button_text": "Voir les serveurs",
+                        "secondary_button_url": "#servers",
+                        "secondary_button_variant": "secondary",
+                        "ip_label": "IP",
+                        "ip_status": "En ligne",
+                        "ip_address": null,
+                        "aos": "none"
+                    }
+                },
+                {
+                    "id": "features",
+                    "order": "3",
+                    "params": {
+                        "badge": "Pourquoi nous ?",
+                        "title": "Con\u00e7u pour une exp\u00e9rience sans friction.",
+                        "subtitle": "Performances, \u00e9quit\u00e9, communaut\u00e9 \u2014 les trois piliers qui font la diff\u00e9rence.",
+                        "items": [
+                            {
+                                "icon": "\u26a1",
+                                "title": "Performances",
+                                "text": "Serveurs d\u00e9di\u00e9s et ping stable pour les joueurs europ\u00e9ens."
+                            },
+                            {
+                                "icon": "\ud83d\udee1",
+                                "title": "Anti-cheat",
+                                "text": "Syst\u00e8me anti-triche mis \u00e0 jour r\u00e9guli\u00e8rement."
+                            },
+                            {
+                                "icon": "\ud83c\udfae",
+                                "title": "Modes de jeu",
+                                "text": "Plusieurs modes pour tous les profils de joueurs."
+                            },
+                            {
+                                "icon": "\ud83d\udcac",
+                                "title": "Communaut\u00e9",
+                                "text": "Discord actif, support r\u00e9actif et \u00e9v\u00e9nements."
+                            }
+                        ],
+                        "aos": "none"
+                    }
+                },
+                {
+                    "id": "servers",
+                    "order": "4",
+                    "params": {
+                        "aos": "none"
+                    }
+                },
+                {
+                    "id": "news",
+                    "order": "5",
+                    "params": {
+                        "aos": "none"
+                    }
+                },
+                {
+                    "id": "steps",
+                    "order": "6",
+                    "params": {
+                        "badge": "Comment rejoindre",
+                        "title": "En ligne en moins de 60 secondes.",
+                        "subtitle": "Accessible sur Java et Bedrock, sans mod, sans inscription obligatoire.",
+                        "items": [
+                            {
+                                "title": "Ouvre Minecraft",
+                                "text": "Lance Java Edition ou Bedrock puis clique sur Multijoueur."
+                            },
+                            {
+                                "title": "Ajoute un serveur",
+                                "text": "Clique sur Ajouter un serveur puis renseigne l\u2019adresse IP."
+                            },
+                            {
+                                "title": "Connecte-toi et joue",
+                                "text": "Choisis ton mode de jeu et rejoins la communaut\u00e9."
+                            }
+                        ],
+                        "aos": "none"
+                    }
+                },
+                {
+                    "id": "stats",
+                    "order": "7",
+                    "params": {
+                        "badge": "En chiffres",
+                        "title": "Un serveur solide depuis 2021.",
+                        "items": [
+                            {
+                                "value": "+500k",
+                                "label": "Joueurs uniques"
+                            },
+                            {
+                                "value": "40k",
+                                "label": "Membres Discord"
+                            },
+                            {
+                                "value": "1 247",
+                                "label": "En ligne maintenant"
+                            },
+                            {
+                                "value": "4.8/5",
+                                "label": "Note moyenne"
+                            }
+                        ],
+                        "aos": "none"
+                    }
+                },
+                {
+                    "id": "cta",
+                    "order": "8",
+                    "params": {
+                        "badge": "Pr\u00eat ?",
+                        "title": "Rejoins l\u2019aventure d\u00e8s aujourd\u2019hui.",
+                        "subtitle": "Gratuit. Sans inscription. La communaut\u00e9 t\u2019attend.",
+                        "primary_button_text": "Commencer \u00e0 jouer",
+                        "primary_button_url": "#join",
+                        "primary_button_variant": "primary",
+                        "secondary_button_text": "Rejoindre le Discord",
+                        "secondary_button_url": null,
+                        "secondary_button_variant": "secondary",
+                        "aos": "none"
+                    }
+                },
+                {
+                    "id": "footer",
+                    "order": "9",
+                    "params": {
+                        "show_logo": "1",
+                        "description": null,
+                        "show_social_links": "1",
+                        "show_dixept_copyright": "1"
+                    }
+                }
+            ]
+        }
+    }
+}

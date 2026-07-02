@@ -1,0 +1,13 @@
+footer{
+    a{
+        transition: color ease-out $anim-delay-fast;
+
+        &.social:hover{
+            color: var(--social-color) !important;
+        }
+    }
+
+    .clipboard{
+        height: 44px;
+    }
+}

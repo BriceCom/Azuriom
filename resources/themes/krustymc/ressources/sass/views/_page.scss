@@ -1,0 +1,34 @@
+body:has(.content){
+    .hero {
+        min-height: 40vh;
+        height: 70vh;
+
+        &__bg {
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                //background: rgb(217,217,217);
+                //background: linear-gradient(0deg, rgba(255,255,255,0) 100%, rgba(24,145,208,0) 47%, rgba(255,255,255,1) 0%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero__img{
+                img{
+                    height: 150px;
+                }
+            }
+        }
+
+        @media (max-height: 600px) {
+            .hero{
+                min-height: 100vh;
+            }
+        }
+    }
+
+}

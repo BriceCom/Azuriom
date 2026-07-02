@@ -1,0 +1,11 @@
+{
+    "id": "origincube",
+    "name": "OriginCube",
+    "description": "Theme for OriginCube",
+    "version": "2.0.0",
+    "url": "https://azuriom.com",
+    "azuriom_api": "1.0.0",
+    "authors": [
+        "[Dixept.fr] Bricec6#6204"
+    ]
+}

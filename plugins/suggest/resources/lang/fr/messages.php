@@ -1,0 +1,83 @@
+<?php
+
+return [
+    'title' => 'Suggestions',
+    'description' => 'Soumettez vos suggestions pour améliorer le serveur ou le site web.',
+    'create' => 'Créer une suggestion',
+    'back' => 'Retour aux suggestions',
+    'empty' => 'Aucune suggestion pour le moment.',
+    'by' => 'Par :user',
+    'votes' => ':count vote|:count votes',
+    'vote' => 'Voter',
+    'upvote' => 'Voter pour',
+    'downvote' => 'Voter contre',
+    'upvoted' => 'Voté pour',
+    'downvoted' => 'Voté contre',
+    'voted' => 'Vous avez voté pour cette suggestion.',
+    'voted_up' => 'Vous avez voté pour cette suggestion.',
+    'voted_down' => 'Vous avez voté contre cette suggestion.',
+    'unvoted_up' => 'Vous avez retiré votre vote positif.',
+    'unvoted_down' => 'Vous avez retiré votre vote négatif.',
+    'already_voted' => 'Vous avez déjà voté pour cette suggestion.',
+    'already_voted_type' => 'Vous avez déjà voté de cette manière pour cette suggestion.',
+    'invalid_vote_type' => 'Type de vote invalide.',
+    'login_to_vote' => 'Vous devez être connecté pour voter les suggestions.',
+    'created' => 'Votre suggestion a été créée avec succès.',
+    'edit' => 'Modifier la suggestion',
+    'edit_own' => 'Modifier votre suggestion',
+    'updated' => 'Votre suggestion a été mise à jour avec succès.',
+    'cannot_edit' => 'Vous ne pouvez pas modifier cette suggestion.',
+    'cannot_edit_votes' => 'Vous ne pouvez pas modifier une suggestion qui a reçu des votes.',
+    'max_suggestions_reached' => 'Vous avez atteint le nombre maximal de suggestions que vous pouvez créer (:max).',
+    'read_more' => 'Lire la suite',
+    'info' => 'Informations',
+    'refusal_reason' => 'Raison du refus',
+
+    'actions' => [
+        'filter' => 'Filtrer',
+    ],
+
+    'filter' => [
+        'all' => 'Toutes les suggestions',
+        'all_categories' => 'Toutes les catégories',
+        'recent' => 'Plus récentes',
+        'oldest' => 'Plus anciennes',
+        'popular' => 'Plus populaires',
+        'unpopular' => 'Moins populaires',
+        'mine' => 'Mes suggestions',
+        'approved' => 'Approuvées',
+        'rejected' => 'Rejetées',
+        'pending' => 'En attente',
+    ],
+
+    'fields' => [
+        'title' => 'Titre',
+        'title_help' => 'Maximum 80 caractères',
+        'description' => 'Description',
+        'description_help' => 'Maximum :max caractères',
+        'category' => 'Catégorie',
+        'select_category' => 'Sélectionnez une catégorie',
+    ],
+
+    'status' => [
+        'pending' => 'En attente',
+        'approved' => 'Approuvée',
+        'rejected' => 'Rejetée',
+    ],
+
+    'comments' => [
+        'title' => 'Commentaires',
+        'empty' => 'Aucun commentaire pour le moment.',
+        'add' => 'Ajouter un commentaire',
+        'content' => 'Commentaire',
+        'submit' => 'Envoyer le commentaire',
+        'created' => 'Votre commentaire a été ajouté avec succès.',
+        'deleted' => 'Le commentaire a été supprimé avec succès.',
+        'not_allowed' => 'Les commentaires ne sont pas autorisés sur cette suggestion.',
+        'closed' => 'Les commentaires sont fermés pour cette suggestion (disponible uniquement pour les suggestions en attente).',
+        'login_required' => 'Vous devez être connecté pour commenter.',
+        'confirm_delete' => 'Êtes-vous sûr de vouloir supprimer ce commentaire ?',
+    ],
+
+    'deleted' => 'Suggestion supprimée avec succès.',
+];

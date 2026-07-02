@@ -1,0 +1,54 @@
+{
+    "name": "Cesium",
+    "short_name": "Cesium",
+    "theme_color": "#333740",
+    "background_color": "#0f1217",
+    "categories":["games","entertainment","kids"],
+    "description":"Cesium : Serveur Minecraft amusant. Cultivez, construisez, explorez - Rejoignez l'aventure dès maintenant !",
+    "display":"standalone",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+      {
+        "src": "/assets/themes/cesium/icons/icon-72x72.png?v1.1.5",
+        "sizes": "72x72",
+        "type": "image/png"
+      },
+      {
+        "src": "/assets/themes/cesium/icons/icon-96x96.png?v1.1.5",
+        "sizes": "96x96",
+        "type": "image/png"
+      },
+      {
+        "src": "/assets/themes/cesium/icons/icon-128x128.png?v1.1.5",
+        "sizes": "128x128",
+        "type": "image/png"
+      },
+      {
+        "src": "/assets/themes/cesium/icons/icon-144x144.png?v1.1.5",
+        "sizes": "144x144",
+        "type": "image/png"
+      },
+      {
+        "src": "/assets/themes/cesium/icons/icon-152x152.png?v1.1.5",
+        "sizes": "152x152",
+        "type": "image/png"
+      },
+      {
+        "src": "/assets/themes/cesium/icons/icon-192x192.png?v1.1.5",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/assets/themes/cesium/icons/icon-384x384.png?v1.1.5",
+        "sizes": "384x384",
+        "type": "image/png"
+      },
+      {
+        "src": "/assets/themes/cesium/icons/icon-512x512.png?v1.1.5",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }

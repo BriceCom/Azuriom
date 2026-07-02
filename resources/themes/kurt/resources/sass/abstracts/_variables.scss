@@ -1,0 +1,19 @@
+$font-base: sans-serif;
+
+// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints
+/// @type Map
+/// s: smartphone - t: tablet - d: desktop
+$breakpoints: (
+        xs: 0,
+        s-xs: 360px,
+        s: 576px,
+        md: 768px,
+        l: 992px,
+        l-x: 1024px,
+        xl: 1200px,
+        xl-x: 1280px,
+        xxl: 1440px,
+        xxxl: 1920px,
+) !default;

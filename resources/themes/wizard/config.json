@@ -1,0 +1,107 @@
+{
+    "footer": {
+        "site": {
+            "index": [
+                {
+                    "name": null,
+                    "url": null
+                }
+            ]
+        },
+        "stats": {
+            "max-player": null
+        },
+        "policy": {
+            "index": [
+                {
+                    "name": null,
+                    "url": null
+                }
+            ]
+        }
+    },
+    "global": {
+        "shop": {
+            "url": null
+        }
+    },
+    "home": {
+        "hero": {
+            "media": null,
+            "title": "bonjour",
+            "name_btn": "blablabla"
+        },
+        "block_1": {
+            "back": null,
+            "render": null,
+            "title": null,
+            "description": null
+        },
+        "article": {
+            "title": null,
+            "back": null,
+            "render": null
+        }
+    },
+    "vote": {
+        "classement": {
+            "title": null,
+            "description": null,
+            "index": [
+                {
+                    "name": null
+                }
+            ]
+        },
+        "multiplicateur": {
+            "index": [
+                {
+                    "name": null
+                }
+            ]
+        }
+    },
+    "shop": {
+        "multiplicateur": {
+            "index": [
+                {
+                    "name": null,
+                    "icon": null
+                }
+            ]
+        },
+        "commandes": {
+            "index": [
+                {
+                    "name": null,
+                    "grade-1": null,
+                    "grade-2": null,
+                    "grade-3": null,
+                    "grade-4": null
+                }
+            ]
+        },
+        "kits": {
+            "index": [
+                {
+                    "name": null,
+                    "grade-1": null,
+                    "grade-2": null,
+                    "grade-3": null,
+                    "grade-4": null
+                }
+            ]
+        },
+        "divers": {
+            "index": [
+                {
+                    "name": null,
+                    "grade-1": null,
+                    "grade-2": null,
+                    "grade-3": null,
+                    "grade-4": null
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,220 @@
+.btn {
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+
+    &-secondary {
+        @extend .border-gradient-gray;
+        text-transform: uppercase;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        font-family: $font-family-asul;
+        font-weight: $font-weight-bold;
+        background-position: center 110%;
+        user-select: none;
+        background-repeat: no-repeat;
+        background-size: contain;
+        text-decoration: none;
+        color: $yellow-600;
+        background-image: radial-gradient(at 50% 50%, #4a455f 0, #403f3f 100%);
+        border-radius: 0;
+
+        &:hover {
+            color: $yellow-600;
+            background-image: url("#{$image-path}petits/menu-current.png"), radial-gradient(at 55% 60%, #44337A 0, #17102c 100%);
+        }
+    }
+
+    &-danger {
+        @extend .border-gradient-danger;
+        text-transform: uppercase;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        font-family: $font-family-asul;
+        font-weight: $font-weight-bold;
+        background-position: center 110%;
+        user-select: none;
+        background-repeat: no-repeat;
+        background-size: contain;
+        text-decoration: none;
+        color: $yellow-600;
+        background-image: radial-gradient(at 50% 50%, #44337A 0, #2c1012 100%);
+        border-radius: 0;
+
+        &:hover {
+            color: $yellow-600;
+            background-image: url("#{$image-path}petits/menu-current.png"), radial-gradient(at 55% 60%, #44337A 0, #17102c 100%);
+        }
+    }
+
+    &-primary {
+        @extend .border-gradient;
+        text-transform: uppercase;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        font-family: $font-family-asul;
+        font-weight: $font-weight-bold;
+        background-position: center 110%;
+        user-select: none;
+        background-repeat: no-repeat;
+        background-size: contain;
+        text-decoration: none;
+        color: $yellow-600;
+        background-image: radial-gradient(at 50% 50%, #44337A 0, #17102c 100%);
+        border-radius: 0;
+
+        &:hover {
+            color: $yellow-600;
+            background-image: url("#{$image-path}petits/menu-current.png"), radial-gradient(at 55% 60%, #44337A 0, #17102c 100%);
+        }
+    }
+
+    &-cta {
+        @extend .border-gradient;
+        text-transform: uppercase;
+        padding: 1rem 1.25rem;
+        font-size: 1.25rem;
+        font-weight: $font-weight-bold;
+        background-position: center 110%;
+        user-select: none;
+        background-repeat: no-repeat;
+        background-size: contain;
+        text-decoration: none;
+        margin: 0 auto;
+        background-image: radial-gradient(at 50% 50%, #44337A 0, #17102c 100%);
+
+        &:hover {
+            background-image: url("#{$image-path}petits/menu-current.png"), radial-gradient(at 55% 60%, #44337A 0, #17102c 100%);
+        }
+    }
+
+    &-special{
+        z-index: 1;
+        overflow: hidden;
+        position: relative;
+        width: fit-content;
+        display: block;
+        text-transform: uppercase;
+        padding: 1rem 1.25rem;
+        font-size: 1.25rem;
+        font-weight: $font-weight-bold;
+        background-position: center 110%;
+        user-select: none;
+        background-repeat: no-repeat;
+        background-size: contain;
+        text-decoration: none;
+        margin: 0 auto;
+        color: #20173e;
+        transition: transform 0.3s ease-out;
+        border-radius: 8px;
+
+        @keyframes clignotte {
+            0%{
+                opacity: 1
+            }
+            50%{
+                opacity: 0.3
+            }
+            100% {
+                opacity: 1
+            }
+        }
+
+        @keyframes arc {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(-50%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        &:after{
+            z-index: -1;
+            content: "";
+            position: absolute;
+            left: -50%;
+            top: 0;
+            bottom: 0;
+            width: 400%;
+            background-image: linear-gradient(129deg, #61cfd2 0, #f8d685 60%, #f49ffa 100%);
+            transition: transform 4s ease-out;
+            animation: clignotte 0.7s ease-in infinite, arc 3s linear infinite;
+        }
+
+        &:hover{
+            transform: translateY(-5px);
+        }
+    }
+
+    &-shop {
+        position: relative;
+        @extend .border-gradient;
+        text-transform: uppercase;
+        padding: 0.9rem 2rem;
+        font-weight: $font-weight-semibold;
+        text-decoration: none;
+        color: $white;
+        background-image: radial-gradient(circle, rgb(68 51 122) 0%, rgb(176 45 191) 1%, rgb(197 107 193) 100%);
+
+        background-clip: padding-box;
+        border-image: unset !important;
+        border: 1px solid transparent;
+        border-radius: 8px;
+
+        &__over {
+            position: absolute;
+            top: -2px; bottom: -2px;
+            left: -2px; right: -2px;
+            //background: linear-gradient(#c3a758, #6b521e);
+            background: linear-gradient(#c3a758, #6b521e);
+            content: '';
+            z-index: -1;
+            border-radius: 8px;
+        }
+
+        &:hover {
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url("#{$image-path}petits/menu-current.png"), radial-gradient(circle, rgb(68 51 122) 0%, rgb(176 45 191) 1%, rgb(197 107 193) 100%);
+            background-position: center 110%;
+
+            &:before {
+                opacity: 1;
+                transform: translate(8px, -50%);
+            }
+
+            &:after {
+                opacity: 1;
+                transform: translate(calc(100% - 24px), -50%);
+            }
+        }
+
+        &:after {
+            right: 0;
+            transform: translate(calc(100% - 16px), -50%);
+        }
+
+        &:before {
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        &:after,
+        &:before {
+            content: "";
+            position: absolute;
+            width: 1rem;
+            height: 1rem;
+            background-position: 50%;
+            opacity: 0;
+            top: 50%;
+            background-image: url("#{$image-path}petits/badge.png");
+            transition: all .2s ease;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+}

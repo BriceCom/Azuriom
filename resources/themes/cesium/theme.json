@@ -1,0 +1,12 @@
+{
+    "id": "cesium",
+    "name": "Cesium",
+    "description": "Theme Cesium pour Azuriom",
+    "version": "0.0.2",
+    "url": "https://bento.me/afi",
+    "authors": [
+        "Afi",
+        "Bricec6"
+    ],
+    "azuriom_api": "1.1.0"
+}

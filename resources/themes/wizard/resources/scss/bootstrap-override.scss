@@ -1,0 +1,60 @@
+::-webkit-scrollbar {
+    width: .5rem;
+    height: .5rem
+}
+
+::-webkit-scrollbar, ::-webkit-scrollbar-track {
+    --bg-opacity: 1;
+    background-color: #33295b;
+    background-color: rgba(51, 41, 91, var(--bg-opacity))
+}
+
+::-webkit-scrollbar-thumb {
+    //background-color: #b794f4;
+    background-color: #77B5FE ;
+    background-color: rgba(183, 148, 244, var(--bg-opacity));
+    --bg-opacity: 0.75;
+    border-radius: .5rem
+}
+
+::selection {
+    --text-opacity: 1;
+    color: #fff;
+    color: rgba(255,255,255,var(--text-opacity));
+    --bg-opacity: 1;
+    background-color: #77B5FE ;
+    background-color: rgba(225,180,61,var(--bg-opacity));
+}
+
+.navbar-brand {
+    img {
+        width: 96px;
+        height: 96px;
+    }
+}
+
+.navbar-toggler-custom {
+    background: transparent;
+    border: 0;
+
+    svg {
+        fill: $white;
+        width: 24px;
+        height: 24px;
+    }
+}
+.text-decoration-none{
+    text-decoration: none;
+}
+
+.container__height-page {
+    min-height: 60vh;
+}
+
+body {
+    .text-body-secondary {
+        color: $gray-500 !important;
+        font-style: italic;
+        font-size: map-get($font-sizes, 7);
+    }
+}

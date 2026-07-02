@@ -1,0 +1,13 @@
+.bi-number{
+    display: grid;
+    place-items: center;
+    width: 2.625rem;
+    height: 2.625rem;
+    font-size: 2.625rem;
+    color: var(--di-dark);
+    font-style: normal;
+    font-weight: bold;
+    line-height: 0;
+    text-shadow: 2px 2px 0 var(--di-body-color);
+    -webkit-text-stroke: 1px var(--di-body-color);
+}

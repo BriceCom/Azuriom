@@ -1,0 +1,94 @@
+@use "page-height";
+@use "hero";
+
+header{
+    &:has(.navbar-toggler[aria-expanded="true"]){
+        z-index: 99;
+        position: fixed;
+        inset: 0;
+        padding: 32px;
+        max-height: 100%;
+        overflow: auto;
+        backdrop-filter: blur(7px);
+        background-color: rgba(var(--di-dark-rgb), 0.5);
+
+        #navbar{
+            background: transparent !important;
+            border: unset !important;
+            box-shadow: unset !important;
+        }
+    }
+}
+
+body{
+    &[data-bs-theme="light"]{
+        header{
+            .btn-outline-tertiary{
+                background-color: rgba(var(--di-tertiary-rgb), 1) !important;
+                color: var(--di-text-emphasis) !important;
+            }
+        }
+    }
+}
+
+header {
+    .header-logo{
+        @media (min-width: 1200px) {
+            position:absolute;
+            transform: translate(-50%, -50%) !important;
+        }
+    }
+
+    .btn{
+        min-height: 44px;
+    }
+
+    nav{
+        min-height: 80px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        transition: unset !important;
+    }
+
+    .nav-link {
+        position: relative;
+        color: var(--di-white);
+        transition: transform .3s;
+        border-radius: 8px;
+        padding: 8px 10px;
+        border: transparent 1px solid;
+
+        &:not(.active) {
+            &:hover{
+                @extend .anim-up;
+            }
+        }
+
+        &.active {
+            --di-navbar-active-color: inherit;
+        }
+
+        &[data-remove-active-background="on"]{
+            --di-navbar-active-color: var(--di-primary);
+            --di-btn-active-bg: transparent;
+        }
+
+        @media (max-width: 1200px) {
+            padding: 8px 16px;
+        }
+    }
+
+    #navbarDropdown-auth{
+        border-bottom: unset;
+    }
+}
+
+#notificationsDropdown,
+#userDropdown {
+    @extend .after-none;
+}
+
+.announce-bar{
+    &>*{
+        margin: 0;
+    }
+}

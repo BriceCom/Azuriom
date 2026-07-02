@@ -1,0 +1,24 @@
+{
+    "name": "azuriom/suggest",
+    "type": "azuriom-plugin",
+    "description": "A plugin for Azuriom that allows users to make suggestions",
+    "autoload": {
+        "psr-4": {
+            "Azuriom\\Plugin\\Suggest\\": "src/"
+        }
+    },
+    "replace": {
+        "guzzlehttp/guzzle": "*",
+        "guzzlehttp/promises": "*",
+        "guzzlehttp/psr7": "*",
+        "monolog/monolog": "*",
+        "nesbot/carbon": "*",
+        "psr/container": "*",
+        "psr/event-dispatcher": "*",
+        "psr/http-client": "*",
+        "psr/http-factory": "*",
+        "psr/http-message": "*",
+        "psr/log": "*",
+        "psr/simple-cache": "*"
+    }
+}

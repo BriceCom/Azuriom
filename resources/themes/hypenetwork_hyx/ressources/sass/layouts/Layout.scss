@@ -1,0 +1,17 @@
+@import
+"header",
+"footer";
+
+#app{
+    margin-top: 92px;
+    margin-bottom: 92px;
+
+    @media (min-width: 767px) {
+        margin-top: 128px;
+        margin-bottom: 192px;
+    }
+
+    &>*:first-child{
+        gap: 92px;
+    }
+}

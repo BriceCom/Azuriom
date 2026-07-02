@@ -1,0 +1,23 @@
+.page-height{
+    z-index: 2;
+    top: 0;
+    position: sticky;
+    height: var(--page-height-bar);
+    background: var(--page-bg-bar);
+
+    &:before{
+        content: "";
+        position: absolute;
+        background: var(--page-color-bar);
+        width: 0;
+        height: var(--page-height-bar);
+        animation-name: grow;
+        animation-timeline: scroll();
+    }
+
+    @keyframes grow{
+        to{
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,2 @@
+- Thanks to Start Bootstrap for the template. (https://startbootstrap.com/previews/modern-business)
+- 95 percent done with AI

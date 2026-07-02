@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'Minecraft';
+    src: url('../fonts/Minecraft.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    line-height: normal;
+    font-family: var(--di-main-font);
+}
+
+h1, .h1 {
+    font-size: 32px;
+}
+
+.h5, .h4 {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+p {
+    line-height: 1.4;
+}
+
+p,
+small,
+li{
+    font-family: var(--di-second-font);
+    letter-spacing: .5px;
+}
+
+hgroup{
+    p{
+        font-size: 18px;
+    }
+}
+
+.text{
+    &-xxl{
+        font-size: 42px;
+    }
+    &-2xl{
+        font-size: 28px;
+    }
+    &-xl{
+        font-size: 24px;
+    }
+    &-1xl{
+        font-size: 20px;
+    }
+    &-lg{
+        font-size: 18px;
+    }
+    &-m{
+        font-size: 15px;
+    }
+    &-sm{
+        font-size: 14px;
+    }
+    &-xs{
+        font-size: 12px;
+    }
+}
+
+.ff-main{
+    font-family: var(--di-main-font);
+}
+
+.ff-tertiary{
+    font-family: var(--di-tertiary-font);
+}
+
+.ff-quarterny{
+    font-family: var(--di-quaterny-font);
+}
+.ff-minecraft{
+    font-family: var(--di-minecraft-font);
+}
+
+
+a{
+    color: var(--di-white)
+}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        text-transform: uppercase;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-shadow: 0.3px 0.3px rgba(var(--di-white-rgb), .5);
+    }
+}

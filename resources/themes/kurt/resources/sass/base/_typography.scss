@@ -1,0 +1,29 @@
+body{
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $font-base, sans-serif;
+  font-weight: 400;
+  line-height: normal;
+}
+
+h1, .h1{
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.h5, .h4{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+p{
+    line-height: 1.4;
+}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+}

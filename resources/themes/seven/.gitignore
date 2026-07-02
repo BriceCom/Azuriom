@@ -1,0 +1,4 @@
+/versions/
+node_modules/
+#/resources/
+config.json

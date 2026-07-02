@@ -1,0 +1,50 @@
+.nav-link {
+    text-transform: uppercase;
+    font-weight: 600;
+
+    &.active {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+}
+
+
+.user__btn {
+    @media (max-width: 767px) {
+        width: 100%
+    }
+}
+
+body{
+    &[data-bs-theme="dark"]{
+        .header-bg{
+            background: var(--bg-dark, var( --bg-base)) center / cover no-repeat;
+        }
+
+        .header-bg__gradient{
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(var(--di-body-rgb)) 100%), linear-gradient(0deg, rgba(18, 18, 18, 0.35) 0%, rgba(18, 18, 18, 0.35) 100%), var(--bg-dark, var( --bg-base)) center / cover no-repeat;
+        }
+    }
+
+    &[data-bs-theme="light"]{
+        .header-bg{
+            background: var(--bg-light, var( --bg-base)) center / cover no-repeat;
+        }
+
+        .header-bg__gradient{
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(var(--di-body-rgb)) 100%), linear-gradient(0deg, rgba(18, 18, 18, 0.35) 0%, rgba(18, 18, 18, 0.35) 100%),  var(--bg-light, var( --bg-base)) center / cover no-repeat;
+        }
+    }
+}
+
+
+.header-bottom_circle {
+    overflow: hidden;
+    height: 215px;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+    clip-path: ellipse(95% 100% at 50% 100%);
+    background: var(--di-body-bg);
+}

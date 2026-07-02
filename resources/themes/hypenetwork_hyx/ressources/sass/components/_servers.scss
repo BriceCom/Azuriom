@@ -1,0 +1,25 @@
+.server{
+    padding: 0;
+    flex-grow: 1;
+
+    @media (min-width: 1200px) {
+        max-width: 345px;
+    }
+    @media (min-width: 1380px) {
+        max-width: 400px;
+    }
+
+    &__wrapper{
+        gap: 40px;
+    }
+
+    &__img{
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 1px 3px 0 #0000001A, 0 1px 2px -1px #0000001A;
+
+        img{
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.hero-cubes {
+    position: relative;
+
+    &__i {
+        position: absolute;
+        transition: background-color 0.2s ease;
+
+        &[data-color="blue"] {
+            background-color: #B69E80;
+        }
+
+        &[data-color="red"] {
+            background-color: var(--di-body-bg);
+        }
+
+        &:hover {
+            background-color: #B69E80 !important;
+        }
+
+        // Crée un effet de "trainée"
+        &:not(:hover) {
+            transition-duration: 0.9s;
+            transition-delay: 0.2s;
+        }
+    }
+}

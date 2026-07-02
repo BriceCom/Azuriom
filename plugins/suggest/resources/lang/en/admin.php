@@ -1,0 +1,135 @@
+<?php
+
+return [
+    'plugin' => [
+        'name' => 'Suggestions',
+    ],
+
+    'index' => [
+        'title' => 'Suggestions',
+    ],
+
+    'suggestions' => [
+        'title' => 'Suggestions',
+        'updated' => 'The suggestion has been updated.',
+        'deleted' => 'The suggestion has been deleted.',
+        'status_updated' => 'The suggestion status has been updated.',
+        'active_title' => 'Active Suggestions (In Progress)',
+        'archive_title' => 'Archived Suggestions',
+        'archived' => 'Archived',
+        'all_archived' => 'All Archived',
+        'refuse_title' => 'Refuse suggestion',
+        'refusal_reason' => 'Refusal reason',
+    ],
+
+    'categories' => [
+        'title' => 'Categories',
+        'create' => 'Create category',
+        'edit' => 'Edit category',
+        'created' => 'The category has been created.',
+        'updated' => 'The category has been updated.',
+        'deleted' => 'The category has been deleted.',
+        'delete_error' => 'You cannot delete a category that has suggestions.',
+    ],
+
+    'permissions' => [
+        'create' => 'Create suggestions',
+        'delete' => 'Delete suggestions',
+        'edit' => 'Edit suggestions',
+        'settings' => 'Manage settings',
+        'comments' => [
+            'delete' => 'Delete any comment on suggestions',
+        ],
+    ],
+
+    'settings' => [
+        'title' => 'Settings',
+        'max_suggestions' => 'Maximum suggestions per user',
+        'max_suggestions_info' => 'The maximum number of pending suggestions a user can create (0 for unlimited)',
+        'max_description_length' => 'Maximum description length',
+        'max_description_length_info' => 'Maximum number of characters for suggestion description (50-4000)',
+        'index_title' => 'Index page title',
+        'index_subtitle' => 'Index page subtitle',
+        'enable_comments' => 'Enable comments',
+        'visible_filters' => 'Visible Filters',
+        'visible_filters_info' => 'Choose which filters should be visible to users on the suggestions page. Unchecked filters will be hidden from the filter list.',
+        'disable_category_filters' => 'Disable category filters',
+    ],
+
+    'discord' => [
+        'title' => 'Discord Webhook',
+        'webhook_url' => 'Discord Webhook URL',
+        'webhook_url_info' => 'Enter your Discord webhook URL. You can create one in your Discord server settings under Integrations > Webhooks.',
+        'enabled' => 'Enabled',
+        'send_on_create' => 'Send webhook when a suggestion is created',
+        'send_on_accept' => 'Send webhook when a suggestion is accepted',
+        'send_on_refuse' => 'Send webhook when a suggestion is refused',
+        'test' => 'Test',
+        'test_success' => 'Webhook test successful!',
+        'test_failed' => 'Webhook test failed',
+        'how_it_works' => 'How it works:',
+        'feature_list' => [
+            'Webhooks will be sent according to the selected options',
+            'Messages include suggestion details, author, status, category and vote count',
+            'Different colors are used for different actions (green for new, blue for accepted, red for refused)',
+        ],
+        'customization' => 'Webhook Customization',
+        'color_created' => 'Created Color',
+        'color_accepted' => 'Accepted Color',
+        'color_refused' => 'Refused Color',
+        'custom_templates' => 'Custom Templates',
+        'template_variables_help' => 'Use variables like {title}, {author}, {category}, {status}, {votes}, {url}, {refusal_reason}',
+        'template_created' => 'Created Template',
+        'template_accepted' => 'Accepted Template',
+        'template_refused' => 'Refused Template',
+        'custom_username' => 'Custom Username',
+        'custom_avatar_url' => 'Custom Avatar URL',
+        'display_options' => 'Display Options',
+        'show_author' => 'Show Author',
+        'show_category' => 'Show Category',
+        'show_votes' => 'Show Votes',
+        'show_description' => 'Show Description',
+        'description_length' => 'Description Length',
+        'description_length_help' => 'Maximum characters for suggestion description (50-4000)',
+    ],
+
+    'statistics' => [
+        'title' => 'Statistics',
+        'total_suggestions' => 'Total suggestions',
+        'pending' => 'Pending',
+        'accepted' => 'Accepted',
+        'refused' => 'Refused',
+        'total_votes' => 'Total votes',
+        'upvotes' => 'Upvotes',
+        'downvotes' => 'Downvotes',
+        'recent_activity' => 'Recent activity (last 30 days)',
+        'new_suggestions' => 'New suggestions',
+        'new_votes' => 'New votes',
+        'top_categories' => 'Top categories',
+        'most_voted_suggestions' => 'Most voted suggestions',
+        'monthly_activity' => 'Monthly activity',
+        'status_distribution' => 'Status distribution',
+        'author' => 'Author',
+        'category' => 'Category',
+        'status' => 'Status',
+        'net_score' => 'Net score',
+        'no_categories' => 'No categories found.',
+        'no_suggestions' => 'No suggestions found.',
+        'table_title' => 'Title',
+        'suggestions' => 'Suggestions',
+        'votes' => 'Votes',
+        'none' => 'None',
+    ],
+
+    'logs' => [
+        'suggest' => [
+            'created' => 'Suggestion created: :title',
+            'deleted' => 'Suggestion deleted: :title by :author',
+            'edited' => 'Suggestion edited: :title',
+        ],
+    ],
+
+
+    'support' => "Discord support",
+    "serveurliste" => "Top Servers listing",
+];

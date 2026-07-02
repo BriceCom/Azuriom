@@ -1,0 +1,11 @@
+{
+    "id": "dungeons",
+    "name": "dungeons",
+    "description": "Theme for ChrisGraph",
+    "version": "1.0.0",
+    "url": "https://azuriom.com",
+    "azuriom_api": "1.0.0",
+    "authors": [
+        "[Dixept.fr] Bricec6#6204"
+    ]
+}

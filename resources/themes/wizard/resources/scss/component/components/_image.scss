@@ -1,0 +1,15 @@
+.ornament {
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTY1IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCAxNjUgOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTc3LjA4MjUgMEw4Mi40OTUyIDVMODguMzI0NSAwSDg5LjQ5MDRMODIuNDk1MiA2TDc2IDBINzcuMDgyNVoiIGZpbGw9IiNENjlFMkUiLz4KPHBhdGggZD0iTTc3LjA4MjUgMkw4Mi40OTUyIDdMODguMzI0NSAySDg5LjQ5MDRMODIuNDk1MiA4TDc2IDJINzcuMDgyNVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik03OC4xMzYzIDAuOTczMjU3TDc3LjExOCAwLjAzMjU5MjhMMCAwLjQ5OTg0MUw3OC4xMzYzIDAuOTczMjU3WiIgZmlsbD0iI0Q2OUUyRSIvPgo8cGF0aCBkPSJNODcuMTkyIDAuOTcwOTkyTDE2NSAwLjQ5OTU2Mkw4OC4yODM1IDAuMDM0NzQ5Mkw4Ny4xOTIgMC45NzA5OTJaIiBmaWxsPSIjRDY5RTJFIi8+Cjwvc3ZnPgo=);
+}
+.ornament-text{
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-image: url("#{$image-path}petits/ornament-text.svg");
+}
+.ornament-lg{
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-image: url("#{$image-path}petits/ornament-text-lg.svg");
+}

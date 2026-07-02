@@ -1,0 +1,24 @@
+body{
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $font-base, sans-serif;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.h5, .h4{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+}
+
+
+.ff-quarterny{
+    font-family: var(--di-quaterny-font);
+}

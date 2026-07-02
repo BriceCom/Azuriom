@@ -1,0 +1,52 @@
+header{
+    z-index: 2;
+
+    &:has(.navbar-toggler[aria-expanded="true"]) {
+        background: rgba(var(--di-secondary-bg-rgb), 1)!important;
+
+        .navbar-dark{
+            --di-navbar-toggler-icon-bg: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(33, 37, 41, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+        }
+    }
+
+}
+
+.nav-link {
+    text-transform: uppercase;
+    font-weight: 600;
+
+    &.active {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+}
+
+
+.user__btn {
+    @media (max-width: 767px) {
+        width: 100%
+    }
+}
+
+.navbar-collapse{
+    @media (min-width: 767px) {
+        background-color: rgba(var(--di-light-rgb), 1) !important;
+        border-radius: var(--di-border-radius-pill) !important;
+    }
+}
+
+.navbar-shop__btn{
+    padding: 8px 16px !important;
+}
+
+#userDropdown{
+    &::after{
+        margin: auto;
+    }
+}
+
+#notificationsDropdown{
+    &::after{
+        display: none;
+    }
+}

@@ -1,0 +1,82 @@
+<?php
+
+return [
+    'title' => 'Vorschläge',
+    'description' => 'Reiche Vorschläge ein, um den Server oder die Website zu verbessern.',
+    'create' => 'Vorschlag erstellen',
+    'back' => 'Zurück zu den Vorschlägen',
+    'empty' => 'Noch keine Vorschläge vorhanden.',
+    'by' => 'Von :user',
+    'votes' => ':count Stimme|:count Stimmen',
+    'vote' => 'Abstimmen',
+    'upvote' => 'Positiv bewerten',
+    'downvote' => 'Negativ bewerten',
+    'upvoted' => 'Positiv bewertet',
+    'downvoted' => 'Negativ bewertet',
+    'voted' => 'Du hast für diesen Vorschlag abgestimmt.',
+    'voted_up' => 'Du hast diesen Vorschlag positiv bewertet.',
+    'voted_down' => 'Du hast diesen Vorschlag negativ bewertet.',
+    'unvoted_up' => 'Du hast deine positive Stimme zurückgezogen.',
+    'unvoted_down' => 'Du hast deine negative Stimme zurückgezogen.',
+    'already_voted' => 'Du hast bereits für diesen Vorschlag abgestimmt.',
+    'already_voted_type' => 'Du hast diesen Vorschlag bereits auf diese Weise bewertet.',
+    'invalid_vote_type' => 'Ungültiger Stimmtyp.',
+    'login_to_vote' => 'Du musst eingeloggt sein, um abzustimmen.',
+    'created' => 'Dein Vorschlag wurde erfolgreich erstellt.',
+    'edit' => 'Vorschlag bearbeiten',
+    'edit_own' => 'Eigenen Vorschlag bearbeiten',
+    'updated' => 'Dein Vorschlag wurde erfolgreich aktualisiert.',
+    'cannot_edit' => 'Du kannst diesen Vorschlag nicht bearbeiten.',
+    'cannot_edit_votes' => 'Du kannst keinen Vorschlag bearbeiten, der bereits Stimmen hat.',
+    'max_suggestions_reached' => 'Du hast die maximale Anzahl an Vorschlägen erreicht (:max).',
+    'read_more' => 'Mehr lesen',
+    'info' => 'Information',
+
+    'actions' => [
+        'filter' => 'Filtern',
+    ],
+
+    'filter' => [
+        'all' => 'Alle Vorschläge',
+        'all_categories' => 'Alle Kategorien',
+        'recent' => 'Neueste',
+        'oldest' => 'Älteste',
+        'popular' => 'Am beliebtesten',
+        'unpopular' => 'Am unbeliebtesten',
+        'mine' => 'Meine Vorschläge',
+        'approved' => 'Genehmigt',
+        'rejected' => 'Abgelehnt',
+        'pending' => 'In Bearbeitung',
+    ],
+
+    'fields' => [
+        'title' => 'Titel',
+        'title_help' => 'Maximal 80 Zeichen',
+        'description' => 'Beschreibung',
+        'description_help' => 'Maximal :max Zeichen',
+        'category' => 'Kategorie',
+        'select_category' => 'Kategorie auswählen',
+    ],
+
+    'status' => [
+        'pending' => 'In Bearbeitung',
+        'approved' => 'Genehmigt',
+        'rejected' => 'Abgelehnt',
+    ],
+
+    'comments' => [
+        'title' => 'Kommentare',
+        'empty' => 'Noch keine Kommentare vorhanden.',
+        'add' => 'Kommentar hinzufügen',
+        'content' => 'Kommentar',
+        'submit' => 'Kommentar absenden',
+        'created' => 'Dein Kommentar wurde erfolgreich hinzugefügt.',
+        'deleted' => 'Der Kommentar wurde erfolgreich gelöscht.',
+        'not_allowed' => 'Für diesen Vorschlag sind keine Kommentare erlaubt.',
+        'closed' => 'Kommentare sind für diesen Vorschlag geschlossen (nur bei ausstehenden Vorschlägen verfügbar).',
+        'login_required' => 'Du musst eingeloggt sein, um einen Kommentar zu schreiben.',
+        'confirm_delete' => 'Bist du sicher, dass du diesen Kommentar löschen möchtest?',
+    ],
+
+    'deleted' => 'Der Vorschlag wurde gelöscht.',
+];

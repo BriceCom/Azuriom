@@ -1,0 +1,8 @@
+//:root {
+//    @each $color, $value in $yellows {
+//        --#{$prefix}#{$color}-rgb: #{to-rgb($value)}
+//    }
+//    @each $color, $value in $purples {
+//        --#{$prefix}#{$color}-rgb: #{to-rgb($value)}
+//    }
+//}

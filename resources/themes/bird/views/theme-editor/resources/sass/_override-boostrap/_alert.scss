@@ -1,0 +1,27 @@
+.alert {
+    &-danger {
+        --bs-alert-bg:  rgba(var(--bs-danger-rgb), .17);
+        --bs-alert-border-color: rgba(var(--bs-danger-rgb), 1);
+        --bs-alert-link-color: var(--bs-danger-text-emphasis);
+        --bs-danger-text-emphasis: var(--bs-white);
+    }
+    &-info {
+        --bs-alert-bg:  rgba(var(--bs-info-rgb), .17);
+        --bs-alert-border-color: rgba(var(--bs-info-rgb), 1);
+        --bs-alert-link-color: var(--bs-info-text-emphasis);
+        --bs-danger-text-emphasis: var(--bs-white);
+    }
+    &-warning {
+        --bs-alert-bg:  rgba(var(--bs-warning-rgb), .17);
+        --bs-alert-border-color: rgba(var(--bs-warning-rgb), 1);
+        --bs-alert-link-color: var(--bs-warning-text-emphasis);
+        --bs-danger-text-emphasis: var(--bs-white);
+    }
+    &-success {
+        --bs-alert-bg:  rgba(var(--bs-success-rgb), .17);
+        --bs-alert-border-color: rgba(var(--bs-success-rgb), 1);
+        --bs-alert-link-color: var(--bs-success-text-emphasis);
+        --bs-danger-text-emphasis: var(--bs-white);
+    }
+}
+

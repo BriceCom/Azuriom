@@ -1,0 +1,201 @@
+/// Generate props from colors
+@mixin gen-props($colors, $prefix, $property) {
+  @each $color-name, $color in $colors {
+    .#{$prefix}-#{"" + $color-name} {
+      #{$property}: $color;
+    }
+  }
+}
+
+/// Responsive breakpoints
+/// @param {String} $breakpoint - Breakpoint
+@mixin responsive($breakpoint, $max:false) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(
+                    type-of($raw-query) == 'string',
+                    unquote($raw-query),
+                    inspect($raw-query)
+    );
+
+
+    @if($max) {
+      @media all and (max-width: #{$query}) {
+        @content;
+      }
+    } @else {
+      @media all and (min-width: #{$query}) {
+        @content;
+      }
+    }
+
+  } @else {
+    @error 'No value found for `#{$breakpoint}`. '
+         + 'Please make sure it is defined in `$breakpoints` map. Take a look in _variables.scss';
+  }
+}
+
+/// Responsive breakpoints
+/// @param {String} $breakpoint - Breakpoint
+@mixin responsive-h($breakpoint, $max:false) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(
+                    type-of($raw-query) == 'string',
+                    unquote($raw-query),
+                    inspect($raw-query)
+    );
+
+
+    @if($max) {
+      @media all and (max-height: #{$query}) {
+        @content;
+      }
+    } @else {
+      @media all and (min-height: #{$query}) {
+        @content;
+      }
+    }
+
+  } @else {
+    @error 'No value found for `#{$breakpoint}`. '
+         + 'Please make sure it is defined in `$breakpoints` map. Take a look in _variables.scss';
+  }
+}
+
+// FONTS
+
+// Font-face
+@mixin font-face($name, $path, $exts: eot otf ttf svg, $weight: null, $style: null) {
+  $src: null;
+
+  $extmods: (
+          eot: '?',
+          svg: '#' + str-replace($name, ' ', '_')
+  );
+
+  $formats: (
+          otf: 'opentype',
+          ttf: 'truetype',
+          woff: 'web open file format',
+          woff2: 'web open file format 2'
+  );
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $src: append($src, url(quote($path + '.' + $extmod)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+@mixin font-family($family, $important: false) {
+  @if ($important) {
+    font-family: $family !important;
+  } @else {
+    font-family: $family;
+  }
+}
+
+@mixin font-size($value) {
+  font-size: ($value/16) + rem;
+}
+
+// UTILS
+
+// Hide scroll bar
+@mixin hide-scroll-bar() {
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    background: transparent;
+    display: none;
+    height: 0 !important;
+    width: 0 !important;
+  }
+}
+
+@mixin circle($radius: 32px) {
+  border-radius: $radius;
+  height: $radius;
+  line-height: $radius;
+  padding: 0;
+  width: $radius;
+}
+
+@mixin hide-input-number-arrows() {
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type=number] {
+    -moz-appearance: textfield;
+  }
+}
+
+// Line-clamp
+// @param {Number} $lines - Number of lines for clamp
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// ASSETS
+
+@mixin img-size($width, $height: $width) {
+  background-size: 100%;
+  height: $height;
+  width: $width;
+}
+
+@mixin svg-size($width, $height: $width) {
+  svg {
+    @include img-size($width, $height);
+  }
+}
+
+@mixin svg-color($color) {
+  svg {
+    path, rect, g {
+      &[fill]:not([fill=none]) {
+        fill: $color;
+      }
+      &[stroke]:not([stroke=none]) {
+        stroke: $color;
+      }
+    }
+  }
+}
+
+// VENDORS
+
+// https://css-tricks.com/snippets/sass/str-replace-function/
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event() {
+  &:is(:hover, :active, :focus, :focus-within) {
+    @content;
+  }
+}

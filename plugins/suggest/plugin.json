@@ -1,0 +1,15 @@
+{
+    "id": "suggest",
+    "name": "Suggest",
+    "description": "A plugin for Azuriom that allows users to make suggestions, with a Discord webhook integration",
+    "version": "1.5.0",
+    "url": "https://market.azuriom.com/resources/178",
+    "authors": [
+        "Bricec6"
+    ],
+    "azuriom_api": "1.1.0",
+    "providers": [
+        "\\Azuriom\\Plugin\\Suggest\\Providers\\SuggestServiceProvider",
+        "\\Azuriom\\Plugin\\Suggest\\Providers\\RouteServiceProvider"
+    ]
+}

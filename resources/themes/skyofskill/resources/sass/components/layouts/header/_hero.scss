@@ -1,0 +1,18 @@
+body {
+    &[data-bs-theme="dark"] {
+        .hero {
+            --bg-light: var(--bg-dark);
+            --bg-light-rgb: var(--bg-dark-rgb);
+        }
+    }
+}
+
+.hero{
+    position: relative;
+    background: linear-gradient(var(--di-secondary) 40%, var(--di-body-bg) 100%);
+
+    @media (min-width: 1280px) {
+        max-height: var(--bg-max-height);
+        min-height: calc(240px);
+    }
+}

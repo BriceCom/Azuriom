@@ -1,0 +1,25 @@
+{
+  "name": "hypenetwork_hyx",
+  "version": "1.0.0",
+  "description": "Theme for Azuriom",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "laravel-mix-clean": "^0.1.0"
+  },
+  "devDependencies": {
+    "sass": "^1.32.7",
+    "sass-loader": "^8.0.0"
+  },
+  "scripts": {
+    "build": "mix build",
+    "development": "mix dev",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production"
+  },
+  "author": "Bricec6#6204",
+  "license": "ISC"
+}

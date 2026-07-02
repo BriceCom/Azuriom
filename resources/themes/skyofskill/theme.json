@@ -1,0 +1,11 @@
+{
+    "id": "skyofskill",
+    "name": "SkyOfSkill",
+    "description": "Theme for #Try",
+    "version": "1.0.0",
+    "url": "https://dixept.fr",
+    "authors": [
+        "Bricec6"
+    ],
+    "azuriom_api": "1.1.0"
+}

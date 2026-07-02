@@ -1,0 +1,49 @@
+.home-background {
+    z-index: 0;
+    position: relative;
+    height: calc(100vh);
+    border-bottom: 2px solid $yellow-600;
+
+    &::after{
+        z-index: -1;
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(180deg, rgba(26, 32, 44, 0) 0%, #140e24 100%);
+    }
+
+    .hero-title{
+        text-shadow: -1px 5px 11px rgba(0, 0, 0, 1);
+    }
+}
+
+.content_home {
+    background: red;
+}
+
+.articles {
+
+    .card-article {
+        border-bottom: 1px solid $gray-700;
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+
+        .article {
+            transition: transform .15s ease-in-out;
+
+            &:hover {
+                transform: translateX(0.5rem);
+            }
+
+        }
+
+        &:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+    }
+}

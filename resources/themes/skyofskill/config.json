@@ -1,0 +1,250 @@
+{
+    "settings": {
+        "index": {
+            "particles": {
+                "count": null,
+                "density": null,
+                "image": null,
+                "speed": null,
+                "size": null
+            }
+        },
+        "discord": {
+            "link": null,
+            "id": null
+        },
+        "server": {
+            "url": null,
+            "text": null,
+            "ip": null
+        }
+    },
+    "home": {
+        "bentobox": {
+            "shop": {
+                "bg": null,
+                "title": null,
+                "href": null
+            },
+            "discord": {
+                "title": null,
+                "text": null
+            },
+            "vote": {
+                "title": null,
+                "text": null,
+                "href": null
+            },
+            "howToJoin": {
+                "title": "OKOAKSOKAS",
+                "text": "azddaadzad",
+                "bg": null,
+                "href": null
+            },
+            "howToJoinServerIcon": null,
+            "howToJoinServerText": null,
+            "howToJoinServerHref": null
+        },
+        "welcome": {
+            "title": null,
+            "description": null,
+            "leftImgSrc": null,
+            "rightImgSrc": null,
+            "button": {
+                "label": null,
+                "href": null
+            },
+            "imgInText": {
+                "src": null,
+                "alt": null
+            },
+            "badges": [
+                {
+                    "icon": "bi-star-fill",
+                    "htmlContent": "<p>Record de joueurs: <strong>721</strong></p>"
+                },
+                {
+                    "icon": "bi-calendar3",
+                    "htmlContent": "<p>Ouvert depuis <strong>2019</strong></p>"
+                }
+            ]
+        },
+        "carousel": {
+            "title": null,
+            "description": null,
+            "projects": [
+                {
+                    "title": null,
+                    "description": null,
+                    "ip": null,
+                    "logo": null,
+                    "bgImage": null,
+                    "colorStart": "#9c0c0f",
+                    "colorEnd": "#dc4c4f"
+                }
+            ]
+        },
+        "hym": {
+            "title": null,
+            "description": null,
+            "leftImgSrc": null,
+            "rightImgSrc": null,
+            "button": {
+                "label": null,
+                "href": null
+            },
+            "imgInText": {
+                "src": null,
+                "alt": null
+            },
+            "badges": [
+                {
+                    "icon": "bi-star-fill",
+                    "htmlContent": "<p>Record de joueurs: <strong>721</strong></p>"
+                },
+                {
+                    "icon": "bi-calendar3",
+                    "htmlContent": "<p>Ouvert depuis <strong>2019</strong></p>"
+                },
+                {
+                    "icon": "bi-heart-fill",
+                    "htmlContent": "<p><strong>+117000</strong> joueurs uniques</p>"
+                }
+            ]
+        },
+        "howToJoin": {
+            "title": null,
+            "description": null,
+            "leftImgSrc": null,
+            "rightImgSrc": null,
+            "button": {
+                "label": null,
+                "href": null
+            },
+            "imgInText": {
+                "src": null,
+                "alt": null
+            },
+            "badges": [
+                {
+                    "icon": "bi-check2-circle",
+                    "htmlContent": "<p>Acc\u00e8s: Gratuit</p>"
+                },
+                {
+                    "icon": "bi-info-circle-fill",
+                    "htmlContent": "<p>Versions: 1.8.8 \u00e0 1.20.1</p>"
+                }
+            ]
+        }
+    },
+    "header": {
+        "index": {
+            "links": {
+                "vote_variant": {
+                    "text": null,
+                    "color": "primary"
+                },
+                "shop_variant": {
+                    "text": null,
+                    "color": "primary"
+                },
+                "play_variant": {
+                    "text": null,
+                    "color": "primary"
+                }
+            }
+        },
+        "modules": {
+            "announceBar": {
+                "text": null,
+                "bg": "#892958"
+            },
+            "pageHeight": {
+                "height": "8",
+                "colorBg": "#6c5e8f",
+                "color": "#531cdb"
+            }
+        }
+    },
+    "footer": {
+        "index": {
+            "title": null,
+            "text": null,
+            "button": {
+                "icon": null,
+                "text": null,
+                "url": null
+            },
+            "links": {
+                "1": {
+                    "title": null
+                }
+            }
+        }
+    },
+    "vote": {
+        "index": {
+            "title": null,
+            "captchaText": null,
+            "rewardInfosText": null,
+            "voteCardImg": null,
+            "howToVoteIcon": null,
+            "howToVoteText": null,
+            "howToVoteHref": null,
+            "rewardTitle": null,
+            "rewardText": null,
+            "infosText": null,
+            "bottomText": null,
+            "faqTitle": "azksazkos",
+            "faqText": "azdazoadzoakdz"
+        }
+    },
+    "style": {
+        "index": {
+            "background": {
+                "light": null,
+                "dark": null
+            },
+            "font": {
+                "url": null,
+                "name": null
+            }
+        },
+        "colors": {
+            "light": {
+                "primary": "#c9ff6b",
+                "secondary": "#55c3f9",
+                "tertiary": "#fed955",
+                "quaternary": "#f278f9",
+                "body": "#ffaa00",
+                "black": "#e2e2e2",
+                "dark": "#ffffff",
+                "white": "#a68dc3",
+                "light": "#fafafa",
+                "color": "#111111",
+                "color-dark": "#f2f2f2",
+                "success": "#bbf24b",
+                "info": "#0dcaf0",
+                "warning": "#f88934",
+                "danger": "#dc3545"
+            },
+            "dark": {
+                "primary": "#00b7ff",
+                "secondary": "#55c3f9",
+                "tertiary": "#fed955",
+                "quaternary": "#f278f9",
+                "body": "#111111",
+                "black": "#070606",
+                "dark": "#17191b",
+                "white": "#21262c",
+                "light": "#111111",
+                "color": "#ffffff",
+                "color-dark": "#6c757d",
+                "success": "#bbf24b",
+                "info": "#3499f8",
+                "warning": "#ffc107",
+                "danger": "#dc3545"
+            }
+        }
+    }
+}

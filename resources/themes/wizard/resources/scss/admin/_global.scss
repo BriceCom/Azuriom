@@ -1,0 +1,20 @@
+#wrapper #content-wrapper {
+    overflow-x: inherit;
+}
+
+.topbar {
+    &.mb-4 {
+        margin-bottom: 0 !important;
+    }
+}
+
+#content {
+    .container-fluid {
+        position: relative;
+        padding-top: 1.5rem !important;
+    }
+}
+
+a {
+    scroll-behavior: smooth;
+}

@@ -1,0 +1,206 @@
+.bentobox{
+    margin: 0 auto;
+
+    @media (min-width: 992px) {
+        max-width: 992px;
+    }
+
+    @media (min-width: 1536px) {
+        max-width: 1140px;
+    }
+
+    &-card{
+        $self: &;
+        position: relative;
+        width: 100%;
+        text-align: center;
+        text-decoration: unset;
+
+        &__content{
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(180deg, var(--linear-end), var(--linear-start));
+            padding: 32px;
+            border-radius: 32px;
+            text-decoration: unset;
+
+            &:after {
+                z-index: -1;
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                        105deg,
+                        transparent 20%,
+                        rgba(255, 255, 255, 0.4) 50%,
+                        transparent 80%
+                );
+                transform: translateX(-100%);
+                pointer-events: none;
+            }
+        }
+
+        &__title{
+            font-size: 2rem;
+            color: white;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 0;
+
+            @media (min-width: 992px) {
+                font-size: 2.625rem;
+            }
+        }
+
+        &__subtitle{
+            text-transform: uppercase;
+            color: white;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+
+        &__discord{
+            display: grid;
+            place-items: center;
+            width: 64px;
+            height: 64px;
+            min-width: 64px;
+            min-height: 64px;
+            background-color: #5C69F3;
+            border-radius: 50%;
+            margin: auto;
+            color: white;
+            font-size: 2.5rem;
+
+            @media (min-width: 576px) {
+                width: 92px;
+                height: 92px;
+                min-width: 92px;
+                min-height: 92px;
+                font-size: 3rem;
+            }
+        }
+
+        &__icon{
+            color: white;
+
+            i{
+                font-size: 2.5rem;
+
+                @media (min-width: 576px) {
+                    font-size: 4rem;
+                }
+            }
+        }
+
+        &__shop{
+            #{$self}{
+                &__title{
+                    font-size: clamp(24px, 7vw, 4.5rem);
+                }
+
+                &__content{
+                    background: linear-gradient(-90deg, var(--linear-end), var(--linear-start));
+                    text-align: start;
+                }
+            }
+
+            &-chest{
+                transition: rotate .2s ease-in-out, scale .22s linear;
+                height: 289px;
+                max-height: 115%;
+
+                img{
+                    height: 100%
+                }
+            }
+
+            &-wrapper{
+                &:hover{
+                    img{
+                        rotate: 5deg;
+                        scale: 1.05;
+                    }
+                }
+            }
+        }
+
+        &__bgImg{
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--background);
+            border-radius: 32px;
+            background-size: cover;
+            background-position: center;
+            pointer-events: none;
+        }
+
+        &:has(#{$self}__bgImg){
+            #{$self} {
+                &__content{
+                    @media (max-width: 992px) {
+                        padding: 48px 32px
+                    }
+                }
+            }
+        }
+
+        &__small{
+            width: 100%;
+
+            @media (min-width: 992px) {
+                max-width: 226px;
+            }
+
+            @media (min-width: 1440px) {
+                max-width: 300px;
+            }
+        }
+
+        #{$self}{
+            &__content,
+            &__bgImg,
+            &__copyip{
+                transition: transform .12s linear;
+            }
+        }
+
+        &:hover{
+            #{$self}{
+                &__content,
+                &__bgImg{
+                    transform: translateY(-4%);
+
+                    &:after {
+                        animation: shine 1.25s ease-in-out;
+                    }
+                }
+
+                &__copyip{
+                    transform: translateY(-12%);
+                }
+            }
+        }
+    }
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%);
+    }
+    40% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}

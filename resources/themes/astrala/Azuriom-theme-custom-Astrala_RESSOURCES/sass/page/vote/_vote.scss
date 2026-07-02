@@ -1,0 +1,88 @@
+#vote {
+    #app {
+        .content > #status-message {
+            margin-top: 0 !important;
+        }
+
+        .content > div:not(.no-margin) {
+            margin-top: 320px !important;
+        }
+    }
+    .custom-card{
+        .form-control{
+            background: unset;
+            border: unset;
+        }
+
+        button {
+            width: fit-content;
+        }
+
+        @media (max-width: 767px) {
+            button {
+                width: 100%
+            }
+            .form-control{
+                text-align: center
+            }
+        }
+
+    }
+    .table{
+        &-custom {
+            position: relative;
+            .gradient-circle{
+                z-index: 1;
+                position: absolute;
+                right: 50%;
+                top: 15%;
+                transform: translateX(50%);
+                width: 981.36px;
+                height: 64px;
+                border-radius: 981.36px;
+                filter: blur(125px);
+                background: var(--gradient-clair, linear-gradient(180deg, #EEA178 100%, #542926 100%));
+            }
+
+            &-header {
+            }
+            &-body {
+                span {
+                    font-weight: 300;
+                }
+                .custom-card{
+                    border-radius: 3.507px;
+                    border-width: 1px;
+                    &:first-child {
+                        border-color: rgba(255, 209, 46, 0.50);
+                        background: rgba(255, 209, 46, 0.05);
+                    }
+                    &:nth-child(2) {
+                        border: 0.877px solid rgba(255, 255, 255, 0.50);
+                        background: rgba(255, 255, 255, 0.05);
+                    }
+                    &:nth-child(3) {
+                        border: 0.877px solid rgba(179, 115, 88, 0.50);
+                        background: rgba(179, 115, 88, 0.05);
+                    }
+                }
+            }
+
+            @media (max-width: 767px) {
+                &-header {
+                    span {
+                        font-size: 8.89px;
+                    }
+                }
+                &-body {
+                    .avatar{
+                        height: 24px;
+                    }
+                    span {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

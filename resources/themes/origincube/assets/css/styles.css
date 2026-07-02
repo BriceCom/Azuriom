@@ -1,0 +1,350 @@
+@font-face {
+  font-family: "Inter";
+  font-display: auto;
+  src: url("../fonts/Inter-ExtraLight.ttf") format("opentype");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Inter";
+  font-display: auto;
+  src: url("../fonts/Inter-Light.ttf") format("opentype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Inter";
+  font-display: auto;
+  src: url("../fonts/Inter-Regular.ttf") format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter";
+  font-display: auto;
+  src: url("../fonts/Inter-Medium.ttf") format("opentype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Inter";
+  font-display: auto;
+  src: url("../fonts/Inter-SemiBold.ttf") format("opentype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Inter";
+  font-display: auto;
+  src: url("../fonts/Inter-Bold.ttf") format("opentype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Inter";
+  font-display: auto;
+  src: url("../fonts/Inter-Black.ttf") format("opentype");
+  font-weight: 900;
+}
+:root {
+  --gray-500: #191919;
+  --gray-500-rgb: 25, 25, 25;
+  --pink-500: #FE47B5;
+  --pink-400: #f65eba;
+  --yellow: #D8A11A;
+  --red: #B44831;
+  --light-gray: #ABABAB;
+  --gray: #313131;
+  --blue: #5865F2;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  background-color: var(--bs-body-bg);
+}
+
+.custom-link {
+  background-color: var(--pink-500);
+  color: white;
+  border-radius: 5px;
+}
+.custom-link:is(:hover, :active, :focus) {
+  background-color: var(--pink-400) !important;
+}
+
+#userDropdownWrapper, #navbarLogo {
+  width: 295px;
+}
+
+header {
+  z-index: 2;
+}
+
+.hero-logo {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+footer hr {
+  background-color: #4A4A4A;
+}
+footer a.text-white:is(:hover, :active, :focus) {
+  color: rgba(var(--bs-white-rgb), 0.85) !important;
+}
+
+.footer-logo {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.bg-blue {
+  background-color: var(--blue);
+}
+
+.bg-gray-custom {
+  background-color: var(--gray);
+}
+
+.nav-link {
+  color: var(--bs-white);
+}
+.nav-link:hover, .nav-link:active, .nav-link:focus {
+  color: rgb(var(--bs-white-rgb), 0.85);
+}
+
+.btn {
+  color: var(--bs-white);
+}
+.btn:hover, .btn:active, .btn:focus {
+  color: rgb(var(--bs-white-rgb), 0.95);
+}
+
+.card-body form {
+  margin-top: 26px;
+}
+.card-body form label {
+  font-size: 15px;
+}
+.card-body button.btn {
+  width: 100%;
+}
+.card-body h2 {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.card-body p {
+  font-size: 14px;
+}
+
+.content:not(div.pageTitle) h1, .content div.pageTitle {
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+}
+
+.content:has(div.pageTitle) div.pageTitle {
+  transform: translateY(-200%);
+}
+.content:has(div.pageTitle) div.pageTitle p {
+  font-weight: 400;
+  text-transform: none;
+}
+
+.content:not(div.pageTitle) h1 {
+  transform: translateY(-500%);
+}
+
+.content:has(div.pageTitle) h1, #user_login h1, #user_register h1 {
+  transform: translateY(0%);
+}
+
+.alert-wrapper {
+  z-index: 2;
+}
+
+.profile-name {
+  font-size: 20px !important;
+}
+
+.ip_address {
+  padding: 0;
+  background-color: #D89024;
+  box-shadow: 0px 3px 0px 0px #BF7D1A;
+  border: 0;
+  border-radius: 5px;
+}
+.ip_address:is(:hover, :active, :focus) {
+  background-color: #dea145;
+}
+.ip_address:is(:hover, :active, :focus) span {
+  background-color: #deaf3c;
+}
+.ip_address:is(:hover, :active, :focus) span:nth-child(2) {
+  background-color: #dea145;
+}
+.ip_address span {
+  text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25);
+}
+.ip_address span:first-child {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.ip_address span:nth-child(2) {
+  padding-left: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border: 0;
+}
+
+.ip_address_clic {
+  font-size: 15px;
+}
+
+.community-links a {
+  font-size: 13px;
+}
+
+.package-img {
+  height: 165px;
+  transform: translate(0, -40%);
+  right: 0;
+  left: 0;
+}
+
+.package-title {
+  margin-top: 7rem;
+}
+
+.discord-btn:is(:hover, :active, :focus) {
+  background-color: var(--bs-white) !important;
+  color: var(--blue) !important;
+}
+
+.youtube-btn:is(:hover, :active, :focus) {
+  background-color: var(--bs-white) !important;
+  color: var(--bs-red) !important;
+}
+
+#shop_cart .card-body button.btn, #news_post .card-body button.btn {
+  width: initial;
+}
+
+#shop_payments_payment .card {
+  height: 100%;
+  justify-content: center;
+}
+
+.vote-sites {
+  width: 30%;
+}
+
+.voteTop-position {
+  font-size: 12px;
+  padding: 7px;
+}
+
+.voteTop-wrapper {
+  font-size: 15px;
+}
+.voteTop-wrapper small {
+  font-size: 11px;
+}
+
+.voteTop-1 {
+  background-color: var(--yellow) !important;
+}
+
+.voteTop-2 {
+  background-color: var(--light-gray) !important;
+}
+
+.voteTop-3 {
+  background-color: var(--red) !important;
+}
+
+.progress {
+  height: 7px;
+}
+
+.pageContent {
+  font-size: 15px;
+}
+.pageContent h1 {
+  font-size: 18px;
+}
+.pageContent h2, .pageContent h3, .pageContent h4, .pageContent h5 {
+  font-size: 16px;
+}
+
+.post-img {
+  height: 165px;
+}
+
+.post-content {
+  font-size: 14px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+@media (max-width: 1200px) {
+  .card-body {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+  .vote-sites {
+    width: 100%;
+  }
+  .discord-list-wrapper {
+    height: 200px !important;
+  }
+}
+@media (max-width: 990px) {
+  #navbar {
+    z-index: 7;
+    max-width: unset !important;
+  }
+  .navbar {
+    background-color: rgba(var(--gray-500-rgb)) !important;
+  }
+}
+@media (max-width: 767px) {
+  .card-body {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+@media (max-width: 576px) {
+  #navbarLogo {
+    width: 150px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
+/* Width */
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--gray-500);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--bs-primary);
+  -webkit-transition: background 0.123s linear;
+  transition: background 0.123s linear;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: red;
+}
+
+/* FIX PLUGINS FRONT */
+#wiki_category_page .card-body {
+  overflow: hidden;
+}
+#wiki_category_page .card-body img[width="17"][height="17"] {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+}

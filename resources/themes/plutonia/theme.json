@@ -1,0 +1,11 @@
+{
+    "id": "plutonia",
+    "name": "plutonia",
+    "description": "Theme for Plutonia",
+    "version": "1.0.0",
+    "url": "https://azuriom.com",
+    "azuriom_api": "1.0.0",
+    "authors": [
+        "Bricec6#6204"
+    ]
+}

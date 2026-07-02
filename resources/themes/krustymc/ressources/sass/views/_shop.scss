@@ -1,0 +1,11 @@
+.shop{
+    position: relative;
+
+    &-price{
+        z-index: 1;
+        position: absolute;
+        top: 2rem;
+        left: 1.5rem;
+        rotate: 347deg
+    }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "theme-template",
+  "version": "1.0.0",
+  "description": "Theme template",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^5.1.0"
+  },
+  "devDependencies": {
+      "bootstrap-icons": "^1.8.1",
+      "laravel-mix": "^6.0.6",
+      "postcss": "^8.2.6",
+      "resolve-url-loader": "^5.0.0",
+      "sass": "^1.32.7",
+      "sass-loader": "^8.0.0",
+      "clean-webpack-plugin": "^4.0.0",
+      "laravel-mix-clean": "^0.1.0"
+  },
+  "scripts": {
+      "dev": "npm run development",
+      "development": "mix",
+      "watch": "mix watch",
+      "watch-poll": "mix watch -- --watch-options-poll=1000",
+      "hot": "mix watch --hot",
+      "prod": "npm run production",
+      "production": "mix --production"
+  },
+  "author": "Bricec6#6204",
+  "license": "ISC"
+}

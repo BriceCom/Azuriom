@@ -1,0 +1,44 @@
+.state-point {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 8px;
+    height: 8px;
+    border-radius: 500%;
+    background-color: #B6FF76;
+
+    @keyframes outline-width {
+        from {
+            outline-width: 1px
+        }
+        to {
+            outline-width: 3px
+        }
+    }
+
+    &:after {
+        position: absolute;
+        content: "";
+        width: 12px;
+        height: 12px;
+        background-color: #B6FF76;
+        border-radius: 500%;
+        animation: point-width 1.5s ease-in infinite;
+
+        @keyframes point-width {
+            from {
+                transform: scale(0.5);
+                opacity: 0.65;
+            }
+            to {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+        }
+    }
+}
+
+// Text
+.text-initial{
+    text-transform: initial;
+}

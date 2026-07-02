@@ -1,0 +1,87 @@
+.card-infos{
+    $self: &;
+    z-index: -1;
+    overflow: hidden;
+    padding: 64px;
+
+    @media (max-width: 992px) {
+        padding: 64px 24px;
+    }
+
+    &__section{
+        @media (min-width: 992px) {
+            &[data-has-leftimg="true"]{
+                transform: translateX(32px);
+            }
+
+            &[data-has-rightimg="true"]{
+                transform: translateX(-32px);
+            }
+
+            &[data-has-leftimg="true"][data-has-rightimg="true"] {
+                transform: translateX(0);
+            }
+        }
+    }
+
+    &__wrapper{
+        width: 100%;
+        margin: 0 auto;
+
+
+        @media (min-width: 992px) {
+            max-width: 992px;
+        }
+
+        @media (min-width: 1536px) {
+            max-width: 1140px;
+        }
+
+        &:has(.card-infos__logo){
+            .card-infos{
+                padding: 92px 64px;
+
+                @media (max-width: 992px) {
+                    padding: 92px 24px;
+                }
+            }
+        }
+    }
+
+    &__content{
+        max-width: 840px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    &__img{
+        pointer-events: none;
+
+        @media (max-width: 1200px) {
+            display: none;
+        }
+
+        &-img{
+            width: fit-content;
+            height: fit-content;
+            object-fit: contain;
+        }
+    }
+
+    &__background{
+        z-index: -1;
+        filter: saturate(0%) opacity(.10);
+        pointer-events: none;
+
+        @media (max-width: 992px) {
+            top: unset !important;
+            bottom: 0;
+        }
+    }
+
+    &__badges{
+        @media (max-width: 512px) {
+            position: relative !important;
+        }
+    }
+}

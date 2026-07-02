@@ -1,0 +1,54 @@
+body {
+    -webkit-font-smoothing: antialiased;
+}
+.object-cover{
+    object-fit: cover;
+}
+.object-position-center{
+    object-position: center;
+}
+
+.bg-image-none {
+    background-image: none;
+}
+img{
+    @extend .img-fluid;
+}
+.underline-effect {
+    position: relative;
+
+    &:before {
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        --bg-opacity: 1;
+        background-color: #d69e2e;
+        background-color: rgba(214, 158, 46, var(--bg-opacity));
+        content: "";
+        height: 2px;
+        transform-origin: bottom right;
+        transform: scaleX(0);
+        transition: transform .4s ease;
+    }
+
+    &:hover:before {
+        transform-origin: bottom left;
+        transform: scaleX(1);
+    }
+}
+
+.bg-background__global {
+    position: relative;
+    display: contents;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(26, 32, 44, 0) 0%, #0f072a 100%);
+    }
+}

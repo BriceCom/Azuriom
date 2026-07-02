@@ -1,0 +1,61 @@
+#vote{
+    tbody > tr {
+        td,th{
+            background-color: rgba(var(--di-vote-rgb), var(--di-bg-opacity, 1)) !important;
+            transition: background-color .2s linear;
+        }
+
+        &:hover{
+            td,th{
+                background-color: rgba(var(--di-vote-rgb), .17) !important;
+            }
+        }
+    }
+
+
+    .btn-icon{
+        width: 2rem;
+        height: 2rem;
+    }
+
+    #faq{
+        width: 100%;
+        max-width: 768px;
+        margin: auto;
+    }
+
+    .vote-icon{
+        font-size: 6.5rem;
+        top: 10%;
+        pointer-events: none;
+
+        @media (max-width: 992px) {
+            top: 0;
+            font-size: 5rem;
+        }
+
+        @media (max-width: 512px) {
+            position: relative !important;
+            transform: unset !important;
+            padding: 16px 0 0 16px;
+        }
+    }
+
+    .vote-card{
+        padding: 32px 32px 32px 64px;
+
+        @media (max-width: 992px) {
+            padding: 24px 24px 24px 48px;
+        }
+
+        @media (max-width: 512px) {
+            padding: 24px;
+        }
+
+        &__wrapper{
+            width: 100%;
+            max-width: 992px;
+            margin: 0 auto;
+        }
+    }
+}

@@ -1,0 +1,369 @@
+@import "~bootstrap/scss/functions";
+
+@import "_override/_variables";
+@import "_override/_variables-dark";
+
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+
+$tertiary: #DC143C;
+
+$custom-theme-colors:map-merge($theme-colors, (
+    "tertiary": $tertiary
+));
+
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+$utilities-colors: map-merge($utilities-colors, $theme-colors-rgb);
+$utilities-text-colors: map-loop($utilities-colors, rgba-css-var, "$key", "text");
+$utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, "$key", "bg");
+
+@import "~bootstrap/scss/utilities";
+
+@import "~bootstrap/scss/utilities/api";
+@import "~bootstrap/scss/bootstrap";
+
+%btn-primary {
+    border-color: rgb(84, 41, 38);
+}
+
+%btn-primary-hover {
+
+}
+
+%base-bg {
+    background-color: rgba(33, 37, 41, 1);
+}
+%base-bg-opacity-50 {
+    background: rgba(18, 18, 18, 0.65);
+}
+%base-bg-second {
+    background-color: rgb(29 32 35);
+}
+
+a.text-white-50, a.text-white{
+    &:is(:hover,:active,:focus) {
+        color: rgba(var(--bs-white-rgb), 0.95) !important;
+    }
+}
+
+.btn {
+    font-weight: 500;
+    font-size: 18px;
+
+    &.nav-link {
+        font-size: 16px;
+    }
+
+    &-primary {
+
+
+    }
+}
+
+.btn-primary.disabled, .btn-primary:disabled{
+    background-color: rgba(var(--bs-primary-rgb), 0.5);
+    border-color: rgba(var(--bs-primary-rgb), 0.3);
+}
+.btn-outline-primary{
+    color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+.btn-outline-primary:hover{
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.btn-secondary{
+    background-color: var(--bs-secondary);
+    border-color: rgba(var(--bs-secondary-rgb), 0.8);
+}
+.btn-outline-secondary{
+    background-color: transparent;
+}
+.btn-secondary:hover,.btn-secondary:focus{
+    background-color: rgba(var(--bs-secondary-rgb), 0.8);
+    border-color: rgba(var(--bs-secondary-rgb), 0.6);
+}
+
+.btn-secondary:focus {
+    color: var(--bs-white);
+    border-color: var(--bs-secondary);
+    box-shadow: 0 0 0 0.25rem rgb(var(--bs-secondary-rgb-no_commas) / 50%) !important;
+}
+.btn-secondary:active{
+    background-color: rgba(var(--bs-secondary-rgb), 0.8) !important;
+    border-color: var(--bs-secondary) !important;
+}
+.btn-outline-secondary{
+    color: var(--bs-secondary);
+    border-color: var(--bs-secondary);
+}
+.btn-outline-secondary:hover{
+    background-color: var(--bs-secondary);
+    border-color: var(--bs-secondary);
+}
+
+.btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle{
+    background-color: var(--bs-primary);
+}
+
+.border-primary{
+    border-color: var(--bs-primary) !important;
+}
+
+.dropdown-item{
+    color: var(--bs-white);
+}
+.dropdown-item:focus, .dropdown-item:hover, .dropdown-item:active{
+    @extend %base-bg-second;
+    color: var(--bs-white);
+}
+
+.dropdown-item.active{
+    @extend %base-bg-second;
+    color: var(--bs-primary);
+}
+
+.dropdown-menu {
+    --bs-dropdown-color: var(--bs-white);
+    @extend %base-bg;
+    color: var(--bs-primary);
+}
+
+/*forum*/
+.editor-toolbar {
+    background-color: var(--bs-white);
+    opacity: 1;
+}
+
+.editor-toolbar i {
+    color: var(--bs-black);
+}
+
+/**/
+.form-control, .form-select {
+    //border: 1px solid var(--bs-light);
+    @extend %base-bg-opacity-50;
+    color: var(--bs-white);
+    border: 2px solid rgba(52, 58, 64, 0.50);
+    &::placeholder{
+        color: rgba(var(--bs-body-color-rgb));
+    }
+}
+.form-label{
+    color: rgba(var(--bs-body-color-rgb));
+}
+.card-body .form-control, .card-body .form-select {
+    @extend %base-bg;
+}
+
+.form-control:focus, .form-select:focus {
+    @extend %base-bg-opacity-50;
+    box-shadow: 0 0 0 0.25rem rgb(var(--bs-light-rgb) / 25%);
+    border: 2px solid rgba(52, 58, 64, 0.50);
+    color: var(--bs-white);
+}
+
+.form-check-input:checked{
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.form-check-input:focus{
+    border-color: rgba(var(--bs-primary-rgb), 0.6);
+    box-shadow: 0 0 0 0.15rem rgb(var(--bs-primary-rgb-no_commas) / 50%) !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    border-color: var(--bs-primary);
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+    background-color: transparent !important;
+}
+
+input:-webkit-autofill {
+    color: var(--bs-white) !important;
+}
+
+.table-wrapper{
+    @extend %base-bg-second;
+    border-color: var(--bs-light);
+}
+
+.table{
+    color: var(--bs-white);
+}
+
+.table {
+    --bs-table-bg: rgb(19 21 22);
+    --bs-table-accent-bg: transparent;
+    --bs-table-striped-color: rgb(27 29 30);
+    --bs-table-striped-bg: rgb(19 21 22);
+    --bs-table-active-color: rgb(27 29 30);
+    --bs-table-active-bg: rgb(19 21 22);
+    --bs-table-hover-color: rgb(27 29 30);
+    --bs-table-hover-bg: rgb(19 21 22);
+}
+
+.table-dark {
+    --bs-table-color: var(--bs-white);
+    --bs-table-bg: rgb(14 16 16);
+}
+
+a{
+    color: var(--bs-white);
+    &:is(:hover,:active,:focus){
+        color: rgba( var(--bs-white-rgb), 0.8);
+    }
+}
+
+.card{
+    &:has(table){
+        background: unset;
+
+        .card-body{
+            background: unset;
+        }
+    }
+    overflow: visible;
+    background: unset;
+    background: rgba(var(--bs-body-bg-rgb), 1);
+    border-radius: 8px;
+    border: 1px solid #f8f9fa33;
+
+    &-header, &-body, &-footer{
+        border-radius: 8px  !important;
+        padding: 24px;
+
+        @media (max-width: 767px) {
+            padding: 16px;
+        }
+    }
+
+    &-header{
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--bs-primary);
+
+        small{
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, .5);
+        }
+        i{
+            display: none;
+        }
+    }
+}
+
+.card-body{
+    color: var(--bs-body-color);
+}
+.card{
+    &-header,&-footer{
+        background: rgba(var(--bs-body-bg-rgb), 1);
+    }
+}
+
+.list-group-item{
+    background: rgba(var(--bs-body-bg-rgb), 1);
+    border-color: transparent;
+    color: var(--bs-white);
+}
+.list-group-item.active{
+    @extend %btn-primary;
+    color: var(--bs-white);
+}
+.list-group {
+    background: transparent;
+}
+
+.modal-content {
+    background-color: var(--bs-body-bg);
+}
+
+.modal-header .btn-close{
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+.accordion-item{
+    background: transparent;
+}
+.accordion-button {
+    color: var(--bs-white);
+}
+.accordion-button:focus{
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-dark-rgb-no_commas) / 25%) !important;
+}
+.accordion-button:not(.collapsed){
+    color: var(--bs-white);
+}
+.accordion-body {
+    background-color: rgba(var(--bs-dark-rgb), 0.5);
+}
+
+.page-item.active .page-link{
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+.page-link{
+    color: rgba(var(--bs-primary-rgb), 0.9);
+
+    &:focus{
+        box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.5);
+    }
+
+    &:hover,&:active,&:focus{
+        color: var(--bs-primary);
+    }
+}
+//FORUM
+ol.breadcrumb{
+    @extend %base-bg-opacity-50;
+    li a{
+        color: var(--bs-white);
+        text-decoration: none;
+        &:hover{
+            color: rgba(var(--bs-white-rgb), 0.93);
+        }
+    }
+}
+
+h5 a{
+    color: var(--bs-white);
+    text-decoration: none;
+    &:hover{
+        color: rgba(var(--bs-white-rgb), 0.93);
+    }
+}
+
+// ADVANCEDBAN
+.table-striped > tbody > tr:nth-of-type(odd) {
+    color: rgba(var(--bs-white-rgb), 0.80);
+}
+.table-striped > tbody > tr:nth-of-type(odd):hover {
+    color: rgba(var(--bs-white-rgb), 0.90);
+}
+.table-hover > tbody > tr:hover{
+    color: rgba(var(--bs-white-rgb), 0.80);
+}
+#advancedban{
+    td img{
+        height: 30px;
+        width: 30px;
+    }
+}
+
+#wiki {
+    a {
+        text-decoration: none;
+    }
+    .card-body{
+        i, h2 {
+            font-size: 27px !important;
+        }
+    }
+}
+

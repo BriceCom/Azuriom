@@ -1,0 +1,21 @@
+#content_launcher {
+    video {
+        width: 100%;
+        max-width: 32rem;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .launcher {
+        img {
+            width: 64px;
+            height: 64px;
+        }
+    }
+
+    p {
+        span {
+            color: $yellow-600;
+        }
+    }
+}

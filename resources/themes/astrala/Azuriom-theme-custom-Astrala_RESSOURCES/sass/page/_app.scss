@@ -1,0 +1,54 @@
+#wiki {
+    #app {
+        .content > #status-message {
+            margin-top: 0 !important;
+        }
+
+        .content > div:not(.no-margin) {
+            margin-top: 0 !important;
+        }
+        #wiki {
+            margin-top: 450px !important;
+        }
+    }
+}
+#app {
+    .content > #status-message {
+        margin-top: 0 !important;
+    }
+    .content > div:not(.no-margin){
+        margin-top: 500px !important;
+    }
+    h1 {
+        text-align: center;
+    }
+    .background {
+        z-index:-1;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+
+        &-wrapper {
+            position: relative;
+            height: 660px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                height: 100%;
+                background: radial-gradient(100% 100% at 50% 0%, rgba(16, 16, 16, 0.00) 0%, #121212 100%), transparent 50% / cover no-repeat;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}

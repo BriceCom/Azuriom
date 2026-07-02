@@ -1,0 +1,209 @@
+{
+    "premium": {
+        "serveurliste": {
+            "link": "https://www.serveurliste.com/minecraft/serveurliste",
+            "token": null
+        }
+    },
+    "settings": {
+        "server": {
+            "ip": "play.coucou.fr"
+        },
+        "discord": {
+            "link": null,
+            "id": null
+        }
+    },
+    "home": {
+        "bentobox": {
+            "vote": {
+                "title": "test",
+                "text": "testttexte",
+                "wysiwyg": null
+            },
+            "vote_empty": {
+                "text": "aucn vote"
+            },
+            "user_disconnected": {
+                "title": "njkop",
+                "text": "jkop^"
+            },
+            "shop": {
+                "title": "jk,oplokop",
+                "link": {
+                    "text": "lien boutique",
+                    "url": ",klop"
+                }
+            }
+        },
+        "discord": {
+            "img": null,
+            "imgHeight": "170",
+            "title": "<p>discord title ald,lzd</p>",
+            "text": "discord text",
+            "link": {
+                "text": "discord linkzz",
+                "url": "hio"
+            }
+        },
+        "video": {
+            "title": "video title ahaha",
+            "text": "video text lol",
+            "url": "https://serveurliste.com"
+        }
+    },
+    "header": {
+        "modules": {
+            "announceBar": {
+                "on": "on",
+                "text": "<p style=\"text-align: center;\"><span style=\"color: #000000;\">da adaedadd\u00a0 dza<strong>zdadazdzadazdaz</strong></span></p>",
+                "bg": "#d8a8e6"
+            },
+            "pageHeight": {
+                "on": "on",
+                "height": "8",
+                "colorBg": "#c9e8dc",
+                "color": "#7ba796"
+            }
+        }
+    },
+    "footer": {
+        "index": {
+            "dixept_copyright": {
+                "off": "on"
+            },
+            "links": {
+                "1": {
+                    "title": "binjor 1",
+                    "1": {
+                        "blank": "on"
+                    },
+                    "links": {
+                        "1": {
+                            "text": null,
+                            "url": null
+                        },
+                        "2": {
+                            "text": null,
+                            "url": null
+                        },
+                        "3": {
+                            "text": null,
+                            "url": null
+                        },
+                        "4": {
+                            "text": null,
+                            "url": null
+                        },
+                        "5": {
+                            "text": null,
+                            "url": null
+                        }
+                    }
+                },
+                "2": {
+                    "title": "bonjour2",
+                    "links": {
+                        "1": {
+                            "text": null,
+                            "url": null
+                        },
+                        "2": {
+                            "text": null,
+                            "url": null
+                        },
+                        "3": {
+                            "text": null,
+                            "url": null
+                        },
+                        "4": {
+                            "text": null,
+                            "url": null
+                        },
+                        "5": {
+                            "text": null,
+                            "url": null
+                        }
+                    },
+                    "4": {
+                        "blank": "on"
+                    }
+                }
+            }
+        }
+    },
+    "shop": {
+        "title": "mjp@oj",
+        "text": "pkjijp"
+    },
+    "vote": {
+        "title": null,
+        "text": null,
+        "rewards": {
+            "on": "on",
+            "text": null,
+            "top": {
+                "1": "bole",
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null,
+                "8": null,
+                "9": null,
+                "10": null
+            }
+        }
+    },
+    "style": {
+        "index": {
+            "font": {
+                "on": "on",
+                "url": null,
+                "name": null
+            }
+        },
+        "colors": {
+            "light": {
+                "primary": "#e22828",
+                "secondary": "#e2b029",
+                "tertiary": "#f8f8f8",
+                "quaternary": "#a779d7",
+                "body": "#f2f2f2",
+                "black": "#e2e2e2",
+                "dark": "#f2f2f2",
+                "white": "#a68dc3",
+                "light": "#fafafa",
+                "color": "#111111",
+                "color-dark": "#6c757d",
+                "success": "#198754",
+                "info": "#0dcaf0",
+                "warning": "#ffc107",
+                "danger": "#dc3545"
+            },
+            "dark": {
+                "primary": "#e22828",
+                "secondary": "#e2b029",
+                "tertiary": "#54cbaa",
+                "quaternary": "#9344e7",
+                "body": "#212529",
+                "black": "#1a1e21",
+                "dark": "#191c1f",
+                "white": "#21262c",
+                "light": "#191c1f",
+                "color": "#ffffff",
+                "color-dark": "#6c757d",
+                "success": "#198754",
+                "info": "#0dcaf0",
+                "warning": "#ffc107",
+                "danger": "#dc3545"
+            }
+        },
+        "ui": {
+            "card": {
+                "borderRadius": "16"
+            }
+        }
+    }
+}

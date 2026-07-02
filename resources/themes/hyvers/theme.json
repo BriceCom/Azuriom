@@ -1,0 +1,11 @@
+{
+    "id": "hyvers",
+    "name": "Hyvers",
+    "description": "Theme fort Hyvers",
+    "version": "1.0.0",
+    "url": "https://bryx-agency.fr",
+    "authors": [
+        "bricec6"
+    ],
+    "azuriom_api": "1.1.0"
+}

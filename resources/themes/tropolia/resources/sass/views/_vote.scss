@@ -1,0 +1,14 @@
+#vote{
+    tbody > tr {
+        td,th{
+            background-color: rgba(var(--di-vote-rgb), .17) !important;
+            transition: background-color .2s linear;
+        }
+
+        &:hover{
+            td,th{
+                background-color: rgba(var(--di-vote-rgb), .2) !important;
+            }
+        }
+    }
+}

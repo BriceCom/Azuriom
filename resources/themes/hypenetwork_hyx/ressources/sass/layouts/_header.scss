@@ -1,0 +1,48 @@
+body{
+    &:has(.hero){
+        header.navbar{
+            background: rgba(15, 23, 42, 0.20);
+        }
+    }
+}
+
+header{
+    z-index: 9;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    &:has(button[aria-expanded="true"]) .navbar{
+        backdrop-filter: blur(4.1px);
+        padding-top: 16px;
+        border-bottom: 3px solid #111827;
+    }
+
+    .navbar{
+        min-height: 83px;
+        font-weight: 700;
+        background: #03071233;
+
+        &-toggler{
+            z-index: 2;
+        }
+
+        a{
+            line-height: 20px;
+            text-transform: uppercase;
+        }
+
+        &-brand{
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            margin-top: 64px;
+            margin-right: 0;
+        }
+
+        &-collapse{
+            transition: unset;
+        }
+    }
+}

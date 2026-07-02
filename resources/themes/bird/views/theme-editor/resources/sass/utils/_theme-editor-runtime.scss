@@ -1,0 +1,102 @@
+.text-primary {
+    color: var(--bs-primary) !important;
+}
+
+.bg-primary {
+    background-color: var(--bs-primary) !important;
+}
+
+.border-primary {
+    border-color: var(--bs-primary) !important;
+}
+
+.link-primary {
+    color: var(--bs-primary) !important;
+}
+
+.link-primary:hover,
+.link-primary:focus {
+    color: var(--bs-link-hover-color) !important;
+}
+
+body {
+    font-family: var(--te-font-body);
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    background-image: var(--te-bg-image);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--te-font-heading);
+}
+
+button, input, select, textarea,
+.btn, .form-control, .form-select {
+    font-family: var(--te-font-body);
+}
+
+.bg-body-secondary {
+    background-color: color-mix(in srgb, var(--bs-body-bg) 85%, #ffffff 15%) !important;
+}
+
+.alert-success {
+    --bs-alert-bg: var(--bs-success);
+    --bs-alert-border-color: var(--bs-success);
+}
+
+.alert-info {
+    --bs-alert-bg: var(--bs-info);
+    --bs-alert-border-color: var(--bs-info);
+}
+
+.alert-warning {
+    --bs-alert-bg: var(--bs-warning);
+    --bs-alert-border-color: var(--bs-warning);
+}
+
+.alert-danger {
+    --bs-alert-bg: var(--bs-danger);
+    --bs-alert-border-color: var(--bs-danger);
+}
+
+.card {
+    background-color: var(--te-dark-tone-1);
+}
+
+[data-te-node="layout-header-shell"] .navbar,
+[data-te-node="layout-header-shell"] .navbar.bg-dark {
+    background-color: var(--te-dark-tone-2) !important;
+    --bs-navbar-color: var(--bs-body-color);
+    --bs-navbar-hover-color: var(--bs-body-color);
+    --bs-navbar-active-color: var(--bs-body-color);
+    --bs-navbar-brand-color: var(--bs-body-color);
+    --bs-navbar-brand-hover-color: var(--bs-body-color);
+}
+
+[data-te-node="layout-header-shell"] .navbar .navbar-brand,
+[data-te-node="layout-header-shell"] .navbar .nav-link {
+    color: var(--bs-body-color);
+}
+
+footer[data-te-block="footer"],
+footer[data-te-block="footer"].text-bg-dark {
+    background-color: var(--te-dark-tone-2) !important;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,15 @@
+{
+    "id": "achievement",
+    "name": "Achievements",
+    "description": "Gamification plugin. Bring progression and rewards to your Azuriom website with fully customizable achievements, a unique trophy system, and a global leaderboard.",
+    "version": "1.0.6",
+    "url": "https://market.azuriom.com/resources/192",
+    "authors": [
+        "Bricec6 | dixept.fr"
+    ],
+    "azuriom_api": "1.2.0",
+    "providers": [
+        "\\Azuriom\\Plugin\\Achievement\\Providers\\AchievementServiceProvider",
+        "\\Azuriom\\Plugin\\Achievement\\Providers\\RouteServiceProvider"
+    ]
+}

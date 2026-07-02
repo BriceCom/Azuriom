@@ -1,0 +1,243 @@
+{
+    "settings": {
+        "index": {
+            "particles": {
+                "enabled": "on",
+                "count": "100",
+                "density": "400",
+                "image": null,
+                "speed": null,
+                "size": null
+            }
+        },
+        "discord": {
+            "link": null,
+            "id": null
+        },
+        "server": {
+            "url": null,
+            "text": null,
+            "ip": null
+        }
+    },
+    "home": {
+        "hero": {
+            "order": null,
+            "badge": "z",
+            "title": "zaddaz",
+            "text": "zadz",
+            "image": null,
+            "bg": null
+        },
+        "news": {
+            "order": null,
+            "title": null,
+            "text": null,
+            "badge": {
+                "name": null
+            },
+            "link": {
+                "name": null
+            }
+        },
+        "video": {
+            "order": null,
+            "badge": "asszzazzs",
+            "title": "aszazzas",
+            "text": "aszszasza",
+            "url": null
+        },
+        "discord": {
+            "order": null,
+            "badge": null,
+            "title": null,
+            "text": null
+        },
+        "stats": {
+            "order": null,
+            "first": {
+                "value": null,
+                "label": null
+            },
+            "second": {
+                "value": null,
+                "label": null
+            },
+            "third": {
+                "value": null,
+                "label": null
+            }
+        },
+        "servers": {
+            "on": "on",
+            "order": null,
+            "badge": null,
+            "title": null,
+            "text": null
+        },
+        "gallery": {
+            "order": null,
+            "badge": "dazd",
+            "title": "zazd",
+            "text": "ad"
+        },
+        "faq": {
+            "order": null,
+            "badge": null,
+            "title": null,
+            "text": null
+        }
+    },
+    "header": {
+        "index": {
+            "links": {
+                "shop_variant": "primary"
+            },
+            "hero": {
+                "img": {
+                    "height": "235"
+                },
+                "bg": {
+                    "max-height": "1000"
+                }
+            }
+        },
+        "modules": {
+            "announceBar": {
+                "on": "on",
+                "text": "<p>azdazdadzda</p>",
+                "bg": "#892958"
+            },
+            "pageHeight": {
+                "on": "on",
+                "height": "8",
+                "colorBg": "#6c5e8f",
+                "color": "#531cdb"
+            }
+        },
+        "hero": {
+            "joinText": null,
+            "server_address_copied": null,
+            "discord": {
+                "hide": "on",
+                "title": null,
+                "text": null
+            }
+        }
+    },
+    "premium": {
+        "serveurliste": {
+            "link": "https://www.serveurliste.com/minecraft/nexodus",
+            "token": "adda"
+        }
+    },
+    "footer": {
+        "index": {
+            "title": null,
+            "text": null,
+            "button": {
+                "title": null,
+                "description": null,
+                "text": null,
+                "url": null
+            },
+            "links": {
+                "1": {
+                    "title": null,
+                    "links": [
+                        {
+                            "name": null,
+                            "href": null
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "vote": {
+        "index": {
+            "title": null,
+            "text": null,
+            "rewardTitle": null,
+            "rewardText": null,
+            "topTitle": null,
+            "topText": null,
+            "rewards": {
+                "on": "on",
+                "text": null,
+                "top": {
+                    "1": "adad",
+                    "2": null,
+                    "3": null,
+                    "4": null,
+                    "5": null,
+                    "6": null,
+                    "7": null,
+                    "8": null,
+                    "9": null,
+                    "10": null
+                },
+                "topColor": {
+                    "1": "#ce7070",
+                    "2": "#ff0000",
+                    "3": "#ff0000",
+                    "4": "#ff0000",
+                    "5": "#ff0000",
+                    "6": "#ff0000",
+                    "7": "#ff0000",
+                    "8": "#ff0000",
+                    "9": "#ff0000",
+                    "10": "#ff0000"
+                }
+            }
+        }
+    },
+    "style": {
+        "index": {
+            "background": {
+                "light": null,
+                "dark": null
+            },
+            "font": {
+                "url": "https://fonts.bunny.net/css?family=amita:400,700",
+                "name": "amita"
+            }
+        },
+        "colors": {
+            "light": {
+                "primary": "#ffc107",
+                "secondary": "#c8cccd",
+                "tertiary": "#f8ca47",
+                "quaternary": "#ecaf2d",
+                "body": "#f2f2f2",
+                "black": "#e2e2e2",
+                "dark": "#e3e2e2",
+                "white": "#a68dc3",
+                "light": "#fafafa",
+                "color": "#111111",
+                "color-dark": "#f2f2f2",
+                "success": "#bbf24b",
+                "info": "#1fefc3",
+                "warning": "#f88934",
+                "danger": "#dc3545"
+            },
+            "dark": {
+                "primary": "#ffc107",
+                "secondary": "#96a2f1",
+                "tertiary": "#f8ca47",
+                "quaternary": "#2196f3",
+                "body": "#af4eb0",
+                "black": "#d8b0b0",
+                "dark": "#2b4d6f",
+                "white": "#48d696",
+                "light": "#334626",
+                "color": "#ffffff",
+                "color-dark": "#6c757d",
+                "success": "#bbf24b",
+                "info": "#301f59",
+                "warning": "#ffc107",
+                "danger": "#dc3545"
+            }
+        }
+    }
+}

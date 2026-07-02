@@ -1,0 +1,90 @@
+.builder-row {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.dropdown-item[data-toggle=collapse][aria-expanded=true] {
+  pointer-events: none;
+}
+
+.dropdown-menu {
+  z-index: 100;
+}
+
+@media (min-width: 998px) {
+  .dropdown-menu {
+    top: -40px !important;
+    left: 62px !important;
+  }
+}
+.list-group-item {
+  z-index: 0;
+}
+
+.list-group-item.multiple_page[aria-expanded=true] {
+  z-index: 10;
+}
+
+.dropdown-item {
+  position: relative;
+}
+
+.dropdown-item[data-toggle=collapse][aria-expanded=true] span:after {
+  content: "";
+  display: inline-block;
+  background-color: #23a474;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  float: right;
+  margin: 4px 0px;
+}
+
+#wrapper #content-wrapper {
+  overflow-x: inherit;
+}
+
+.topbar.mb-4 {
+  margin-bottom: 0 !important;
+}
+
+#content .container-fluid {
+  position: relative;
+  padding-top: 1.5rem !important;
+}
+
+a {
+  scroll-behavior: smooth;
+}
+
+.btn-add-section {
+  position: absolute;
+  left: 0;
+}
+
+a.badge.badge-info {
+  font-size: 1.1rem;
+  position: absolute;
+  top: 8px;
+  left: -15px;
+  height: 35px;
+  width: 35px;
+  border-radius: 22.25px;
+  line-height: 37px;
+  padding: 0;
+}
+
+.accordion > .card:not(:last-of-type) {
+  border-bottom: 1px solid;
+  border-bottom-right-radius: 1px;
+  border-bottom-left-radius: 1px;
+}
+
+.collapse--setting-section {
+  position: absolute;
+  top: 3rem;
+  left: 0.25rem;
+  width: 250px;
+  z-index: 100;
+}

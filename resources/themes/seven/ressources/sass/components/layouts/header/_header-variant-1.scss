@@ -1,0 +1,29 @@
+.header {
+    $self: &;
+
+    #navbar{
+        justify-content: space-between;
+    }
+
+    .navbar{
+        background-color: unset !important;
+
+        &-nav{
+            margin: unset !important;
+        }
+
+        .copyButton{
+            display: none !important;
+        }
+    }
+
+    &[data-variant="1"]{
+        #{$self} {
+            &-bg{
+                z-index: -1;
+                position: absolute;
+                inset: 0;
+            }
+        }
+    }
+}

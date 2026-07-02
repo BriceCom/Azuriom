@@ -1,0 +1,11 @@
+{
+    "id": "lexwill",
+    "name": "Lexwill",
+    "description": "Theme for Azuriom",
+    "version": "1.0.0",
+    "url": "https://azuriom.com",
+    "azuriom_api": "1.1.0",
+    "authors": [
+        "[Dixept.fr] Bricec6"
+    ]
+}

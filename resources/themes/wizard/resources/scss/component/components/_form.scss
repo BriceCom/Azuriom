@@ -1,0 +1,15 @@
+.editor-toolbar {
+    background-color: $white;
+
+    * {
+        color: $gray-900 !important;
+    }
+}
+
+form {
+    select,
+    input,
+    .form-control{
+        @extend .border-gradient
+    }
+}

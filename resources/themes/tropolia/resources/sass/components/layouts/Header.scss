@@ -1,0 +1,39 @@
+@import
+"page-height";
+
+header{
+    &:has(.navbar-toggler[aria-expanded="true"]){
+        background: var(--di-dark);
+        //filter: blur(16px);
+    }
+}
+
+.nav-logo{
+    @media (max-width: 767px) {
+        height: 24px;
+    }
+}
+
+.nav-socials{
+    @media (min-width: 992px) and (max-width: 1200px) {
+        display: none;
+    }
+
+}
+
+.nav-item{
+    i{
+        display: grid;
+        place-items: center;
+        width: 24px;
+        height: 24px;
+
+        &::before{
+            font-size: 24px;
+        }
+    }
+
+    .btn{
+        padding: 16px !important;
+    }
+}

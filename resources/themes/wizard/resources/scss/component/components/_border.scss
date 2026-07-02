@@ -1,0 +1,52 @@
+.border-gradient {
+    border-image: linear-gradient(180deg, #c3a758, #6b521e) stretch;
+    border-image-slice: 1;
+    border-width: 2px;
+    border-style: solid;
+}
+.border-gradient-danger {
+    border-image: linear-gradient(180deg, #c35858, #6f1b1b) stretch;
+    border-image-slice: 1;
+    border-width: 2px;
+    border-style: solid;
+}
+.border-gradient-gray {
+    border-image: linear-gradient(180deg, #939393, #403f3f) stretch;
+    border-image-slice: 1;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.border-separator {
+    border-image: url("#{$image-path}petits/separator.svg");
+    border-image-slice: 1;
+    border-right-width: 1px;
+    border-style: solid;
+}
+
+.border-separator-container{
+    border-bottom: 2px solid $yellow-600;
+}
+
+@each $key, $value in $grays {
+    .border-gray-#{$key} {
+        border-color: #{$value} !important;
+    }
+}
+@each $key, $value in $purples {
+    .border-#{$key} {
+        border-color: #{$value} !important;
+    }
+}
+
+@each $key, $value in $cyans {
+    .border-#{$key} {
+        border-color: #{$value} !important;
+    }
+}
+
+@each $key, $value in $yellows {
+    .border-#{$key} {
+        border-color: #{$value} !important;
+    }
+}

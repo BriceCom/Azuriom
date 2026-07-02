@@ -1,0 +1,11 @@
+{
+    "id": "pomodoro",
+    "name": "Pomodoro",
+    "description": "Simple theme, hero, trailer, features, testimonial, custom color.",
+    "version": "1.0.2",
+    "url": "https://market.azuriom.com/resources/197",
+    "authors": [
+        "Bricec6"
+    ],
+    "azuriom_api": "1.1.0"
+}

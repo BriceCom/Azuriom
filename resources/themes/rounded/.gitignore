@@ -1,0 +1,6 @@
+/versions/
+node_modules/
+config.json
+/ressources/
+theme_dev.json
+

@@ -1,0 +1,74 @@
+.state-point {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 8px;
+    height: 8px;
+    border-radius: 500%;
+    background-color: #B6FF76;
+
+    @keyframes outline-width {
+        from {
+            outline-width: 1px
+        }
+        to {
+            outline-width: 3px
+        }
+    }
+
+    &:after {
+        position: absolute;
+        content: "";
+        width: 12px;
+        height: 12px;
+        background-color: #B6FF76;
+        border-radius: 500%;
+        animation: point-width 1.5s ease-in infinite;
+
+        @keyframes point-width {
+            from {
+                transform: scale(0.5);
+                opacity: 0.65;
+            }
+            to {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+        }
+    }
+}
+
+
+.radial-gradient {
+    background: radial-gradient(ellipse at bottom, #4F4233 0%, var(--di-dark) 80%);
+    color: var(--di-white)
+}
+
+
+/* Details html for accordion */
+details {
+    &[open] summary::after {
+        transform: rotate(-180deg);
+    }
+
+    summary {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &::marker, &::-webkit-details-marker {
+            display: none;
+            content: "";
+        }
+
+        &::after {
+            content: url('data:image/svg+xml,<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.469 7.46912C2.53867 7.39927 2.62143 7.34386 2.71255 7.30605C2.80367 7.26824 2.90135 7.24878 3 7.24878C3.09865 7.24878 3.19633 7.26824 3.28745 7.30605C3.37857 7.34386 3.46133 7.39927 3.531 7.46912L12 15.9396L20.469 7.46912C20.5387 7.39939 20.6215 7.34407 20.7126 7.30633C20.8037 7.2686 20.9014 7.24917 21 7.24917C21.0986 7.24917 21.1963 7.2686 21.2874 7.30633C21.3785 7.34407 21.4613 7.39939 21.531 7.46912C21.6007 7.53885 21.656 7.62164 21.6938 7.71274C21.7315 7.80385 21.7509 7.9015 21.7509 8.00012C21.7509 8.09874 21.7315 8.19639 21.6938 8.2875C21.656 8.3786 21.6007 8.46139 21.531 8.53112L12.531 17.5311C12.4613 17.601 12.3786 17.6564 12.2874 17.6942C12.1963 17.732 12.0986 17.7515 12 17.7515C11.9013 17.7515 11.8037 17.732 11.7125 17.6942C11.6214 17.6564 11.5387 17.601 11.469 17.5311L2.469 8.53112C2.39915 8.46145 2.34374 8.37869 2.30593 8.28757C2.26812 8.19645 2.24866 8.09877 2.24866 8.00012C2.24866 7.90147 2.26812 7.80379 2.30593 7.71267C2.34374 7.62155 2.39915 7.53879 2.469 7.46912Z" fill="black"/></svg>');
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-left: auto;
+            transition: transform .2s ease-in-out;
+        }
+    }
+}

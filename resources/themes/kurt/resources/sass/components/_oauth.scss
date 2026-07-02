@@ -1,0 +1,20 @@
+.oauth{
+    &-spacer{
+        position: relative;
+        overflow: visible;
+        opacity: 1;
+        border-color: var(--di-border-color);
+
+        &:after{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            content: attr(data-content);
+            color: var(--di-card-color);
+            background: var(--di-card-bg);
+            padding: 4px 8px;
+            text-transform: lowercase;
+        }
+    }
+}

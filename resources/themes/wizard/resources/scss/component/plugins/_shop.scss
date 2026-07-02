@@ -1,0 +1,111 @@
+#content_shop {
+    p {
+        span {
+            color: $yellow-600
+        }
+    }
+
+    .block_title {
+        img {
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+
+    .shop__card {
+        .card-img-top {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        h4 {
+            position: relative;
+            @extend .border-gradient;
+            font-size: map-get($font-sizes, 7);
+            padding: 0.5rem 2rem;
+            font-weight: $font-weight-semibold;
+            background-image: radial-gradient(at 50% 50%, #4b1849 0, #330c32 100%);
+            color: $purple-200;
+            text-decoration: none;
+            border: 0;
+            border-top: 2px solid #d69e2e;
+
+            &:hover {
+                &:before {
+                    opacity: 1;
+                    transform: translate(8px, -50%);
+                }
+
+                &:after {
+                    opacity: 1;
+                    transform: translate(calc(100% - 24px), -50%);
+                }
+            }
+
+            &:after {
+                right: 0;
+                transform: translate(calc(100% - 16px), -50%);
+            }
+
+            &:before {
+                left: 0;
+                transform: translateY(-50%);
+            }
+
+            &:after,
+            &:before {
+                content: "";
+                position: absolute;
+                width: 1rem;
+                height: 1rem;
+                background-position: 50%;
+                opacity: 0;
+                top: 50%;
+                background-image: url("#{$image-path}petits/badge.png");
+                transition: all .2s ease;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+    }
+
+    .card {
+        @extend .border-gradient;
+        background-color: $purple-900;
+    }
+    .table__grade {
+        tbody {
+            svg {
+                vertical-align: sub;
+                width: 1.25rem;
+                height: 1.25rem;
+            }
+
+        }
+
+        th,
+        td {
+            text-align: center;
+            padding: .5rem 1rem;
+        }
+
+        &-title {
+
+        }
+
+        td {
+            color: $purple-200;
+        }
+
+        tr,
+        td {
+            border: none;
+        }
+
+        th:nth-child(2n),
+        td:nth-child(2n) {
+            background-color: $purple-780;
+        }
+    }
+}

@@ -1,0 +1,170 @@
+{
+    "settings": {
+        "server": {
+            "text": null,
+            "url": null
+        }
+    },
+    "home": {
+        "news": {
+            "title": null,
+            "text": null
+        },
+        "cta2": {
+            "img": null,
+            "title": null,
+            "text": null,
+            "button": {
+                "icon": null,
+                "text": null,
+                "url": null
+            }
+        },
+        "cta": {
+            "img": null,
+            "title": null,
+            "text": null,
+            "button": {
+                "icon": null,
+                "text": null,
+                "url": null
+            }
+        }
+    },
+    "header": {
+        "index": {
+            "hero": {
+                "img": {
+                    "height": "64"
+                }
+            },
+            "button": {
+                "icon": "bi bi-hangbag-fill",
+                "text": "Boutique",
+                "url": "/shop"
+            }
+        },
+        "modules": {
+            "announceBar": {
+                "text": null,
+                "bg": "#892958"
+            }
+        },
+        "hero": {
+            "joinText": null,
+            "carousel": [
+                "background.jpg",
+                "backgrond.png",
+                "bghyx.png",
+                "background.jpg",
+                null,
+                null
+            ]
+        }
+    },
+    "footer": {
+        "index": {
+            "button": {
+                "title": "Soutenez-nous",
+                "icon": "bi bi-bag-fill",
+                "text": "Terms",
+                "url": "http://azuriomm.test/"
+            },
+            "links": {
+                "1": {
+                    "title": "Important",
+                    "links": [
+                        {
+                            "target": "on",
+                            "name": "Terms",
+                            "href": "http://azuriomm.test/"
+                        }
+                    ]
+                },
+                "2": {
+                    "title": "Important",
+                    "links": [
+                        {
+                            "target": "on",
+                            "name": "Terms",
+                            "href": "http://azuriomm.test/"
+                        },
+                        {
+                            "target": "on",
+                            "name": "Terms",
+                            "href": "http://azuriomm.test/"
+                        },
+                        {
+                            "target": "on",
+                            "name": "Terms",
+                            "href": "http://azuriomm.test/"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "vote": {
+        "title": null,
+        "text": null,
+        "chooseSiteText": null,
+        "rewardTitle": null,
+        "rewardText": null,
+        "topTitle": null,
+        "topText": null,
+        "rewards": {
+            "on": "on",
+            "top": {
+                "1": "cc",
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null,
+                "8": null,
+                "9": null,
+                "10": null
+            },
+            "topColor": {
+                "1": "#f8d32e",
+                "2": "#3d55b3",
+                "3": "#f8d32e",
+                "4": "#f8d32e",
+                "5": "#f8d32e",
+                "6": "#f8d32e",
+                "7": "#f8d32e",
+                "8": "#f8d32e",
+                "9": "#f8d32e",
+                "10": "#f8d32e"
+            }
+        }
+    },
+    "style": {
+        "index": {
+            "font": {
+                "url": null,
+                "name": null
+            }
+        },
+        "colors": {
+            "dark": {
+                "primary": "#4caf50",
+                "secondary": "#757575",
+                "tertiary": "#fca500",
+                "quaternary": "#d96d3c",
+                "body": "#0b0907",
+                "black": "#111111",
+                "dark": "#111111",
+                "white": "#ffffff",
+                "light": "#1e1e1e",
+                "color": "#ffffff",
+                "color-dark": "#6c757d",
+                "success": "#198754",
+                "info": "#0dcaf0",
+                "warning": "#ffc107",
+                "danger": "#dc3545"
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "id": "wizard",
+    "name": "AnaCraft",
+    "description": "Theme for Azuriom By Latshow",
+    "version": "1.0.0",
+    "url": "https://discord.gg/wmYrG2c",
+    "azuriom_api": "1.0.0",
+    "authors": [
+        "Latshow#4681 - linedev.fr",
+        "Edits : Bricec6 - dixept.fr"
+    ]
+}

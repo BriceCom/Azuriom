@@ -1,0 +1,58 @@
+#wiki {
+    #app {
+    }
+}
+#app {
+    .background {
+        z-index:-1;
+        position: absolute;
+        inset: 0;
+
+        &-content{
+            z-index: 2;
+            position: absolute;
+            top: 70px;
+            right: 0;
+            width: 100%;
+
+
+            &>div:first-child{
+                min-height: 480px;
+            }
+
+            @media (min-width: 767px) {
+                top: 144px;
+            }
+        }
+
+        &-wrapper {
+            position: relative;
+            height: 660px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                height: 100%;
+                background: radial-gradient(100% 100% at 50% 0%, rgba(16, 16, 16, 0.00) 0%, #121212 100%), transparent 50% / cover no-repeat;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+
+            div:has(.logo){
+                img{
+                    width: 50%;
+                    @media (min-width: 767px) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

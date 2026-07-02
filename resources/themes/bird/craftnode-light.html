@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CraftNode — Serveur Minecraft Français</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bs-body-font-family: 'Sora', sans-serif;
+      --cn-green: #22c55e;
+      --cn-green-light: #dcfce7;
+      --cn-green-border: #bbf7d0;
+      --cn-dark: #0f172a;
+      --cn-muted: #64748b;
+      --cn-surface: #f8fafc;
+      --cn-border: #e2e8f0;
+    }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      background: #fff;
+      color: var(--cn-dark);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--cn-border);
+      padding: 0.75rem 0;
+    }
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--cn-dark) !important;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .brand-dot {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--cn-green);
+      display: inline-block;
+    }
+    .nav-link {
+      font-size: 0.875rem;
+      color: var(--cn-muted) !important;
+      transition: color .2s;
+    }
+    .nav-link:hover { color: var(--cn-dark) !important; }
+    .btn-play {
+      background: var(--cn-green);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 7px 20px;
+      border-radius: 6px;
+      border: none;
+      letter-spacing: .02em;
+      transition: opacity .2s;
+    }
+    .btn-play:hover { opacity: .85; color: #fff; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, #f0fdf4 0%, #f8fafc 55%, #eff6ff 100%);
+      padding: 7rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -120px; top: -80px;
+      width: 520px; height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(34,197,94,.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--cn-green-light);
+      border: 1px solid var(--cn-green-border);
+      color: #15803d;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-badge-dot {
+      width: 6px; height: 6px;
+      background: var(--cn-green);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; }
+      50% { opacity: .4; }
+    }
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+      color: var(--cn-dark);
+    }
+    .hero-title span { color: var(--cn-green); }
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--cn-muted);
+      font-weight: 300;
+      line-height: 1.75;
+      max-width: 480px;
+      margin-top: 1rem;
+    }
+    .ip-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      border: 1px solid var(--cn-border);
+      border-radius: 8px;
+      padding: 9px 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.05);
+      margin-top: 1.5rem;
+    }
+    .ip-chip-label {
+      font-size: 0.65rem;
+      color: var(--cn-muted);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+    .ip-chip-addr {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--cn-dark);
+    }
+    .ip-chip-status {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 0.72rem;
+      color: #15803d;
+      font-weight: 600;
+    }
+    .ip-chip-status::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--cn-green);
+      border-radius: 50%;
+    }
+    .hero-img-wrap {
+      position: relative;
+    }
+    .hero-img-mock {
+      background: #fff;
+      border: 1px solid var(--cn-border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 40px rgba(0,0,0,.08);
+    }
+    .mc-screen {
+      background: #0f172a;
+      border-radius: 10px;
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .mc-screen-text {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--cn-green);
+      font-size: 0.75rem;
+      text-align: center;
+      z-index: 2;
+    }
+    .mc-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(34,197,94,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34,197,94,.05) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .hero-stat-row {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.25rem;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat-value {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--cn-dark);
+      letter-spacing: -.02em;
+    }
+    .hero-stat-label {
+      font-size: 0.7rem;
+      color: var(--cn-muted);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    /* ── SECTION COMMON ── */
+    .section-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #15803d;
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: -.02em;
+      line-height: 1.2;
+      color: var(--cn-dark);
+    }
+    .section-sub {
+      font-size: 0.95rem;
+      color: var(--cn-muted);
+      font-weight: 300;
+      line-height: 1.75;
+      margin-top: 0.6rem;
+    }
+
+    /* ── SERVERS ── */
+    .servers { background: var(--cn-surface); }
+    .server-card {
+      background: #fff;
+      border: 1px solid var(--cn-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .server-card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,.07);
+      transform: translateY(-2px);
+    }
+    .server-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .server-name {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .badge-online {
+      background: var(--cn-green-light);
+      color: #15803d;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+    .badge-offline {
+      background: #fee2e2;
+      color: #b91c1c;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+    .server-players {
+      font-size: 0.8rem;
+      color: var(--cn-muted);
+      margin-bottom: 0.5rem;
+    }
+    .progress {
+      height: 4px;
+      background: #e2e8f0;
+      border-radius: 4px;
+    }
+    .progress-bar { background: var(--cn-green); border-radius: 4px; }
+    .server-ip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      background: var(--cn-surface);
+      color: var(--cn-muted);
+      padding: 5px 10px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 0.75rem;
+      border: 1px solid var(--cn-border);
+    }
+    .server-mode-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--cn-green-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* ── TEXT-IMAGE BLOCK ── */
+    .textimage { background: #fff; }
+    .textimage-img {
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      border-radius: 16px;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--cn-green-border);
+      position: relative;
+      overflow: hidden;
+    }
+    .textimage-img-inner {
+      position: relative; z-index: 2; text-align: center;
+    }
+    .textimage-img-icon {
+      font-size: 4rem;
+      line-height: 1;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .textimage-img-label {
+      font-size: 0.75rem;
+      color: #15803d;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+    .textimage-img-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(34,197,94,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34,197,94,.06) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .feature-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--cn-surface);
+      border: 1px solid var(--cn-border);
+      border-radius: 100px;
+      font-size: 0.78rem;
+      padding: 5px 14px;
+      color: var(--cn-dark);
+      font-weight: 500;
+      margin: 4px 4px 0 0;
+    }
+    .feature-pill i { color: var(--cn-green); font-size: 0.8rem; }
+
+    /* ── STEPS ── */
+    .steps-section { background: var(--cn-surface); }
+    .step-item {
+      display: flex;
+      gap: 1.25rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--cn-border);
+    }
+    .step-item:last-child { border-bottom: none; }
+    .step-num {
+      flex-shrink: 0;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--cn-green-light);
+      border: 1px solid var(--cn-green-border);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #15803d;
+      margin-top: 2px;
+    }
+    .step-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 3px; }
+    .step-text { font-size: 0.85rem; color: var(--cn-muted); line-height: 1.65; }
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      background: var(--cn-green-light);
+      color: #15803d;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .steps-aside {
+      background: #fff;
+      border: 1px solid var(--cn-border);
+      border-radius: 14px;
+      padding: 2rem;
+    }
+    .steps-aside-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--cn-muted);
+      margin-bottom: 1rem;
+    }
+    .platform-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid var(--cn-border);
+      font-size: 0.85rem;
+    }
+    .platform-row:last-child { border-bottom: none; }
+    .platform-name { font-weight: 600; display: flex; align-items: center; gap: 8px; }
+    .platform-name i { color: var(--cn-green); }
+    .platform-compat {
+      font-size: 0.7rem;
+      background: var(--cn-green-light);
+      color: #15803d;
+      padding: 2px 9px;
+      border-radius: 100px;
+      font-weight: 700;
+    }
+
+    /* ── WHY US ── */
+    .why { background: #fff; }
+    .why-card {
+      border: 1px solid var(--cn-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      height: 100%;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .why-card:hover {
+      border-color: var(--cn-green-border);
+      box-shadow: 0 4px 20px rgba(34,197,94,.08);
+    }
+    .why-icon {
+      width: 42px; height: 42px;
+      border-radius: 10px;
+      background: var(--cn-green-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      border: 1px solid var(--cn-green-border);
+    }
+    .why-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .why-text { font-size: 0.82rem; color: var(--cn-muted); line-height: 1.65; }
+
+    /* ── NEWS ── */
+    .news-section { background: var(--cn-surface); }
+    .news-card {
+      background: #fff;
+      border: 1px solid var(--cn-border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .news-card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,.07);
+      transform: translateY(-2px);
+    }
+    .news-thumb {
+      width: 100%;
+      aspect-ratio: 16/8;
+      background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      border-bottom: 1px solid var(--cn-border);
+      position: relative;
+      overflow: hidden;
+    }
+    .news-thumb-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(34,197,94,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34,197,94,.05) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .news-body { padding: 1.25rem; }
+    .news-meta {
+      font-size: 0.72rem;
+      color: var(--cn-muted);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 0.4rem;
+    }
+    .news-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+      color: var(--cn-dark);
+    }
+    .news-excerpt {
+      font-size: 0.82rem;
+      color: var(--cn-muted);
+      line-height: 1.65;
+      margin-bottom: 0.75rem;
+    }
+    .news-link {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #15803d;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .news-link:hover { color: var(--cn-green); }
+
+    /* ── STATS ── */
+    .stats { background: var(--cn-dark); }
+    .stat-card {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-right: 1px solid rgba(255,255,255,.07);
+    }
+    .stat-card:last-child { border-right: none; }
+    .stat-value {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -.03em;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-value span { color: var(--cn-green); }
+    .stat-label {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,.4);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: linear-gradient(135deg, #f0fdf4 0%, #fff 50%, #eff6ff 100%);
+      border-top: 1px solid var(--cn-border);
+    }
+    .cta-inner {
+      background: #fff;
+      border: 1px solid var(--cn-green-border);
+      border-radius: 20px;
+      padding: 4rem 3rem;
+      text-align: center;
+      box-shadow: 0 4px 40px rgba(34,197,94,.06);
+    }
+    .cta-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -.02em;
+      color: var(--cn-dark);
+    }
+    .cta-sub {
+      font-size: 0.95rem;
+      color: var(--cn-muted);
+      font-weight: 300;
+      margin-top: 0.5rem;
+    }
+    .btn-green {
+      background: var(--cn-green);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 12px 28px;
+      border-radius: 8px;
+      border: none;
+      letter-spacing: .01em;
+      transition: opacity .2s, transform .15s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-green:hover { opacity: .85; color: #fff; transform: translateY(-1px); }
+    .btn-outline-green {
+      background: transparent;
+      color: #15803d;
+      font-weight: 600;
+      font-size: 0.875rem;
+      padding: 12px 28px;
+      border-radius: 8px;
+      border: 1px solid var(--cn-green-border);
+      letter-spacing: .01em;
+      transition: all .2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-outline-green:hover {
+      background: var(--cn-green-light);
+      color: #15803d;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--cn-dark);
+      color: rgba(255,255,255,.5);
+      border-top: 1px solid rgba(255,255,255,.05);
+    }
+    .footer-brand {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .footer-desc {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,.35);
+      margin-top: 0.5rem;
+      line-height: 1.65;
+      max-width: 240px;
+    }
+    .footer-heading {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: rgba(255,255,255,.3);
+      margin-bottom: 1rem;
+    }
+    .footer-links { list-style: none; padding: 0; margin: 0; }
+    .footer-links li { margin-bottom: 0.5rem; }
+    .footer-links a {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,.5);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: 1.25rem 0;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,.25);
+    }
+    .social-link {
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,.5);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all .2s;
+    }
+    .social-link:hover {
+      background: rgba(34,197,94,.15);
+      border-color: rgba(34,197,94,.3);
+      color: var(--cn-green);
+    }
+
+    /* ── UTILS ── */
+    .sticky-top { top: 0; }
+    hr.section-divider {
+      border: none;
+      border-top: 1px solid var(--cn-border);
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════ -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <span class="brand-dot"></span>
+      CraftNode
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto gap-1">
+        <li class="nav-item"><a class="nav-link px-3" href="#servers">Serveurs</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="#join">Rejoindre</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="#why">Pourquoi nous</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="#news">Actualités</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="#">Boutique</a></li>
+      </ul>
+      <a href="#join" class="btn btn-play ms-2">Jouer maintenant</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════
+     HERO
+═══════════════════════════════════════ -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-6">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          1 247 joueurs en ligne
+        </div>
+        <h1 class="hero-title">
+          Le serveur Minecraft<br>
+          <span>sans compromis.</span>
+        </h1>
+        <p class="hero-subtitle">
+          Survie, PvP, Skyblock, OneBlock — une communauté francophone active depuis 2021. Java & Bedrock, 100 % gratuit.
+        </p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="#join" class="btn btn-green">Commencer à jouer</a>
+          <a href="#servers" class="btn btn-outline-green">Voir les serveurs</a>
+        </div>
+        <div class="ip-chip">
+          <span class="ip-chip-label">IP</span>
+          <span class="ip-chip-addr">play.craftnode.fr</span>
+          <span class="ip-chip-status">En ligne</span>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-img-mock">
+          <div class="mc-screen">
+            <div class="mc-grid"></div>
+            <div class="mc-screen-text">
+              <div style="font-size:1.8rem;margin-bottom:.5rem;">⛏</div>
+              Bienvenue sur CraftNode<br>
+              <span style="color:rgba(74,222,128,.6);font-size:.65rem;">play.craftnode.fr</span>
+            </div>
+          </div>
+          <div class="hero-stat-row justify-content-around mt-3">
+            <div class="hero-stat">
+              <div class="hero-stat-value">+500k</div>
+              <div class="hero-stat-label">Joueurs</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value">40k</div>
+              <div class="hero-stat-label">Discord</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value">4.8/5</div>
+              <div class="hero-stat-label">Note</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value">2021</div>
+              <div class="hero-stat-label">Depuis</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+
+<!-- ═══════════════════════════════════════
+     SERVERS
+═══════════════════════════════════════ -->
+<section class="servers py-6" id="servers" style="padding:5rem 0;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-eyebrow">Nos serveurs</p>
+      <h2 class="section-title">Choisis ton terrain de jeu.</h2>
+      <p class="section-sub mx-auto" style="max-width:460px;">
+        Trois mondes, trois ambiances. Rejoins celui qui te correspond.
+      </p>
+    </div>
+    <div class="row g-4">
+      <!-- Survie PvP -->
+      <div class="col-md-4">
+        <div class="server-card h-100">
+          <div class="server-mode-icon">⚔️</div>
+          <div class="server-card-header">
+            <span class="server-name">Survie PvP</span>
+            <span class="badge-online">En ligne</span>
+          </div>
+          <p class="server-players">847 / 2 000 joueurs connectés</p>
+          <div class="progress"><div class="progress-bar" style="width:42%"></div></div>
+          <p style="font-size:.8rem;color:var(--cn-muted);margin-top:.75rem;line-height:1.6;">
+            Construis, combats, survie. Le mode classique pour les joueurs qui aiment l'action et la stratégie.
+          </p>
+          <code class="server-ip">pvp.craftnode.fr</code>
+        </div>
+      </div>
+      <!-- Skyblock -->
+      <div class="col-md-4">
+        <div class="server-card h-100" style="border-color:var(--cn-green-border);">
+          <div class="server-mode-icon">🏝️</div>
+          <div class="server-card-header">
+            <span class="server-name">Skyblock</span>
+            <span class="badge-online">En ligne</span>
+          </div>
+          <p class="server-players">312 / 1 000 joueurs connectés</p>
+          <div class="progress"><div class="progress-bar" style="width:31%"></div></div>
+          <p style="font-size:.8rem;color:var(--cn-muted);margin-top:.75rem;line-height:1.6;">
+            Développe ton île dans les nuages. Ressources limitées, ambitions illimitées.
+          </p>
+          <code class="server-ip">sky.craftnode.fr</code>
+        </div>
+      </div>
+      <!-- OneBlock -->
+      <div class="col-md-4">
+        <div class="server-card h-100">
+          <div class="server-mode-icon">🟫</div>
+          <div class="server-card-header">
+            <span class="server-name">OneBlock</span>
+            <span class="badge-online">En ligne</span>
+          </div>
+          <p class="server-players">88 / 500 joueurs connectés</p>
+          <div class="progress"><div class="progress-bar" style="width:18%"></div></div>
+          <p style="font-size:.8rem;color:var(--cn-muted);margin-top:.75rem;line-height:1.6;">
+            Un seul bloc au départ, l'infini comme horizon. Casse, progresse, domine.
+          </p>
+          <code class="server-ip">one.craftnode.fr</code>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+
+<!-- ═══════════════════════════════════════
+     TEXT + IMAGE BLOCK
+═══════════════════════════════════════ -->
+<section class="textimage py-5" id="about" style="padding:5rem 0;">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-5 order-lg-2">
+        <div class="textimage-img">
+          <div class="textimage-img-grid"></div>
+          <div class="textimage-img-inner">
+            <span class="textimage-img-icon">🌍</span>
+            <span class="textimage-img-label">Survie Earth</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 order-lg-1 offset-lg-1">
+        <p class="section-eyebrow">À propos</p>
+        <h2 class="section-title">Un serveur francophone<br>depuis 2021.</h2>
+        <p class="section-sub">
+          CraftNode est un serveur Minecraft communautaire accessible gratuitement depuis Java et Bedrock — que tu joues sur PC, Switch, PlayStation ou mobile. Plus de 500 000 joueurs ont rejoint l'aventure depuis notre ouverture.
+        </p>
+        <p class="section-sub mt-2">
+          Aucun Pay-to-Win. Aucun abonnement. Tu rejoins, tu joues, tu progresses. Une équipe de modération dédiée veille en permanence à l'équité et à la bonne ambiance.
+        </p>
+        <div class="mt-4">
+          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Gratuit à vie</span>
+          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Java & Bedrock</span>
+          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> 0 Pay-to-Win</span>
+          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Anti-cheat maison</span>
+          <span class="feature-pill"><i class="bi bi-check-circle-fill"></i> Staff réactif</span>
+        </div>
+        <a href="#join" class="btn btn-green mt-4">Rejoindre l'aventure</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+
+<!-- ═══════════════════════════════════════
+     COMMENT REJOINDRE
+═══════════════════════════════════════ -->
+<section class="steps-section" id="join" style="padding:5rem 0;">
+  <div class="container">
+    <div class="row gy-5 align-items-start">
+      <div class="col-lg-6">
+        <p class="section-eyebrow">Comment rejoindre</p>
+        <h2 class="section-title">En ligne en<br>moins de 60 secondes.</h2>
+        <p class="section-sub">Aucun mod, aucune inscription obligatoire. Trois étapes et tu joues.</p>
+
+        <div class="mt-4">
+          <div class="step-item">
+            <div class="step-num">01</div>
+            <div>
+              <div class="step-title">Ouvre Minecraft</div>
+              <div class="step-text">Lance Java Edition ou Bedrock Edition, puis rends-toi dans le menu <strong>Multijoueur</strong>.</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">02</div>
+            <div>
+              <div class="step-title">Ajoute le serveur</div>
+              <div class="step-text">Clique sur <strong>Ajouter un serveur</strong> et entre l'adresse <code>play.craftnode.fr</code> dans le champ IP.</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">03</div>
+            <div>
+              <div class="step-title">Connecte-toi et joue !</div>
+              <div class="step-text">Sélectionne CraftNode dans ta liste et rejoins. Choisis ton mode de jeu et c'est parti — gratuit pour toujours.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 offset-lg-1">
+        <div class="steps-aside">
+          <p class="steps-aside-title">Plateformes compatibles</p>
+          <div class="platform-row">
+            <span class="platform-name"><i class="bi bi-display"></i> PC (Java)</span>
+            <span class="platform-compat">Compatible</span>
+          </div>
+          <div class="platform-row">
+            <span class="platform-name"><i class="bi bi-windows"></i> PC (Bedrock)</span>
+            <span class="platform-compat">Compatible</span>
+          </div>
+          <div class="platform-row">
+            <span class="platform-name"><i class="bi bi-phone"></i> Mobile</span>
+            <span class="platform-compat">Compatible</span>
+          </div>
+          <div class="platform-row">
+            <span class="platform-name"><i class="bi bi-controller"></i> Xbox</span>
+            <span class="platform-compat">Compatible</span>
+          </div>
+          <div class="platform-row">
+            <span class="platform-name"><i class="bi bi-controller"></i> PlayStation</span>
+            <span class="platform-compat">Compatible</span>
+          </div>
+          <div class="platform-row">
+            <span class="platform-name"><i class="bi bi-joystick"></i> Nintendo Switch</span>
+            <span class="platform-compat">Compatible</span>
+          </div>
+          <div class="mt-3 p-3" style="background:var(--cn-green-light);border-radius:10px;border:1px solid var(--cn-green-border);">
+            <p style="font-size:.75rem;color:#15803d;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;">Adresse du serveur</p>
+            <p style="font-family:'JetBrains Mono',monospace;font-size:1rem;font-weight:600;color:#15803d;margin:0;">play.craftnode.fr</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+
+<!-- ═══════════════════════════════════════
+     POURQUOI NOUS
+═══════════════════════════════════════ -->
+<section class="why" id="why" style="padding:5rem 0;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-eyebrow">Pourquoi nous choisir</p>
+      <h2 class="section-title">Tout ce qui fait la différence.</h2>
+      <p class="section-sub mx-auto" style="max-width:460px;">
+        On ne fait pas de compromis sur les points qui comptent vraiment pour les joueurs.
+      </p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="why-card">
+          <div class="why-icon"><i class="bi bi-lightning-charge-fill" style="color:#15803d;"></i></div>
+          <div class="why-title">Performances</div>
+          <div class="why-text">Serveurs dédiés haute performance. Ping inférieur à 20ms pour les joueurs européens. Zéro lag garanti.</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="why-card">
+          <div class="why-icon"><i class="bi bi-shield-fill-check" style="color:#15803d;"></i></div>
+          <div class="why-title">Anti-cheat</div>
+          <div class="why-text">Système anti-triche maison, mis à jour chaque semaine. Un jeu équitable pour tous, sans exception.</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="why-card">
+          <div class="why-icon"><i class="bi bi-people-fill" style="color:#15803d;"></i></div>
+          <div class="why-title">Communauté</div>
+          <div class="why-text">40 000+ membres Discord. Événements hebdomadaires, staff bienveillant, entraide permanente.</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="why-card">
+          <div class="why-icon"><i class="bi bi-currency-euro" style="color:#15803d;"></i></div>
+          <div class="why-title">100% Gratuit</div>
+          <div class="why-text">Aucun Pay-to-Win, aucun abonnement. Tous les avantages boutique sont aussi obtenables en jouant.</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="why-card">
+          <div class="why-icon"><i class="bi bi-phone-fill" style="color:#15803d;"></i></div>
+          <div class="why-title">Multiplateforme</div>
+          <div class="why-text">PC, mobile, console — joue depuis n'importe quel appareil. Java et Bedrock jouent ensemble.</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="why-card">
+          <div class="why-icon"><i class="bi bi-controller" style="color:#15803d;"></i></div>
+          <div class="why-title">4 Modes de jeu</div>
+          <div class="why-text">Survie PvP, Skyblock, OneBlock, Survie Earth. Un mode pour chaque style de joueur.</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="why-card">
+          <div class="why-icon"><i class="bi bi-wrench-adjustable" style="color:#15803d;"></i></div>
+          <div class="why-title">Plugins uniques</div>
+          <div class="why-text">Fonctionnalités développées en interne que tu ne trouveras nulle part ailleurs. Mises à jour régulières.</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="why-card">
+          <div class="why-icon"><i class="bi bi-headset" style="color:#15803d;"></i></div>
+          <div class="why-title">Support réactif</div>
+          <div class="why-text">Équipe de modération disponible 7j/7. Ticket répondu en moins de 2h en moyenne.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+
+<!-- ═══════════════════════════════════════
+     ACTUALITÉS
+═══════════════════════════════════════ -->
+<section class="news-section" id="news" style="padding:5rem 0;">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-end justify-content-between mb-5 gap-3">
+      <div>
+        <p class="section-eyebrow">Actualités</p>
+        <h2 class="section-title">Les dernières nouvelles.</h2>
+      </div>
+      <a href="#" class="btn btn-outline-green" style="padding:9px 22px;font-size:.82rem;">Voir toutes les actualités</a>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="news-card h-100">
+          <div class="news-thumb">
+            <div class="news-thumb-grid"></div>
+            <span style="position:relative;font-size:2.5rem;">🗺️</span>
+          </div>
+          <div class="news-body">
+            <p class="news-meta">28 avril 2026 · Mise à jour</p>
+            <h3 class="news-title">Survie Earth : nouvelle carte 1:1000</h3>
+            <p class="news-excerpt">La carte Survie Earth a été entièrement reconstruite à l'échelle 1:1000. Découvrez des biomes encore plus fidèles à la réalité.</p>
+            <a href="#" class="news-link">Lire la suite <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="news-card h-100">
+          <div class="news-thumb">
+            <div class="news-thumb-grid"></div>
+            <span style="position:relative;font-size:2.5rem;">🏆</span>
+          </div>
+          <div class="news-body">
+            <p class="news-meta">15 avril 2026 · Événement</p>
+            <h3 class="news-title">Tournoi PvP printanier — inscriptions ouvertes</h3>
+            <p class="news-excerpt">Le grand tournoi saisonnier est de retour. 64 joueurs, élimination directe, des récompenses exclusives à la clé.</p>
+            <a href="#" class="news-link">Lire la suite <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="news-card h-100">
+          <div class="news-thumb">
+            <div class="news-thumb-grid"></div>
+            <span style="position:relative;font-size:2.5rem;">🔧</span>
+          </div>
+          <div class="news-body">
+            <p class="news-meta">3 avril 2026 · Patch</p>
+            <h3 class="news-title">Patch 4.2 — Anti-cheat & optimisations</h3>
+            <p class="news-excerpt">Le patch 4.2 déploie une nouvelle version de notre système anti-cheat et réduit la latence de 15% en heure de pointe.</p>
+            <a href="#" class="news-link">Lire la suite <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+
+<!-- ═══════════════════════════════════════
+     STATS
+═══════════════════════════════════════ -->
+<section class="stats" style="padding:0;">
+  <div class="container-fluid px-0">
+    <div class="row g-0">
+      <div class="col-6 col-md-3">
+        <div class="stat-card">
+          <div class="stat-value"><span>+500k</span></div>
+          <div class="stat-label">Joueurs uniques</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-card">
+          <div class="stat-value">40k</div>
+          <div class="stat-label">Membres Discord</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-card">
+          <div class="stat-value"><span>1 247</span></div>
+          <div class="stat-label">En ligne maintenant</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-card" style="border-right:none;">
+          <div class="stat-value">4.8<span>/5</span></div>
+          <div class="stat-label">Note moyenne</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     CTA
+═══════════════════════════════════════ -->
+<section class="cta-section" style="padding:5rem 0;">
+  <div class="container">
+    <div class="cta-inner">
+      <p class="section-eyebrow" style="margin-bottom:.75rem;">Prêt ?</p>
+      <h2 class="cta-title">Rejoins l'aventure dès aujourd'hui.</h2>
+      <p class="cta-sub">Gratuit. Sans inscription. 1 247 joueurs t'attendent en ce moment.</p>
+      <div class="d-flex flex-wrap gap-3 justify-content-center mt-4">
+        <a href="#join" class="btn btn-green" style="padding:13px 32px;font-size:.9rem;">
+          <i class="bi bi-play-fill me-1"></i> Commencer à jouer
+        </a>
+        <a href="#" class="btn btn-outline-green" style="padding:13px 28px;font-size:.9rem;">
+          <i class="bi bi-discord me-1"></i> Rejoindre le Discord
+        </a>
+      </div>
+      <div class="ip-chip mt-4" style="display:inline-flex;">
+        <span class="ip-chip-label">IP</span>
+        <span class="ip-chip-addr">play.craftnode.fr</span>
+        <span class="ip-chip-status">En ligne</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+<footer style="padding:4rem 0 0;">
+  <div class="container">
+    <div class="row gy-4 pb-4" style="border-bottom:1px solid rgba(255,255,255,.06);">
+      <div class="col-lg-4">
+        <a href="#" class="footer-brand mb-3 d-inline-flex">
+          <span class="brand-dot me-2"></span>CraftNode
+        </a>
+        <p class="footer-desc">
+          Le serveur Minecraft francophone le plus joué depuis 2021. Java & Bedrock, gratuit, sans Pay-to-Win.
+        </p>
+        <div class="d-flex gap-2 mt-3">
+          <a href="#" class="social-link"><i class="bi bi-discord"></i></a>
+          <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="social-link"><i class="bi bi-youtube"></i></a>
+          <a href="#" class="social-link"><i class="bi bi-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2 offset-lg-1">
+        <p class="footer-heading">Jouer</p>
+        <ul class="footer-links">
+          <li><a href="#">Survie PvP</a></li>
+          <li><a href="#">Skyblock</a></li>
+          <li><a href="#">OneBlock</a></li>
+          <li><a href="#">Survie Earth</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <p class="footer-heading">Site</p>
+        <ul class="footer-links">
+          <li><a href="#">Voter</a></li>
+          <li><a href="#">Boutique</a></li>
+          <li><a href="#">Classements</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <p class="footer-heading">Légal</p>
+        <ul class="footer-links">
+          <li><a href="#">CGV</a></li>
+          <li><a href="#">CGU</a></li>
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <span>© 2026 CraftNode — Non affilié à Mojang Studios</span>
+      <span>Fait avec ❤️ pour la communauté francophone</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

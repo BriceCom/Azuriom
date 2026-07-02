@@ -1,0 +1,12 @@
+{
+    "id": "valblock",
+    "name": "Valblock",
+    "description": "Theme for Valblock",
+    "version": "1.0.0",
+    "url": "https://azuriom.com",
+    "azuriom_api": "1.1.0",
+    "authors": [
+        "Min0w",
+        "[Dixept.fr] Bricec6"
+    ]
+}

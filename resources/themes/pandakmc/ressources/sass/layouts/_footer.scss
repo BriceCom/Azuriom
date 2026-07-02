@@ -1,0 +1,29 @@
+.footer{
+    margin-top: 0;
+
+    &__content{
+        border-radius: 79.5px 79.5px 0 0;
+    }
+
+    &__panda{
+        position: relative;
+        z-index: -1;
+        transform: translateY(15%);
+        height: 320px;
+    }
+
+    @media (max-width: 767px) {
+        position: relative;
+        margin-top: 92px;
+
+        &__img{
+            position: relative;
+            transform: translateY(-50%);
+            height: 85px;
+        }
+
+        &__panda{
+            display: none;
+        }
+    }
+}
