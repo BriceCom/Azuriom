@@ -1,0 +1,26 @@
+{
+    "name": "azuriom-plugins/cron",
+    "description": "Manage and secure the execution of scheduled Azuriom tasks via external services (Cron-Job.org). Ideal for shared hosting without SSH access.",
+    "type": "azuriom-plugin",
+    "version": "1.0.0",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Azuriom\\Plugin\\Cron\\": "src/"
+        }
+    },
+    "replace": {
+        "guzzlehttp/guzzle": "*",
+        "guzzlehttp/promises": "*",
+        "guzzlehttp/psr7": "*",
+        "monolog/monolog": "*",
+        "nesbot/carbon": "*",
+        "psr/container": "*",
+        "psr/event-dispatcher": "*",
+        "psr/http-client": "*",
+        "psr/http-factory": "*",
+        "psr/http-message": "*",
+        "psr/log": "*",
+        "psr/simple-cache": "*"
+    }
+}

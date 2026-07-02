@@ -1,0 +1,72 @@
+@use "hero";
+
+
+header{
+    &:has(.navbar-toggler[aria-expanded="true"]){
+        //background: var(--bs-dark);
+        backdrop-filter: blur(7px);
+    }
+}
+
+body{
+    &[data-bs-theme="light"]{
+        header{
+            .btn-outline-tertiary{
+                background-color: rgba(var(--bs-tertiary-rgb), 1) !important;
+                color: var(--bs-text-emphasis) !important;
+            }
+        }
+    }
+}
+
+header {
+    .btn{
+        min-height: 44px;
+    }
+
+    .nav-link {
+        position: relative;
+        color: var(--bs-body-color);
+        transition: transform .3s;
+        border-radius: 8px;
+        padding: 8px 10px;
+        border: transparent 1px solid;
+
+        &:not(.active) {
+            &:hover{
+                @extend .anim-up;
+            }
+        }
+
+        &.active {
+            padding-left: var(--bs-btn-padding-x) !important;
+            padding-right: var(--bs-btn-padding-x) !important;
+            --bs-navbar-active-color: var(--bs-body-color);
+            --bs-btn-active-bg: rgba(var(--bs-body-color-rgb), var(--bs-bg-opacity, 1));
+        }
+
+        &[data-remove-active-background="on"]{
+            --bs-navbar-active-color: var(--bs-primary);
+            --bs-btn-active-bg: transparent;
+        }
+
+        @media (max-width: 1200px) {
+            padding: 8px 16px;
+        }
+    }
+
+    #navbarDropdown-auth{
+        border-bottom: unset;
+    }
+}
+
+#notificationsDropdown,
+#userDropdown {
+    @extend .after-none;
+}
+
+.announce-bar{
+    &>*{
+        margin: 0;
+    }
+}

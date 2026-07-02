@@ -1,0 +1,237 @@
+{
+    "settings": {
+        "index": {
+            "particles": {
+                "count": null,
+                "density": null,
+                "image": null,
+                "speed": null,
+                "size": null
+            }
+        },
+        "discord": {
+            "link": null,
+            "id": null
+        },
+        "server": {
+            "url": null,
+            "text": null,
+            "ip": null
+        }
+    },
+    "home": {
+        "news": {
+            "title": null,
+            "text": null,
+            "badge": {
+                "name": null
+            },
+            "link": {
+                "name": null
+            }
+        },
+        "changelog": {
+            "title": null,
+            "text": null,
+            "link": {
+                "name": null
+            }
+        },
+        "video": {
+            "url": null
+        },
+        "cta": {
+            "icon": null,
+            "title": null,
+            "text": null,
+            "link": {
+                "text": null,
+                "url": null
+            }
+        }
+    },
+    "sidebar": {
+        "vote_button": {
+            "text": null,
+            "url": null
+        },
+        "shop_button": {
+            "text": null,
+            "url": null
+        },
+        "vote": {
+            "title": null
+        },
+        "discord": {
+            "title": null
+        },
+        "article": {
+            "title": null
+        }
+    },
+    "header": {
+        "index": {
+            "container": {
+                "max-width": "1320"
+            },
+            "hero": {
+                "bg": {
+                    "max-height": "1000"
+                },
+                "img": {
+                    "height": "235"
+                }
+            },
+            "links": {
+                "shop_variant": "primary"
+            },
+            "image": null
+        },
+        "modules": {
+            "announceBar": {
+                "text": null,
+                "bg": "#892958"
+            },
+            "pageHeight": {
+                "height": "8",
+                "colorBg": "#6c5e8f",
+                "color": "#531cdb"
+            }
+        },
+        "hero": {
+            "joinText": null,
+            "server_address_copied": null,
+            "discord": {
+                "title": null,
+                "text": null
+            }
+        }
+    },
+    "premium": {
+        "serveurliste": {
+            "link": null,
+            "token": null
+        }
+    },
+    "footer": {
+        "index": {
+            "container": {
+                "max-width": "1320"
+            },
+            "image": null,
+            "title": null,
+            "text": null,
+            "button": {
+                "title": null,
+                "description": null,
+                "text": null,
+                "url": null
+            },
+            "links": {
+                "1": {
+                    "title": null,
+                    "links": [
+                        {
+                            "name": null,
+                            "href": null
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "vote": {
+        "index": {
+            "title": null,
+            "text": null,
+            "rewardTitle": null,
+            "rewardText": null,
+            "topTitle": null,
+            "topText": null,
+            "rewards": {
+                "text": null,
+                "top": {
+                    "1": null,
+                    "2": null,
+                    "3": null,
+                    "4": null,
+                    "5": null,
+                    "6": null,
+                    "7": null,
+                    "8": null,
+                    "9": null,
+                    "10": null
+                },
+                "topColor": {
+                    "1": "#ff0000",
+                    "2": "#ff0000",
+                    "3": "#ff0000",
+                    "4": "#ff0000",
+                    "5": "#ff0000",
+                    "6": "#ff0000",
+                    "7": "#ff0000",
+                    "8": "#ff0000",
+                    "9": "#ff0000",
+                    "10": "#ff0000"
+                }
+            }
+        },
+        "cta": {
+            "icon": null,
+            "title": null,
+            "text": null,
+            "link": {
+                "text": null,
+                "url": null
+            }
+        }
+    },
+    "style": {
+        "index": {
+            "background": {
+                "light": null,
+                "dark": null
+            },
+            "font": {
+                "url": null,
+                "name": null
+            }
+        },
+        "colors": {
+            "light": {
+                "primary": "#5ca6c3",
+                "secondary": "#c8cccd",
+                "tertiary": "#f8ca47",
+                "quaternary": "#ecaf2d",
+                "body": "#f2f2f2",
+                "black": "#e2e2e2",
+                "dark": "#e3e2e2",
+                "white": "#a68dc3",
+                "light": "#fafafa",
+                "color": "#111111",
+                "color-dark": "#f2f2f2",
+                "success": "#bbf24b",
+                "info": "#0dcaf0",
+                "warning": "#f88934",
+                "danger": "#dc3545"
+            },
+            "dark": {
+                "primary": "#9458ff",
+                "secondary": "#3e404d",
+                "tertiary": "#f8ca47",
+                "quaternary": "#ff6cba",
+                "body": "#111111",
+                "black": "#070606",
+                "dark": "#17191b",
+                "white": "#21262c",
+                "light": "#111111",
+                "color": "#ffffff",
+                "color-dark": "#6c757d",
+                "success": "#bbf24b",
+                "info": "#3499f8",
+                "warning": "#ffc107",
+                "danger": "#dc3545"
+            }
+        }
+    }
+}

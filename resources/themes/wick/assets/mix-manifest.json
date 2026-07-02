@@ -1,0 +1,22 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/js/webgl.js": "/js/webgl.js",
+    "/css/override_bootstrap.css": "/css/override_bootstrap.css",
+    "/css/styles.css": "/css/styles.css",
+    "/images/dixept.webp": "/images/dixept.webp",
+    "/images/models/Fox/README.md": "/images/models/Fox/README.md",
+    "/images/models/Fox/glTF/Fox.bin": "/images/models/Fox/glTF/Fox.bin",
+    "/images/models/Fox/glTF/Fox.gltf": "/images/models/Fox/glTF/Fox.gltf",
+    "/images/models/Fox/glTF/Texture.png": "/images/models/Fox/glTF/Texture.png",
+    "/images/models/Fox/glTF-Binary/Fox.glb": "/images/models/Fox/glTF-Binary/Fox.glb",
+    "/images/models/Fox/glTF-Embedded/Fox.gltf": "/images/models/Fox/glTF-Embedded/Fox.gltf",
+    "/images/models/Fox/screenshot/screenshot.jpg": "/images/models/Fox/screenshot/screenshot.jpg",
+    "/images/textures/dirt/color.jpg": "/images/textures/dirt/color.jpg",
+    "/images/textures/dirt/normal.jpg": "/images/textures/dirt/normal.jpg",
+    "/images/textures/environmentMap/nx.jpg": "/images/textures/environmentMap/nx.jpg",
+    "/images/textures/environmentMap/ny.jpg": "/images/textures/environmentMap/ny.jpg",
+    "/images/textures/environmentMap/nz.jpg": "/images/textures/environmentMap/nz.jpg",
+    "/images/textures/environmentMap/px.jpg": "/images/textures/environmentMap/px.jpg",
+    "/images/textures/environmentMap/py.jpg": "/images/textures/environmentMap/py.jpg",
+    "/images/textures/environmentMap/pz.jpg": "/images/textures/environmentMap/pz.jpg"
+}

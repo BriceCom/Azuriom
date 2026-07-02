@@ -1,0 +1,11 @@
+{
+    "id": "drive",
+    "name": "Drive",
+    "description": "Modern dashboard-like theme with sidebar navigation, top search header, and bento-style homepage.",
+    "version": "1.0.0",
+    "url": "https://azuriom.com",
+    "authors": [
+        "Bricec6"
+    ],
+    "azuriom_api": "1.1.0"
+}

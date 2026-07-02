@@ -1,0 +1,377 @@
+body {
+    min-height: 100vh;
+}
+
+#reborn-app-shell {
+    min-height: 100vh;
+}
+
+.reborn-site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    container-type: inline-size;
+    container-name: reborn-header;
+    background: var(--bs-body-bg);
+    border-bottom: 1px solid color-mix(in srgb, var(--bs-body-color) 15%, transparent);
+    box-shadow: 0 .25rem .9rem rgba(0, 0, 0, .06);
+}
+
+.reborn-header-inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: .75rem 1rem;
+}
+
+.reborn-header-blocks {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .8rem;
+    width: 100%;
+}
+
+.reborn-header-blocks > * {
+    flex: 0 0 auto;
+}
+
+.reborn-brand-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .75rem;
+    color: inherit;
+    text-decoration: none;
+}
+
+.reborn-brand-link:hover {
+    color: inherit;
+}
+
+.reborn-brand-logo {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    border-radius: .55rem;
+}
+
+.reborn-brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.reborn-brand-name {
+    font-weight: 700;
+}
+
+.reborn-brand-tagline {
+    font-size: .72rem;
+    opacity: .7;
+}
+
+.reborn-header-menu .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: .15rem;
+}
+
+.reborn-menu-minimal .nav-link {
+    border-radius: .25rem;
+}
+
+.reborn-menu-underline .nav-link {
+    border-bottom: 2px solid transparent;
+    border-radius: 0 !important;
+}
+
+.reborn-menu-underline .nav-link.active,
+.reborn-menu-underline .nav-link:hover {
+    border-bottom-color: currentColor;
+}
+
+.reborn-menu-pills .nav-link {
+    border-radius: 999px;
+}
+
+.reborn-menu-pills .nav-link.active {
+    background: var(--bs-primary);
+    color: #fff !important;
+}
+
+.reborn-header-user {
+    margin-left: auto;
+    display: inline-flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+body.reborn-header-left #reborn-app-shell {
+    display: grid;
+    grid-template-columns: var(--reborn-header-width, 280px) minmax(0, 1fr);
+}
+
+body.reborn-header-left .reborn-site-header {
+    min-height: 100vh;
+    border-right: 1px solid color-mix(in srgb, var(--bs-body-color) 12%, transparent);
+    border-bottom: 0;
+}
+
+body.reborn-header-left .reborn-header-inner,
+body.reborn-header-left .reborn-header-blocks {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+body.reborn-header-left .reborn-header-user {
+    margin-left: 0;
+}
+
+@media (max-width: 992px) {
+    body.reborn-header-left #reborn-app-shell {
+        grid-template-columns: 1fr;
+    }
+
+    body.reborn-header-left .reborn-site-header {
+        min-height: auto;
+        border-right: 0;
+        border-bottom: 1px solid color-mix(in srgb, var(--bs-body-color) 12%, transparent);
+    }
+}
+
+@container reborn-header (max-width: 820px) {
+    .reborn-header-menu .navbar-nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .reborn-header-user {
+        margin-left: 0;
+    }
+}
+
+.reborn-main {
+    min-width: 0;
+}
+
+.reborn-page-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+}
+
+.reborn-page-grid.reborn-page-grid--with-sidebar {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 330px);
+}
+
+.reborn-page-main-slot,
+.reborn-page-sidebar-slot {
+    position: relative;
+    display: grid;
+    gap: 1rem;
+    align-content: start;
+}
+
+.reborn-inline-add {
+    position: absolute;
+    top: .55rem;
+    right: .55rem;
+    z-index: 5;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .2);
+}
+
+body.reborn-footer-position-fixed .reborn-main {
+    padding-bottom: 105px;
+}
+
+body.reborn-footer-position-fixed #rebornBaseFooter {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1025;
+}
+
+@media (min-width: 993px) {
+    body.reborn-footer-position-fixed.reborn-header-left #rebornBaseFooter {
+        left: var(--reborn-header-width, 280px);
+    }
+}
+
+.reborn-hero-immersive {
+    position: relative;
+    min-height: clamp(380px, 68vh, 700px);
+    display: flex;
+    align-items: flex-end;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, .2), transparent 45%),
+        linear-gradient(145deg, rgba(4, 18, 35, .92), rgba(13, 40, 70, .68)),
+        var(--reborn-hero-bg, none) center/cover no-repeat;
+    color: #fff;
+    overflow: hidden;
+}
+
+.reborn-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, .55) 100%);
+}
+
+.reborn-hero-content {
+    position: relative;
+    z-index: 1;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+}
+
+.reborn-roadmap {
+    display: grid;
+    gap: .85rem;
+}
+
+.reborn-roadmap-item {
+    border-left: .3rem solid var(--bs-primary);
+}
+
+.reborn-dungeon-card {
+    border: 1px solid color-mix(in srgb, var(--bs-primary) 18%, transparent);
+}
+
+.reborn-pomodoro {
+    background: linear-gradient(140deg, color-mix(in srgb, var(--bs-primary) 18%, transparent), transparent 58%);
+}
+
+.reborn-pomodoro-clock {
+    width: 220px;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    margin-inline: auto;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.reborn-pomodoro-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    border: 12px solid color-mix(in srgb, var(--bs-primary) 28%, transparent);
+    border-top-color: var(--bs-primary);
+}
+
+.reborn-pomodoro-time {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: .03em;
+}
+
+.reborn-spacer {
+    height: var(--reborn-spacer-height, 48px);
+}
+
+@media (max-width: 576px) {
+    .reborn-spacer {
+        height: var(--reborn-spacer-height-mobile, 24px);
+    }
+}
+
+.reborn-builder-btn {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1065;
+}
+
+.reborn-composer-offcanvas {
+    width: min(94vw, 960px) !important;
+}
+
+.reborn-builder-grid {
+    display: grid;
+    grid-template-columns: minmax(310px, 40%) minmax(0, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width: 992px) {
+    .reborn-builder-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reborn-page-grid.reborn-page-grid--with-sidebar {
+        grid-template-columns: 1fr;
+    }
+}
+
+.reborn-section-box {
+    border: 1px solid var(--bs-border-color);
+    border-radius: .6rem;
+    padding: .7rem;
+}
+
+.reborn-block-list {
+    display: flex;
+    flex-direction: column;
+    gap: .45rem;
+}
+
+.reborn-block-item {
+    border: 1px solid var(--bs-border-color);
+    border-radius: .5rem;
+    padding: .55rem;
+    background: color-mix(in srgb, var(--bs-body-bg) 93%, var(--bs-primary) 7%);
+}
+
+.reborn-block-item.is-selected {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 .2rem rgba(var(--bs-primary-rgb), .12);
+}
+
+.reborn-builder-fields {
+    display: grid;
+    gap: .8rem;
+}
+
+.reborn-builder-field-group {
+    border: 1px solid var(--bs-border-color);
+    border-radius: .55rem;
+    padding: .65rem;
+}
+
+.reborn-builder-collection {
+    display: grid;
+    gap: .6rem;
+}
+
+body.reborn-builder-active .container,
+body.reborn-builder-active .container-fluid,
+body.reborn-builder-active .container-sm,
+body.reborn-builder-active .container-md,
+body.reborn-builder-active .container-lg,
+body.reborn-builder-active .container-xl,
+body.reborn-builder-active .container-xxl {
+    outline: 1px dashed rgba(var(--bs-primary-rgb), .55);
+    outline-offset: -1px;
+}
+
+body.reborn-builder-active .row {
+    outline: 1px dashed rgba(25, 135, 84, .45);
+    outline-offset: -1px;
+}
+
+body.reborn-builder-active .row > [class*='col'],
+body.reborn-builder-active [class^='col-'],
+body.reborn-builder-active [class*=' col-'] {
+    outline: 1px dotted rgba(220, 53, 69, .45);
+    outline-offset: -1px;
+}

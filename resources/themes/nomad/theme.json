@@ -1,0 +1,11 @@
+{
+    "id": "nomad",
+    "name": "Nomad",
+    "description": "Modern and minimalist theme for Azuriom.",
+    "version": "1.1.1",
+    "authors": [
+        "pkhemae & akira_fr"
+    ],
+    "azuriom_api": "1.1.0",
+    "apiId": 162
+}

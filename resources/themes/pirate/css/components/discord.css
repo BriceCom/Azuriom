@@ -1,0 +1,13 @@
+#discord {
+    background:#490000;
+    border-radius:15px;
+    color:white;
+    overflow:hidden;
+}
+#discord svg {
+    display:block;
+    transform:translateY(2px) rotate(0deg) !important;
+}
+#discord .section-2 {
+    background:#6c0000;
+}

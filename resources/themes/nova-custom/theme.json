@@ -1,0 +1,11 @@
+{
+    "id": "nova-custom",
+    "name": "Nova Custom",
+    "description": "Nova derivative with a fully reworked visual identity (palette, typography, components and hero styling).",
+    "version": "1.0.30",
+    "url": "https://example.com",
+    "authors": [
+        "Bricec6"
+    ],
+    "azuriom_api": "1.1.0"
+}

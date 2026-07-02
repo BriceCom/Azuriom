@@ -1,0 +1,32 @@
+{
+    "name": "azuriom/webhook-manager",
+    "type": "azuriom-plugin",
+    "description": "Centralized outgoing webhook manager with dynamic payloads, logs, and extensible event dispatch API.",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Azuriom\\Plugin\\WebhookManager\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=8.1"
+    },
+    "replace": {
+        "guzzlehttp/guzzle": "*",
+        "guzzlehttp/promises": "*",
+        "guzzlehttp/psr7": "*",
+        "monolog/monolog": "*",
+        "nesbot/carbon": "*",
+        "psr/container": "*",
+        "psr/event-dispatcher": "*",
+        "psr/http-client": "*",
+        "psr/http-factory": "*",
+        "psr/http-message": "*",
+        "psr/log": "*",
+        "psr/simple-cache": "*"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "platform-check": false
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "id": "nova",
+    "name": "Nova",
+    "description": "Trending theme. Can remove author copyright, custom colors/font, sections, texts and image, active support and more.",
+    "version": "1.1.0",
+    "url": "https://market.azuriom.com/resources/182",
+    "authors": [
+        "Bricec6"
+    ],
+    "azuriom_api": "1.1.0"
+}

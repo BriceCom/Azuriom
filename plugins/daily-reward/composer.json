@@ -1,0 +1,11 @@
+{
+    "name": "azuriom/daily-reward",
+    "type": "azuriom-plugin",
+    "description": "Daily rewards with streak, Discord webhook and mail notifications.",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Azuriom\\Plugin\\DailyReward\\": "src/"
+        }
+    }
+}

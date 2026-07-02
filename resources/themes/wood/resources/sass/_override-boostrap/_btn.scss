@@ -1,0 +1,57 @@
+// BUTTON
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px !important;
+    font-weight: 600;
+    font-size: 18px;
+
+    @mixin button-styles($color, $rgb) {
+        --di-btn-bg: var(--#{$color});
+        --di-btn-color: var(--#{$color}-text-emphasis);
+        --di-btn-border-color: rgba(var(--#{$rgb}), 1);
+        --di-btn-hover-bg: rgba(var(--#{$rgb}), 0.9);
+        --di-btn-hover-border-color: rgba(var(--#{$rgb}), 0.95);
+        --di-btn-hover-color: var(--#{$color}-text-emphasis);
+        --di-btn-focus-shadow-rgb: 49, 132, 253;
+        --di-btn-active-bg: rgba(var(--#{$rgb}), 0.8);
+        --di-btn-active-border-color: rgba(var(--#{$rgb}), 0.8);
+        --di-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        --di-btn-active-color: var(--#{$color}-text-emphasis);
+        --di-btn-disabled-bg: rgba(var(--#{$rgb}), 0.6);
+        --di-btn-disabled-border-color: rgba(var(--#{$rgb}), 0.6);
+    }
+
+
+
+    &-primary {
+        @include button-styles(di-primary, di-primary-rgb);
+        --di-btn-color: var(--di-primary-text-emphasis);
+    }
+
+    &-secondary {
+        @include button-styles(di-secondary, di-secondary-rgb);
+        --di-btn-color: var(--di-secondary-text-emphasis);
+    }
+
+    &-tertiary {
+        @include button-styles(di-tertiary, di-tertiary-rgb);
+    }
+
+    &-quaternary {
+        @include button-styles(di-quaternary, di-quaternary-rgb);
+    }
+}
+
+.btn-shadow{
+    &-primary{
+        border: unset;
+        box-shadow: 0 3px 0 hsl(var(--di-primary-hsl), 100%, 30%);
+    }
+
+    &-secondary{
+        border: unset;
+        box-shadow: 0 3px 0 hsl(var(--di-secondary-hsl), 100%, 30%);
+    }
+}

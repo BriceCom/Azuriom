@@ -1,0 +1,47 @@
+:root {
+    --rb-card-shadow-0: none;
+    --rb-card-shadow-1: 0 .125rem .25rem rgba(0, 0, 0, .075);
+    --rb-card-shadow-2: 0 .5rem 1rem rgba(0, 0, 0, .12);
+    --rb-card-shadow-3: 0 1rem 2.5rem rgba(0, 0, 0, .18);
+    --rb-btn-shadow-0: none;
+    --rb-btn-shadow-1: 0 .125rem .25rem rgba(0, 0, 0, .1);
+    --rb-btn-shadow-2: 0 .35rem .8rem rgba(0, 0, 0, .16);
+    --rb-btn-shadow-3: 0 .75rem 1.4rem rgba(0, 0, 0, .2);
+}
+
+.btn {
+    border-radius: var(--bs-btn-radius, .375rem) !important;
+    box-shadow: var(--rb-btn-shadow, var(--rb-btn-shadow-0));
+}
+
+.card {
+    box-shadow: var(--rb-card-shadow, var(--rb-card-shadow-0));
+}
+
+.card-body {
+    padding: var(--rb-card-padding-y, 1rem) var(--rb-card-padding-x, 1rem) !important;
+}
+
+.form-control,
+.form-select,
+.input-group-text {
+    border-radius: var(--rb-form-radius, .375rem) !important;
+}
+
+.nav-link,
+.navbar-nav .nav-link {
+    padding: var(--rb-nav-padding-y, .5rem) var(--rb-nav-padding-x, .85rem) !important;
+}
+
+.alert {
+    border-radius: var(--rb-alert-radius, .5rem) !important;
+}
+
+.badge {
+    border-radius: var(--rb-badge-radius, .375rem) !important;
+}
+
+.list-group-item.active {
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+}

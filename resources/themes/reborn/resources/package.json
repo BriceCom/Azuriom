@@ -1,0 +1,15 @@
+{
+  "name": "pagebuilder",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "bricec6",
+  "scripts": {
+    "build": "mix build",
+    "watch": "mix watch",
+    "prod": "mix --production"
+  },
+  "dependencies": {
+    "grapesjs": "^0.22.13"
+  }
+}

@@ -1,0 +1,8 @@
+.badge{
+    --di-badge-color: #ffffff;
+    --di-border-color: var(--di-badge-color);
+    --di-bg-opacity: .1;
+    background-color: var(--di-badge-color);
+    border: solid 1px transparent;
+    font-weight: 600;
+}

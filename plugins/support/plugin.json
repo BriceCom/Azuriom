@@ -1,0 +1,16 @@
+{
+    "id": "support",
+    "name": "Support",
+    "description": "A support plugin that allows users to create a ticket when they need help.",
+    "version": "1.1.9",
+    "url": "https:\/\/market.azuriom.com\/resources\/3",
+    "authors": [
+        "Azuriom"
+    ],
+    "azuriom_api": "1.2.0",
+    "providers": [
+        "\\Azuriom\\Plugin\\Support\\Providers\\SupportServiceProvider",
+        "\\Azuriom\\Plugin\\Support\\Providers\\RouteServiceProvider"
+    ],
+    "apiId": 3
+}

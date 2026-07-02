@@ -1,0 +1,30 @@
+<?php
+
+return [
+    'title' => 'Quiz',
+    'no_quiz' => 'There is no active quiz for today.',
+    'already_answered' => 'You have already answered today\'s quiz.',
+    'correct_answer' => 'Congratulations! Your answer is correct. You have received: :reward.',
+    'wrong_answer' => 'Sorry, that is not the correct answer.',
+    'time_expired' => 'Time expired. The quiz has been marked as failed.',
+    'time_limit' => 'Time remaining',
+    'delay_not_elapsed' => 'Next quiz available in :remaining.',
+    'admin_not_allowed' => 'Administrators are not allowed to participate in the quiz.',
+    'login_to_participate' => 'Please log in to participate in the quiz.',
+    'score' => 'Your total score: :score',
+    'leaderboard' => 'Leaderboard',
+    'rank' => 'Rank',
+    'player' => 'Player',
+    'points' => 'Points',
+    'back_to_quiz' => 'Back to Quiz',
+    'submit' => 'Submit Answer',
+    'no_reward' => 'no reward',
+    'reward_points' => ':value points',
+    'reward_money' => ':value money',
+    'reward_item' => 'Item: :value',
+    'difficulty' => [
+        'easy' => 'Easy',
+        'medium' => 'Medium',
+        'hard' => 'Hard',
+    ],
+];

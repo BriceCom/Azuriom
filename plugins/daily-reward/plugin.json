@@ -1,0 +1,15 @@
+{
+    "id": "daily-reward",
+    "name": "Daily Reward",
+    "description": "Daily rewards with streak, Discord webhook and mail notifications.",
+    "version": "0.1.0",
+    "url": "https://github.com/azuriom/plugins",
+    "authors": [
+        "SFD"
+    ],
+    "azuriom_api": "1.2.0",
+    "providers": [
+        "\\Azuriom\\Plugin\\DailyReward\\Providers\\DailyRewardServiceProvider",
+        "\\Azuriom\\Plugin\\DailyReward\\Providers\\RouteServiceProvider"
+    ]
+}

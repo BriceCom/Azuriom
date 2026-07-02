@@ -1,0 +1,32 @@
+{
+    "discord_id": "983857265960435822",
+    "twitter": null,
+    "home_description": "Gr\u00e2ce \u00e0 notre launcher, acc\u00e8de \u00e0 deux modes de jeu : Cobblemon (1.21.1) et Pixelmon (1.16.5). Notre serveur, unique en France, r\u00e9unit ces deux univers au sein d'une structure commune, partageant des valeurs et engagements qui nous sont propres.",
+    "icon_1": "bi bi-shield-shaded",
+    "icon_2": "bi bi-speedometer2",
+    "icon_3": "bi bi-people",
+    "title_1": "\u00c9conomie en or",
+    "title_2": "S\u00e9curit\u00e9 & Performances",
+    "title_3": "Comp\u00e9titivit\u00e9",
+    "description_1": "La stabilit\u00e9 de l\u2019\u00e9conomie est au c\u0153ur de Pixel Realm, garantissant une exp\u00e9rience unique et p\u00e9renne. Bien que le serveur soit r\u00e9guli\u00e8rement mis \u00e0 jour, aucun reset ne viendra jamais effacer vos efforts. Ainsi, chaque ressource se dote d'une v\u00e9ritable valeur au fil du temps, le farm prime sur l\u2019argent d\u00e9pens\u00e9, et vous pourrez revenir dans trois ans en retrouvant intact tout ce que vous avez durement acquis.",
+    "description_2": "Nous disposons de notre propre infrastructure de jeux. Vos donn\u00e9es ne d\u00e9pendent pas de tiers et sont en s\u00e9curit\u00e9s sur un serveur tr\u00e8s performant sur lequel nous avons un total contr\u00f4le hardware & software.",
+    "description_3": "Que tu sois un fin strat\u00e8ge ou un chasseur aguerri, Pixel Realm a de quoi te satisfaire ! Entre nos concours de chasse et nos grands tournois strat\u00e9giques, rel\u00e8ve le d\u00e9fi et tente de d\u00e9crocher des cash-prizes pouvant atteindre plusieurs centaines d\u2019euros pour le premier !",
+    "footer_title_1": "\u00c0 propos de nous",
+    "footer_title_2": "Affiliations",
+    "footer_description_1": "Pixel Realm est un double serveur ouvert aux cracks, te proposant une exp\u00e9rience Pixelmon (1.16.5) & Cobblemon (1.21.1), accessible via notre launcher personnalis\u00e9 sur Windows, Mac et Linux.",
+    "footer_description_2": "Pixel Realm est un projet ind\u00e9pendant. Nous ne sommes d'aucune sorte affili\u00e9s \u00e0 Mojang AB, ni \u00e0 The Pokemon Company, Nintendo & GameFreak.",
+    "footer_links": [
+        {
+            "name": "Support",
+            "value": "https://discord.gg/pixelrealm"
+        },
+        {
+            "name": "CGU",
+            "value": "https://pixelrealm.fr/cgu"
+        },
+        {
+            "name": "CGV",
+            "value": "https://pixelrealm.fr/cgv"
+        }
+    ]
+}

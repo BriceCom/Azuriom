@@ -1,0 +1,16 @@
+{
+    "id": "cron",
+    "description": "Manage and secure the execution of scheduled Azuriom tasks via external services (Cron-Job.org). Ideal for shared hosting without SSH access.",
+    "name": "Cron (with external service)",
+    "version": "1.0.0",
+    "url": "https:\/\/azuriom.com",
+    "authors": [
+        "vyrriox",
+        "bricec6"
+    ],
+    "azuriom_api": "1.1.0",
+    "providers": [
+        "\\Azuriom\\Plugin\\Cron\\Providers\\CronServiceProvider",
+        "\\Azuriom\\Plugin\\Cron\\Providers\\RouteServiceProvider"
+    ]
+}

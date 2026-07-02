@@ -1,0 +1,11 @@
+{
+    "id": "seriva",
+    "name": "Seriva",
+    "description": "Clean clinical-inspired Azuriom theme with a Bootstrap-first architecture and plugin-safe layouts.",
+    "version": "1.0.0",
+    "url": "https://azuriom.com",
+    "authors": [
+        "Bricec6"
+    ],
+    "azuriom_api": "1.1.0"
+}

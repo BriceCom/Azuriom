@@ -1,0 +1,26 @@
+.discord-list{
+    max-height: 150px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    /* Track */
+   &::-webkit-scrollbar-track {
+        border-radius: 3px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: rgba(var(--bs-white-rgb), 0.85);
+        border-radius: 2px;
+        transition: background 0.123s linear;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba(var(--bs-white-rgb), 0.6);
+    }
+}

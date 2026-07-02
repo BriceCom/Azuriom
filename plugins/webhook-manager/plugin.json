@@ -1,0 +1,15 @@
+{
+    "id": "webhook-manager",
+    "name": "WebhookManager",
+    "description": "Get a Discord notification for: a player votes, makes a payment, creates a support ticket, logs in to the website, or when an admin logs in. And extensible event dispatch API.",
+    "version": "1.0.0",
+    "url": "https://market.azuriom.com/resources/207",
+    "authors": [
+        "Bricec6"
+    ],
+    "azuriom_api": "1.1.0",
+    "providers": [
+        "\\Azuriom\\Plugin\\WebhookManager\\Providers\\WebhookManagerServiceProvider",
+        "\\Azuriom\\Plugin\\WebhookManager\\Providers\\RouteServiceProvider"
+    ]
+}

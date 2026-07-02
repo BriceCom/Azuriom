@@ -1,0 +1,315 @@
+<?php
+
+$buttonVariants = ['server', 'primary', 'secondary', 'tertiary', 'quaternary'];
+$aosOptions = [
+    'none',
+    'fade-up',
+    'fade-down',
+    'fade-left',
+    'fade-right',
+    'zoom-in',
+    'zoom-out',
+    'flip-up',
+    'flip-down',
+];
+
+$withLayoutBlocks = static function (array $ids): array {
+    $sanitized = array_values(array_filter(
+        $ids,
+        static fn ($id) => is_string($id) && $id !== 'header' && $id !== 'footer',
+    ));
+
+    array_unshift($sanitized, 'header');
+    $sanitized[] = 'footer';
+
+    return array_values(array_unique($sanitized));
+};
+
+$catalog = [
+    [
+        'id' => 'header',
+        'label' => 'Header',
+        'fixed' => true,
+        'required' => true,
+        'unique' => true,
+        'external' => true,
+        'anchor' => 'start',
+        'addable' => false,
+        'movable' => false,
+        'deletable' => false,
+        'duplicable' => false,
+        'default_params' => [
+            'sticky' => false,
+            'show_shadow' => true,
+            'button_styles' => [],
+        ],
+        'params' => [
+            ['key' => 'sticky', 'label' => 'Activer le header sticky', 'type' => 'toggle', 'rules' => ['nullable', 'boolean']],
+            ['key' => 'show_shadow', 'label' => 'Afficher l’ombre', 'type' => 'toggle', 'hidden' => true, 'rules' => ['nullable', 'boolean']],
+            [
+                'key' => 'button_styles',
+                'label' => 'Styles de boutons (par texte de lien)',
+                'type' => 'list',
+                'item_defaults' => ['label' => '', 'variant' => 'primary'],
+                'item_fields' => [
+                    ['key' => 'label', 'label' => 'Texte ciblé (ex: Boutique)', 'type' => 'text'],
+                    ['key' => 'variant', 'label' => 'Type de bouton', 'type' => 'select', 'options' => $buttonVariants],
+                ],
+                'rules' => ['nullable', 'array', 'max:20'],
+            ],
+        ],
+    ],
+    [
+        'id' => 'page_content',
+        'label' => 'Contenu de la page',
+        'unique' => true,
+        'addable' => false,
+        'editable' => false,
+        'deletable' => false,
+        'duplicable' => false,
+        'default_params' => [],
+        'params' => [],
+    ],
+    [
+        'id' => 'hero',
+        'label' => 'Hero',
+        'default_params' => [
+            'badge_text' => '1 247 joueurs en ligne maintenant',
+            'title' => 'Le serveur Minecraft',
+            'highlight' => 'sans compromis.',
+            'subtitle' => 'Survie, PvP, Skyblock — un seul serveur, une communauté francophone active.',
+            'primary_button_text' => 'Commencer à jouer',
+            'primary_button_url' => '#join',
+            'primary_button_variant' => 'primary',
+            'secondary_button_text' => 'Voir les serveurs',
+            'secondary_button_url' => '#servers',
+            'secondary_button_variant' => 'secondary',
+            'ip_label' => 'IP',
+            'ip_status' => 'En ligne',
+            'ip_address' => '',
+        ],
+        'params' => [
+            ['key' => 'badge_text', 'label' => 'Badge', 'type' => 'text', 'rules' => ['nullable', 'string', 'max:160']],
+            ['key' => 'title', 'label' => 'Titre', 'type' => 'text', 'rules' => ['nullable', 'string', 'max:160']],
+            ['key' => 'highlight', 'label' => 'Texte accentué', 'type' => 'text', 'rules' => ['nullable', 'string', 'max:160']],
+            ['key' => 'subtitle', 'label' => 'Sous-titre', 'type' => 'textarea', 'rules' => ['nullable', 'string', 'max:500']],
+            ['key' => 'primary_button_text', 'label' => 'Bouton principal - Texte', 'type' => 'text', 'rules' => ['nullable', 'string', 'max:120']],
+            ['key' => 'primary_button_url', 'label' => 'Bouton principal - Lien', 'type' => 'url', 'rules' => ['nullable', 'string', 'max:255']],
+            ['key' => 'primary_button_variant', 'label' => 'Bouton principal - Type', 'type' => 'select', 'options' => $buttonVariants, 'rules' => ['nullable', 'in:'.implode(',', $buttonVariants)]],
+            ['key' => 'secondary_button_text', 'label' => 'Bouton secondaire - Texte', 'type' => 'text', 'rules' => ['nullable', 'string', 'max:120']],
+            ['key' => 'secondary_button_url', 'label' => 'Bouton secondaire - Lien', 'type' => 'url', 'rules' => ['nullable', 'string', 'max:255']],
+            ['key' => 'secondary_button_variant', 'label' => 'Bouton secondaire - Type', 'type' => 'select', 'options' => $buttonVariants, 'rules' => ['nullable', 'in:'.implode(',', $buttonVariants)]],
+            ['key' => 'ip_label', 'label' => 'Label IP', 'type' => 'text', 'rules' => ['nullable', 'string', 'max:30']],
+            ['key' => 'ip_status', 'label' => 'Statut IP', 'type' => 'text', 'rules' => ['nullable', 'string', 'max:30']],
+            ['key' => 'ip_address', 'label' => 'Adresse IP affichée (vide = auto)', 'type' => 'text', 'rules' => ['nullable', 'string', 'max:120']],
+        ],
+    ],
+    [
+        'id' => 'features',
+        'label' => 'Features',
+        'default_params' => [
+            'badge' => 'Pourquoi nous ?',
+            'title' => 'Conçu pour une expérience sans friction.',
+            'subtitle' => 'Performances, équité, communauté — les trois piliers qui font la différence.',
+            'items' => [
+                ['icon' => '⚡', 'title' => 'Performances', 'text' => 'Serveurs dédiés et ping stable pour les joueurs européens.'],
+                ['icon' => '🛡', 'title' => 'Anti-cheat', 'text' => 'Système anti-triche mis à jour régulièrement.'],
+                ['icon' => '🎮', 'title' => 'Modes de jeu', 'text' => 'Plusieurs modes pour tous les profils de joueurs.'],
+                ['icon' => '💬', 'title' => 'Communauté', 'text' => 'Discord actif, support réactif et événements.'],
+            ],
+        ],
+        'params' => [
+            ['key' => 'badge', 'label' => 'Badge', 'type' => 'text', 'rules' => ['nullable', 'string', 'max:120']],
+            ['key' => 'title', 'label' => 'Titre', 'type' => 'text', 'rules' => ['nullable', 'string', 'max:180']],
+            ['key' => 'subtitle', 'label' => 'Sous-titre', 'type' => 'textarea', 'rules' => ['nullable', 'string', 'max:500']],
+            [
+                'key' => 'items',
+                'label' => 'Cartes features',
+                'type' => 'list',
+                'item_defaults' => ['icon' => '★', 'title' => '', 'text' => ''],
+                'item_fields' => [
+                    ['key' => 'icon', 'label' => 'Icône', 'type' => 'text'],
+                    ['key' => 'title', 'label' => 'Titre', 'type' => 'text'],
+                    ['key' => 'text', 'label' => 'Texte', 'type' => 'textarea'],
+                ],
+                'rules' => ['nullable', 'array', 'max:12'],
+            ],
+        ],
+    ],
+    [
+        'id' => 'servers',
+        'label' => 'Serveurs',
+        'default_params' => [],
+        'params' => [],
+    ],
+    [
+        'id' => 'news',
+        'label' => 'Nouveautés',
+        'default_params' => [],
+        'params' => [],
+    ],
+    [
+        'id' => 'steps',
+        'label' => 'Steps',
+        'default_params' => [
+            'badge' => 'Comment rejoindre',
+            'title' => 'En ligne en moins de 60 secondes.',
+            'subtitle' => 'Accessible sur Java et Bedrock, sans mod, sans inscription obligatoire.',
+            'items' => [
+                ['title' => 'Ouvre Minecraft', 'text' => 'Lance Java Edition ou Bedrock puis clique sur Multijoueur.'],
+                ['title' => 'Ajoute un serveur', 'text' => 'Clique sur Ajouter un serveur puis renseigne l’adresse IP.'],
+                ['title' => 'Connecte-toi et joue', 'text' => 'Choisis ton mode de jeu et rejoins la communauté.'],
+            ],
+        ],
+        'params' => [
+            ['key' => 'badge', 'label' => 'Badge', 'type' => 'text', 'rules' => ['nullable', 'string', 'max:120']],
+            ['key' => 'title', 'label' => 'Titre', 'type' => 'text', 'rules' => ['nullable', 'string', 'max:180']],
+            ['key' => 'subtitle', 'label' => 'Sous-titre', 'type' => 'textarea', 'rules' => ['nullable', 'string', 'max:500']],
+            [
+                'key' => 'items',
+                'label' => 'Étapes',
+                'type' => 'list',
+                'item_defaults' => ['title' => '', 'text' => ''],
+                'item_fields' => [
+                    ['key' => 'title', 'label' => 'Titre', 'type' => 'text'],
+                    ['key' => 'text', 'label' => 'Description', 'type' => 'textarea'],
+                ],
+                'rules' => ['nullable', 'array', 'max:12'],
+            ],
+        ],
+    ],
+    [
+        'id' => 'stats',
+        'label' => 'Stats',
+        'default_params' => [
+            'badge' => 'En chiffres',
+            'title' => 'Un serveur solide depuis 2021.',
+            'items' => [
+                ['value' => '+500k', 'label' => 'Joueurs uniques'],
+                ['value' => '40k', 'label' => 'Membres Discord'],
+                ['value' => '1 247', 'label' => 'En ligne maintenant'],
+                ['value' => '4.8/5', 'label' => 'Note moyenne'],
+            ],
+        ],
+        'params' => [
+            ['key' => 'badge', 'label' => 'Badge', 'type' => 'text', 'rules' => ['nullable', 'string', 'max:120']],
+            ['key' => 'title', 'label' => 'Titre', 'type' => 'text', 'rules' => ['nullable', 'string', 'max:180']],
+            [
+                'key' => 'items',
+                'label' => 'Statistiques',
+                'type' => 'list',
+                'item_defaults' => ['value' => '', 'label' => ''],
+                'item_fields' => [
+                    ['key' => 'value', 'label' => 'Valeur', 'type' => 'text'],
+                    ['key' => 'label', 'label' => 'Label', 'type' => 'text'],
+                ],
+                'rules' => ['nullable', 'array', 'max:12'],
+            ],
+        ],
+    ],
+    [
+        'id' => 'cta',
+        'label' => 'CTA',
+        'default_params' => [
+            'badge' => 'Prêt ?',
+            'title' => 'Rejoins l’aventure dès aujourd’hui.',
+            'subtitle' => 'Gratuit. Sans inscription. La communauté t’attend.',
+            'primary_button_text' => 'Commencer à jouer',
+            'primary_button_url' => '#join',
+            'primary_button_variant' => 'primary',
+            'secondary_button_text' => 'Rejoindre le Discord',
+            'secondary_button_url' => '',
+            'secondary_button_variant' => 'secondary',
+        ],
+        'params' => [
+            ['key' => 'badge', 'label' => 'Badge', 'type' => 'text', 'rules' => ['nullable', 'string', 'max:120']],
+            ['key' => 'title', 'label' => 'Titre', 'type' => 'text', 'rules' => ['nullable', 'string', 'max:180']],
+            ['key' => 'subtitle', 'label' => 'Sous-titre', 'type' => 'textarea', 'rules' => ['nullable', 'string', 'max:500']],
+            ['key' => 'primary_button_text', 'label' => 'Bouton principal - Texte', 'type' => 'text', 'rules' => ['nullable', 'string', 'max:120']],
+            ['key' => 'primary_button_url', 'label' => 'Bouton principal - Lien', 'type' => 'url', 'rules' => ['nullable', 'string', 'max:255']],
+            ['key' => 'primary_button_variant', 'label' => 'Bouton principal - Type', 'type' => 'select', 'options' => $buttonVariants, 'rules' => ['nullable', 'in:'.implode(',', $buttonVariants)]],
+            ['key' => 'secondary_button_text', 'label' => 'Bouton secondaire - Texte', 'type' => 'text', 'rules' => ['nullable', 'string', 'max:120']],
+            ['key' => 'secondary_button_url', 'label' => 'Bouton secondaire - Lien', 'type' => 'url', 'rules' => ['nullable', 'string', 'max:255']],
+            ['key' => 'secondary_button_variant', 'label' => 'Bouton secondaire - Type', 'type' => 'select', 'options' => $buttonVariants, 'rules' => ['nullable', 'in:'.implode(',', $buttonVariants)]],
+        ],
+    ],
+    [
+        'id' => 'footer',
+        'label' => 'Footer',
+        'fixed' => true,
+        'required' => true,
+        'unique' => true,
+        'external' => true,
+        'anchor' => 'end',
+        'addable' => false,
+        'movable' => false,
+        'deletable' => false,
+        'duplicable' => false,
+        'default_params' => [
+            'show_logo' => true,
+            'description' => '',
+            'show_social_links' => true,
+            'show_dixept_copyright' => true,
+        ],
+        'params' => [
+            ['key' => 'show_logo', 'label' => 'Afficher le logo', 'type' => 'toggle', 'rules' => ['nullable', 'boolean']],
+            ['key' => 'description', 'label' => 'Description', 'type' => 'text', 'rules' => ['nullable', 'string', 'max:255']],
+            ['key' => 'show_social_links', 'label' => 'Afficher les liens sociaux', 'type' => 'toggle', 'rules' => ['nullable', 'boolean']],
+            ['key' => 'show_dixept_copyright', 'label' => 'Afficher le copyright Dixept', 'type' => 'toggle', 'advanced' => true, 'rules' => ['nullable', 'boolean']],
+        ],
+    ],
+];
+
+$viewMap = [
+    'header' => 'theme-editor.blocks.home.header',
+    'page_content' => 'theme-editor.blocks.home.page-content',
+    'hero' => 'theme-editor.blocks.home.hero',
+    'features' => 'theme-editor.blocks.home.features',
+    'servers' => 'theme-editor.blocks.home.servers',
+    'news' => 'theme-editor.blocks.home.news',
+    'steps' => 'theme-editor.blocks.home.steps',
+    'stats' => 'theme-editor.blocks.home.stats',
+    'cta' => 'theme-editor.blocks.home.cta',
+    'footer' => 'theme-editor.blocks.home.footer',
+];
+
+$paramRulesOverrides = [
+    'header' => [
+        'button_styles.*' => ['nullable', 'array'],
+        'button_styles.*.label' => ['nullable', 'string', 'max:120'],
+        'button_styles.*.variant' => ['nullable', 'in:'.implode(',', $buttonVariants)],
+    ],
+    'features' => [
+        'items.*' => ['nullable', 'array'],
+        'items.*.icon' => ['nullable', 'string', 'max:20'],
+        'items.*.title' => ['nullable', 'string', 'max:80'],
+        'items.*.text' => ['nullable', 'string', 'max:350'],
+    ],
+    'steps' => [
+        'items.*' => ['nullable', 'array'],
+        'items.*.title' => ['nullable', 'string', 'max:120'],
+        'items.*.text' => ['nullable', 'string', 'max:400'],
+    ],
+    'stats' => [
+        'items.*' => ['nullable', 'array'],
+        'items.*.value' => ['nullable', 'string', 'max:40'],
+        'items.*.label' => ['nullable', 'string', 'max:80'],
+    ],
+];
+
+$defaultBlocksForRoute = static function (?string $routeName, ?string $routePattern, string $routePath) use ($withLayoutBlocks): array {
+    $normalizedRouteName = strtolower(trim((string) $routeName));
+    if ($routePath === '/' || $normalizedRouteName === 'home') {
+        return $withLayoutBlocks(['hero', 'features', 'servers', 'news', 'steps', 'stats', 'cta']);
+    }
+
+    return $withLayoutBlocks(['page_content']);
+};
+
+return [
+    'aos_options' => $aosOptions,
+    'catalog' => $catalog,
+    'view_map' => $viewMap,
+    'param_rules_overrides' => $paramRulesOverrides,
+    'default_blocks_for_route' => $defaultBlocksForRoute,
+];

@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'Minecraft';
+    src: url('../fonts/Minecraft.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    line-height: normal;
+    font-family: var(--di-main-font);
+}
+
+h1, .h1,
+h2, .h2{
+    font-size: 32px;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+}
+
+h3, .h3{
+    font-size: 24px;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+}
+
+.h5, .h4 {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+p {
+    line-height: 1.4;
+}
+
+p,
+small,
+li{
+    font-family: var(--di-second-font);
+    letter-spacing: .5px;
+}
+
+hgroup{
+    p{
+        font-size: 18px;
+    }
+}
+
+.text{
+    &-xxl{
+        font-size: 42px;
+    }
+    &-3xl{
+        font-size: 32px;
+    }
+    &-2xl{
+        font-size: 28px;
+    }
+    &-xl{
+        font-size: 24px;
+    }
+    &-1xl{
+        font-size: 20px;
+    }
+    &-lg{
+        font-size: 18px;
+    }
+    &-md{
+        font-size: 16px;
+    }
+    &-m{
+        font-size: 15px;
+    }
+    &-sm{
+        font-size: 14px;
+    }
+    &-xs{
+        font-size: 12px;
+    }
+}
+
+.ff-main{
+    font-family: var(--di-main-font);
+}
+
+a{
+    color: var(--di-white)
+}

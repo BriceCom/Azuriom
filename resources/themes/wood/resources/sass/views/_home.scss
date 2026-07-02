@@ -1,0 +1,31 @@
+.post {
+
+    .post-gradient::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        display: block;
+        background: linear-gradient(35deg, var(--di-body-bg) -20%, transparent 85%)
+    }
+
+    &-img {
+        overflow: hidden;
+        max-height: 348px;
+
+        img {
+            transition: transform .3s ease-in-out;
+        }
+    }
+
+    &-content {
+        pointer-events: none;
+    }
+
+    &:hover {
+        &-img {
+            img {
+                transform: scale(1.012);
+            }
+        }
+    }
+}

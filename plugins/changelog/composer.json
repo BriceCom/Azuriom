@@ -1,0 +1,10 @@
+{
+    "name": "azuriom/changelog",
+    "type": "azuriom-plugin",
+    "description": "Add a changelog to your website.",
+    "autoload": {
+        "psr-4": {
+            "Azuriom\\Plugin\\Changelog\\": "src/"
+        }
+    }
+}

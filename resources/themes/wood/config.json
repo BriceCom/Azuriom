@@ -1,0 +1,255 @@
+{
+    "premium": {
+        "serveurliste": {
+            "link": "https://www.serveurliste.com/minecraft/serveurliste",
+            "token": "2233"
+        }
+    },
+    "settings": {
+        "server": {
+            "ip": null
+        },
+        "discord": {
+            "link": null,
+            "id": null
+        }
+    },
+    "home": {
+        "video": {
+            "title": "titre video",
+            "text": "texte video",
+            "url": "https://www.youtube.com/watch?v=b_khmiB2hZk"
+        },
+        "cta": {
+            "img": "bg.jpg",
+            "title": "adlladz",
+            "text": "<p>kzd,kdza</p>",
+            "link": {
+                "text": null,
+                "url": null
+            }
+        },
+        "stats": {
+            "stats": {
+                "1": {
+                    "icon": null,
+                    "title": "titre 2",
+                    "text": "text 2"
+                },
+                "2": {
+                    "icon": null,
+                    "title": "zd",
+                    "text": "zddzo"
+                },
+                "3": {
+                    "icon": null,
+                    "title": null,
+                    "text": null
+                }
+            }
+        },
+        "trusts": {
+            "title": null,
+            "trusts": {
+                "1": {
+                    "title": null,
+                    "text": null,
+                    "icon": null,
+                    "color": "#f0ffac"
+                },
+                "2": {
+                    "title": null,
+                    "text": null,
+                    "icon": null,
+                    "color": "#f0ffac"
+                },
+                "3": {
+                    "title": null,
+                    "text": null,
+                    "icon": null,
+                    "color": "#f0ffac"
+                },
+                "4": {
+                    "title": null,
+                    "text": null,
+                    "icon": null,
+                    "color": "#f0ffac"
+                }
+            }
+        }
+    },
+    "header": {
+        "index": {
+            "hero": {
+                "img": {
+                    "height": "179"
+                }
+            }
+        },
+        "modules": {
+            "announceBar": {
+                "text": null,
+                "bg": "#892958"
+            },
+            "pageHeight": {
+                "height": "8",
+                "colorBg": "#6c5e8f",
+                "color": "#531cdb"
+            }
+        },
+        "hero": {
+            "joinText": null
+        }
+    },
+    "footer": {
+        "index": {
+            "text": "adzda",
+            "button": {
+                "text": "blabl",
+                "url": "https://wave.webaim.org/"
+            },
+            "links": {
+                "1": {
+                    "1": {
+                        "blank": "on"
+                    },
+                    "links": {
+                        "1": {
+                            "text": "daad",
+                            "url": "adzd"
+                        },
+                        "2": {
+                            "text": null,
+                            "url": null
+                        },
+                        "3": {
+                            "text": null,
+                            "url": null
+                        },
+                        "4": {
+                            "text": null,
+                            "url": null
+                        },
+                        "5": {
+                            "text": null,
+                            "url": null
+                        }
+                    }
+                },
+                "2": {
+                    "links": {
+                        "1": {
+                            "text": "zdadz",
+                            "url": "zdadz"
+                        },
+                        "2": {
+                            "text": null,
+                            "url": null
+                        },
+                        "3": {
+                            "text": null,
+                            "url": null
+                        },
+                        "4": {
+                            "text": null,
+                            "url": null
+                        },
+                        "5": {
+                            "text": null,
+                            "url": null
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "vote": {
+        "title": null,
+        "text": "zdad",
+        "logout": {
+            "text": null
+        },
+        "rewards": {
+            "on": "on",
+            "text": "R\u00e9compensio",
+            "top": {
+                "1": "1,000 points boutique",
+                "2": "500 points boutique",
+                "3": "100 points boutique",
+                "4": "5 diamants",
+                "5": "3 diamants",
+                "6": "1 diamant",
+                "7": "1 diamant",
+                "8": null,
+                "9": null,
+                "10": null
+            },
+            "topColor": {
+                "1": "#f8d32e",
+                "2": "#f8d32e",
+                "3": "#f8d32e",
+                "4": "#f8d32e",
+                "5": "#f8d32e",
+                "6": "#f8d32e",
+                "7": "#f8d32e",
+                "8": "#f8d32e",
+                "9": "#f8d32e",
+                "10": "#f8d32e"
+            }
+        }
+    },
+    "style": {
+        "index": {
+            "background": {
+                "light": "gbgbg.png",
+                "dark": "krustyrender.webp"
+            },
+            "font": {
+                "on": "on",
+                "url": null,
+                "name": null
+            }
+        },
+        "colors": {
+            "light": {
+                "primary": "#e22828",
+                "secondary": "#e2b029",
+                "tertiary": "#000000",
+                "quaternary": "#ecaf2d",
+                "body": "#f2f2f2",
+                "black": "#e2e2e2",
+                "dark": "#f2f2f2",
+                "white": "#a68dc3",
+                "light": "#fafafa",
+                "color": "#111111",
+                "color-dark": "#6c757d",
+                "success": "#198754",
+                "info": "#0dcaf0",
+                "warning": "#ffc107",
+                "danger": "#dc3545"
+            },
+            "dark": {
+                "primary": "#e22828",
+                "secondary": "#e2b029",
+                "tertiary": "#54cbaa",
+                "quaternary": "#ecaf2d",
+                "body": "#212529",
+                "black": "#1a1e21",
+                "dark": "#191c1f",
+                "white": "#21262c",
+                "light": "#191c1f",
+                "color": "#ffffff",
+                "color-dark": "#6c757d",
+                "success": "#198754",
+                "info": "#0dcaf0",
+                "warning": "#ffc107",
+                "danger": "#dc3545"
+            }
+        },
+        "ui": {
+            "card": {
+                "borderRadius": "0"
+            }
+        }
+    }
+}

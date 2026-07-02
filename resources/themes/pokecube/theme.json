@@ -1,0 +1,12 @@
+{
+    "id": "pokecube",
+    "name": "PokeCube",
+    "version": "1.0.0",
+    "description": "Thème officiel du serveur Minecraft PokeCube !",
+    "url": "https://pokecube.fr",
+    "authors": [
+        "Vrombi",
+        "PokeCube"
+    ],
+    "azuriom_api": "1.2.0"
+}

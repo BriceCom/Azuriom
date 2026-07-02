@@ -1,0 +1,14 @@
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-border-color: rgba(126, 152, 195, 0.22);
+    border-radius: 0.9rem;
+    overflow: hidden;
+}
+
+.table > :not(caption) > * > * {
+    padding: 0.95rem 1rem;
+}
+
+.table tbody tr:hover > * {
+    background-color: rgba(0, 183, 255, 0.1);
+}

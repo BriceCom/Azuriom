@@ -1,0 +1,14 @@
+
+
+// WIKI
+.col-md-3{
+    &>a{
+        text-decoration: none;
+
+        &:hover{
+            &>.card{
+                background: rgba(var(--bs-black-rgb), .7) !important;
+            }
+        }
+    }
+}

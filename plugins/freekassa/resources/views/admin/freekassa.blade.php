@@ -1,0 +1,44 @@
+<div class="row g-3">
+    <div class="mb-3 col-md-6">
+        <label class="form-label" for="keyInput">{{ trans('shop::admin.gateways.private-key') }}</label>
+        <input type="text" class="form-control @error('private-key') is-invalid @enderror" id="keyInput" name="private-key" value="{{ old('private-key', $gateway->data['private-key'] ?? '') }}" required>
+
+        @error('private-key')
+        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+        @enderror
+    </div>
+
+    <div class="mb-3 col-md-6">
+        <label class="form-label" for="keyInput">{{ trans('shop::admin.gateways.private-key') }} 2</label>
+        <input type="text" class="form-control @error('private-key-2') is-invalid @enderror" id="keyInput" name="private-key-2" value="{{ old('private-key-2', $gateway->data['private-key-2'] ?? '') }}" required>
+
+        @error('private-key-2')
+        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+        @enderror
+    </div>
+
+    <div class="mb-3 col-md-6">
+        <label class="form-label" for="keyInput">{{ trans('shop::admin.gateways.project-id') }}</label>
+        <input type="text" class="form-control @error('project-id') is-invalid @enderror" id="keyInput" name="project-id" value="{{ old('project-id', $gateway->data['project-id'] ?? '') }}" required>
+
+        @error('project-id')
+        <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+        @enderror
+    </div>
+
+</div>
+
+<div class="alert alert-info">
+    <p>
+        <i class="bi bi-info-circle"></i>
+        @lang('freekassa::messages.setup', [
+            'success' => '<code>'.route('shop.payments.success', 'freekassa').'</code>',
+            'notification' => '<code>'.route('shop.payments.notification', 'freekassa').'</code>',
+            'failure' => '<code>'.route('shop.payments.failure', 'freekassa').'</code>',
+        ])
+    </p>
+
+    <a class="btn btn-primary mb-3" target="_blank" href="https://merchant.freekassa.ru/" role="button" >
+        <i class="bi bi-box-arrow-in-right"></i> {{ trans('freekassa::messages.keys') }}
+    </a>
+</div>

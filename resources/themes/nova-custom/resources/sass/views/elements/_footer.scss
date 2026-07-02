@@ -1,0 +1,14 @@
+footer{
+    border-top: 1px solid rgba(var(--di-primary-rgb), .22);
+    background: linear-gradient(180deg, rgba(var(--di-body-rgb), .35) 0%, rgba(var(--di-dark-rgb), .35) 100%);
+
+    a {
+        transition: transform .3s, color .2s ease;
+
+        &:hover{
+            @extend .anim-up;
+            color: var(--di-primary);
+        }
+    }
+
+}

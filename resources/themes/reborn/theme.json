@@ -1,0 +1,11 @@
+{
+    "id": "reborn",
+    "name": "Reborn",
+    "description": "Composable Azuriom theme with pluggable blocks, global/page scopes and interactive off-canvas customization.",
+    "version": "1.0.0",
+    "url": "https://azuriom.com",
+    "authors": [
+        "Bricec6"
+    ],
+    "azuriom_api": "1.1.0"
+}

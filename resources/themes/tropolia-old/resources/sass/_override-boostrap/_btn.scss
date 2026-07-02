@@ -1,0 +1,144 @@
+// BUTTON
+.btn {
+    min-height: 48px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0 24px !important;
+    font-weight: bold;
+    font-size: 18px;
+    transition: transform 0.1s ease;
+    text-transform: uppercase;
+
+    &:hover{
+        transform: translateY(-4%);
+    }
+
+    @mixin button-outline-styles($color, $rgb) {
+        --di-btn-bg: rgba(var(--#{$rgb}), 0.17);
+        --di-btn-border-color: rgba(var(--#{$rgb}), 0.5);
+        --di-btn-color: var(--#{$color});
+
+        --di-btn-disabled-bg: rgba(var(--#{$rgb}), 0.17);
+        --di-btn-disabled-border-color: rgba(var(--#{$rgb}), 0.17);
+        --di-btn-disabled-color: rgba(var(--#{$rgb}), 0.5);
+
+        --di-btn-hover-bg: rgba(var(--#{$rgb}), 0.28);
+        --di-btn-hover-border-color: var(--#{$color});
+        --di-btn-hover-color: var(--#{$color});
+
+        --di-btn-active-bg: rgba(var(--#{$rgb}), 0.9);
+        --di-btn-active-border-color: rgba(var(--#{$rgb}), 0.8);
+        --di-btn-active-color: var(--#{$color}-text-emphasis);
+    }
+
+    @mixin button-text-styles($color, $rgb) {
+        padding-left: 0 !important;
+        text-decoration: underline;
+        --di-btn-bg: transparent;
+        --di-btn-border-color: transparent;
+        --di-btn-color: var(--#{$color});
+
+        --di-btn-disabled-bg: rgba(var(--#{$rgb}), 0.5);
+        --di-btn-disabled-border-color: rgba(var(--#{$rgb}), 0.5);
+        --di-btn-disabled-color: rgba(var(--#{$rgb}), 0.5);
+
+        --di-btn-hover-bg: transparent;
+        --di-btn-hover-border-color: transparent;
+        --di-btn-hover-color: rgba(var(--#{$rgb}), 0.9);
+
+        --di-btn-active-bg: transparent;
+        --di-btn-active-border-color: transparent;
+        --di-btn-active-color: rgba(var(--#{$rgb}), 0.9);
+    }
+
+    @mixin button-styles($color, $rgb, $hsl, $use-hsl: true, $outline: false) {
+        --di-btn-bg: var(--#{$color});
+        --di-btn-color: var(--#{$color}-text-emphasis);
+        --di-btn-hover-bg: rgba(var(--#{$rgb}), 0.9);
+        --di-btn-hover-color: var(--di-btn-color);
+        --di-btn-focus-shadow-rgb: 49, 132, 253;
+        --di-btn-active-bg: rgba(var(--#{$rgb}), 0.9);
+        --di-btn-active-border-color: rgba(var(--#{$rgb}), 0.8);
+        --di-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        --di-btn-active-color: var(--#{$color}-text-emphasis);
+        --di-btn-disabled-color: var(--#{$color}-text-emphasis);
+        --di-btn-disabled-bg: rgba(var(--#{$rgb}), 0.6);
+
+        @if $use-hsl {
+            --di-btn-border-color: hsl(var(--#{$hsl}), 50%, 15%);
+            --di-btn-disabled-border-color: hsl(var(--#{$hsl}), 50%, 15%);
+            --di-btn-hover-border-color: hsl(var(--#{$hsl}), 50%, 15%);
+        } @else {
+            --di-btn-border-color: var(--#{$color}-text-emphasis);
+            --di-btn-disabled-border-color: var(--#{$color}-text-emphasis);
+            --di-btn-hover-border-color: var(--#{$color}-text-emphasis);
+        }
+    }
+
+    &-primary {
+        @include button-styles(di-primary, di-primary-rgb, di-primary-hsl, false);
+        --di-btn-color: var(--di-white);
+    }
+
+    &-secondary {
+        @include button-styles(di-secondary, di-secondary-rgb, di-secondary-hsl, false);
+        --di-btn-color: var(--di-white);
+    }
+
+    &-tertiary {
+        @include button-styles(di-tertiary, di-tertiary-rgb, di-tertiary-hsl, false);
+        --di-btn-color: var(--di-white);
+
+        &-outline{
+            @include button-outline-styles(di-tertiary, di-tertiary-rgb);
+        }
+    }
+
+    &-text{
+        &-primary{
+            @include button-text-styles(di-primary, di-primary-rgb);
+        }
+    }
+
+    &-outline{
+        &-primary{
+            @include button-outline-styles(di-primary, di-primary-rgb);
+        }
+
+        &-secondary{
+            @include button-outline-styles(di-secondary, di-secondary-rgb);
+        }
+
+        &-tertiary{
+            @include button-outline-styles(di-tertiary, di-tertiary-rgb);
+        }
+    }
+
+    &-blue {
+        @include button-styles(di-blue, di-blue-rgb, di-blue-hsl);
+        --di-btn-color: var(--di-blue-text-emphasis);
+    }
+
+    &-icon{
+        display: grid;
+        place-items: center;
+        width: 44px;
+        height: 40px;
+        padding: 0 !important;
+    }
+
+    &-currentColor {
+        background: var(--di-btn-color, white);
+        color: var(--di-white);
+        border-color: hsl(var(--di-btn-color-hsl), 50%, 15%);
+        box-shadow: inset 2px 2px 0 0 #ffffff29, 0 2px 0 0 hsl(var(--di-btn-color-hsl), 50%, 15%);
+
+        &:is(:hover, :active, :focus){
+            background: var(--di-btn-color, white);
+            border-color: hsl(var(--di-btn-color-hsl), 50%, 15%);
+            box-shadow: inset 2px 2px 0 0 #ffffff29, 0 1px 0 0 hsl(var(--di-btn-color-hsl), 50%, 15%);
+        }
+    }
+}

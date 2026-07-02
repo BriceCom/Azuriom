@@ -1,0 +1,40 @@
+body{
+    position: relative;
+    background-color: var(--di-body-bg);
+    background-image:
+        radial-gradient(circle at 14% -12%, rgba(var(--di-primary-rgb), .12), transparent 33%),
+        radial-gradient(circle at 88% -6%, rgba(var(--di-tertiary-rgb), .1), transparent 28%);
+
+    &::before{
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        opacity: .38;
+        background-image:
+            linear-gradient(to right, rgba(var(--di-primary-rgb), .08) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(var(--di-primary-rgb), .08) 1px, transparent 1px);
+        background-size: 36px 36px;
+        mask-image: radial-gradient(circle at 50% 40%, black 32%, transparent 80%);
+    }
+
+    #app{
+        position: relative;
+        z-index: 1;
+    }
+}
+
+[data-bs-theme="dark"] body::before{
+    opacity: .2;
+}
+
+.hero{
+    .container-header{
+        .btn{
+            border: 1px solid rgba(var(--di-primary-rgb), .25);
+            background: rgba(var(--di-body-rgb), .35);
+            backdrop-filter: blur(10px);
+        }
+    }
+}

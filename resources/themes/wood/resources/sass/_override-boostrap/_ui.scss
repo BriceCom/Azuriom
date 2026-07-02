@@ -1,0 +1,56 @@
+// LIST GROUP
+.list-group-item {
+
+    &:hover{
+        background-color: rgba(var(--di-secondary-rgb), 0.05);
+    }
+
+    &.active {
+        background-color: var(--di-secondary);
+        border-color: rgba(var(--di-secondary-rgb), 1);
+        color: var(--di-secondary-text-emphasis);
+    }
+}
+
+// DROPDOWN
+.dropdown-item:active {
+    background-color: var(--di-secondary);
+}
+
+// LINKS
+.nav-link{
+    color: var(--di-body-color) !important;
+
+    &:hover, &:focus, &:active{
+        color: rgba(var(--di-white-rgb), 0.75) !important;
+    }
+}
+
+// BACKGROUND
+.bg-body-secondary{
+    background-color: var(--di-tertiary-bg) !important;
+}
+
+
+// BODY
+.bg-body-tertiary{
+    background-color: var(--di-light) !important;
+}
+
+// SEARCH BTN WITH INPUT
+.input-group{
+    &:has([type="search"]){
+        .btn{
+            border-radius: var(--di-border-radius);
+            padding: 12px !important;
+        }
+    }
+}
+
+// SLIDER
+[data-bs-theme=dark] .carousel-control-prev-icon, [data-bs-theme=dark] .carousel-control-next-icon {
+    filter: unset !important;
+}
+[data-bs-theme=light] .carousel-control-prev-icon, [data-bs-theme=light] .carousel-control-next-icon {
+    filter: invert(1) grayscale(100) !important;
+}

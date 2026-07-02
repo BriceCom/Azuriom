@@ -1,0 +1,14 @@
+{
+    "id": "pirate",
+    "name": "Pirate",
+    "description": "Nice and modern pirate theme for Azuriom.",
+    "version": "1.1.0",
+    "url": "https:\/\/market.azuriom.com\/resources\/88",
+    "authors": [
+        "Sloyni",
+        "JustZak"
+    ],
+    "api_id": 88,
+    "azuriom_api": "1.1.0",
+    "apiId": 88
+}

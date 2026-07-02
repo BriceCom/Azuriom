@@ -1,0 +1,9 @@
+{
+    "id": "faylora",
+    "name": "faylora",
+    "description": "Theme for Faylora server",
+    "version": "1.0.0",
+    "url": "https://faylora.fr",
+    "authors": ["Vrombi"],
+    "azuriom_api": "1.0.0"
+}

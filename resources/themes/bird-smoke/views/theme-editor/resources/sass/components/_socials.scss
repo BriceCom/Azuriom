@@ -1,0 +1,14 @@
+.social {
+    height: 32px;
+    width: 32px;
+    padding: 4px;
+    background: var(--social-color);
+    border-radius: var(--bs-border-radius);
+    color: #fff;
+    transition: transform .1s linear;
+
+    &:hover {
+        background: var(--social-color-opacity);
+        transform: translateY(-2%);
+    }
+}

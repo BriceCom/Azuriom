@@ -1,0 +1,11 @@
+{
+    "id": "wood",
+    "name": "Wood",
+    "description": "A modern and dynamic theme for Azuriom community",
+    "version": "1.0.0",
+    "url": "https://azuriom.com",
+    "authors": [
+        "bricec6"
+    ],
+    "azuriom_api": "1.1.0"
+}

@@ -1,0 +1,16 @@
+{
+    "id": "discord-auth",
+    "name": "Discord Auth",
+    "description": "Plugin for Azuriom",
+    "version": "1.4.0",
+    "url": "https:\/\/github.com\/naekaa444\/Plugin-Discord-Auth-Azuriom",
+    "authors": [
+        "Naekaa & magrigry"
+    ],
+    "azuriom_api": "1.0.0",
+    "providers": [
+        "\\Azuriom\\Plugin\\DiscordAuth\\Providers\\DiscordAuthServiceProvider",
+        "\\Azuriom\\Plugin\\DiscordAuth\\Providers\\RouteServiceProvider"
+    ],
+    "apiId": 62
+}

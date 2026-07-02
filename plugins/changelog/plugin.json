@@ -1,0 +1,17 @@
+{
+    "id": "changelog",
+    "name": "Changelog",
+    "description": "Add a changelog to your website.",
+    "version": "1.3.0",
+    "url": "https:\/\/market.azuriom.com\/resources\/53",
+    "authors": [
+        "MrMicky",
+        "Bryan M."
+    ],
+    "azuriom_api": "1.0.0",
+    "providers": [
+        "\\Azuriom\\Plugin\\Changelog\\Providers\\ChangelogServiceProvider",
+        "\\Azuriom\\Plugin\\Changelog\\Providers\\RouteServiceProvider"
+    ],
+    "apiId": 53
+}

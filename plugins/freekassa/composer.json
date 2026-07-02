@@ -1,0 +1,11 @@
+{
+    "name": "azuriom/freekassa",
+    "type": "azuriom-plugin",
+    "description": "FreeKassa для магазина",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Azuriom\\Plugin\\FreeKassa\\": "src/"
+        }
+    }
+}

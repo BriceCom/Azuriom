@@ -1,0 +1,17 @@
+{
+    "name": "azuriom/discord-auth",
+    "type": "azuriom-plugin",
+    "description": "Plugin for Azuriom",
+    "autoload": {
+        "psr-4": {
+            "Azuriom\\Plugin\\DiscordAuth\\": "src/"
+        }
+    },
+    "replace": {
+        "guzzlehttp/guzzle": "*",
+        "psr/log": "*",
+        "symfony/http-foundation": "*",
+        "illuminate/support": "*",
+        "facade/ignition-contracts": "*"
+    }
+}

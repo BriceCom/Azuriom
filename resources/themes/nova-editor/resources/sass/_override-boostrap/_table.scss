@@ -1,0 +1,74 @@
+$table-border-radius: var(--di-border-radius);
+
+.table-dark{
+    --di-table-color: var(--di-body-color);
+}
+
+table {
+    border-collapse: separate;
+    border-spacing:  0 8px;
+    margin-top: 32px;
+}
+
+thead, tbody, tfoot, tr, td, th{
+    border: unset !important;
+}
+
+thead{
+    position: relative;
+
+    tr{
+        th{
+            background-color: transparent !important;
+            border-bottom: 1px solid rgba(var(--di-white-rgb), .1) !important;
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+}
+
+tbody{
+    font-size: 16px;
+
+    tr{
+        vertical-align: middle;
+
+        &>*{
+            &:first-child {
+                border-top-left-radius: $table-border-radius;
+                border-bottom-left-radius: $table-border-radius;
+            }
+
+            &:last-child{
+                    border-top-right-radius: $table-border-radius;
+                    border-bottom-right-radius: $table-border-radius;
+            }
+        }
+    }
+}
+
+tbody > tr:nth-of-type(odd) {
+    td,th{
+        background-color: var(--di-body-bg) !important;
+        transition: background-color .2s linear;
+    }
+
+    &:hover{
+        td,th{
+            background-color: rgba(var(--di-body-rgb), .9) !important;
+        }
+    }
+}
+
+tbody > tr:nth-of-type(even) {
+    td,th{
+        background-color: rgba(var(--di-body-rgb), .9) !important;
+        transition: background-color .2s linear;
+    }
+
+    &:hover{
+        td,th{
+            background-color: var(--di-body-bg) !important;
+        }
+    }
+}

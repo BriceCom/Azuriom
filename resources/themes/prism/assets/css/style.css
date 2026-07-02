@@ -1,0 +1,138 @@
+:root,
+[data-bs-theme=light],
+[data-bs-theme=dark] {
+    --bs-border-radius: 0;
+    --bs-border-radius-sm: 0;
+    --bs-border-radius-lg: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#app {
+    flex-shrink: 0;
+    padding-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+.h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.content {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+
+/*
+ * Navbar
+ */
+.navbar,
+.footer {
+    background: #1a1d20;
+}
+
+.navbar {
+    font-size: 1.05rem;
+    text-transform: uppercase;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #eee;
+}
+
+.navbar-brand img {
+    height: 70px;
+}
+
+.prism-nav-right .nav-item {
+    margin-right: 1rem;
+    display: inline-block;
+    list-style: none;
+}
+
+.copy-address {
+    border-radius: 5px;
+    border: none;
+    padding: 2px 5px;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+@media (min-width: 991px) {
+    .navbar-brand {
+        margin-right: 0;
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        width: 165px;
+        transform: translateX(-50%);
+        z-index: 50;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navbar-collapse .navbar-nav {
+        width: calc((100% - 165px) / 2);
+    }
+
+    .navbar-brand img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.sub-navbar .btn-rounded {
+    padding: 0.5em 1em;
+    border-radius: 30px;
+}
+
+/*
+ * Home
+ */
+.home-background {
+    position: relative;
+    height: 600px;
+}
+
+.background-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(50, 50, 50, 0.5);
+}
+
+.home-container .card,
+.post-preview {
+    position: relative;
+    height: 100%;
+}
+
+.post-preview .title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(25, 25, 25, 0.7);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.post-preview:hover .title {
+    background: rgba(25, 25, 25, 0.9);
+}

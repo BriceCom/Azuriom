@@ -1,0 +1,283 @@
+:root {
+    --bs-font-sans-serif: 'Raleway', sans-serif;
+    --background-url: url("https://pixelrealm.fr/storage/img/4klossless.png");
+}
+
+[data-bs-theme=dark] {
+    --bs-body-bg: #1c2833;
+    --bs-body-bg-rgb: 28, 40, 51;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: #212f3d;
+}
+
+a {
+    text-decoration: none;
+}
+
+.content {
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 4.5rem;
+}
+
+#particles-js {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: -1;
+}
+
+/* ------------------------ NAVBAR (liens, émojis, etc.) ------------------------ */
+
+/* Liens de la navbar : couleurs, marges, style */
+.navbar .navbar-nav .nav-link {
+    color: #fff;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.05em;
+    position: relative;
+}
+
+/* Lien actif en couleur primaire */
+.navbar .navbar-nav .nav-link.active {
+    color: var(--bs-primary);
+}
+
+/* Animation du soulignement au survol */
+.nav-item .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    height: 2px;
+    background: #fff;
+    transition: all ease 0.3s;
+}
+
+.nav-item .nav-link:hover::before {
+    left: 0;
+    right: 0;
+    transition: all ease 0.3s;
+}
+
+/* Empêcher un pseudo trop long de déborder
+   sans toucher à la dropdown : on applique ces règles
+   seulement au lien (nav-link) direct, pas à la .dropdown-menu */
+.navbar-user-area > .nav-item > .nav-link {
+    max-width: 150px;      /* Ajuste selon la place dispo */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ------------------------ HEADER ------------------------ */
+
+.header {
+    min-height: 300px;
+    position: relative;
+    background: url("https://pixelrealm.fr/storage/img/4klossless.png") no-repeat center / cover;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.header .logo {
+    max-height: 175px;
+}
+
+/* ------------------------ HEADER SEPARATOR & ANIMATIONS ------------------------ */
+
+.header-separator {
+    position: relative;
+    margin-top: 175px;
+    bottom: -20px;
+}
+
+.home-header .header-separator {
+    margin-top: 30px;
+    position: absolute;
+    bottom: -10px;
+}
+
+.header-separator .svg-1 {
+    height: 140px;
+    position: absolute;
+    bottom: 60px;
+    z-index: 0;
+    animation: wave 5s linear infinite;
+}
+
+.header-separator .svg-2 {
+    height: 140px;
+    position: relative;
+    z-index: 15;
+    animation: wave 8s linear infinite;
+}
+
+.header-separator .boat {
+    width: 15%;
+    position: absolute;
+    bottom: 70%;
+    z-index: 10;
+    animation: boat 30s linear infinite;
+}
+
+/* ------------------------ HOME ------------------------ */
+
+.home-title {
+    position: relative;
+    padding-bottom: 0.4rem;
+}
+
+.home-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    right: 30%;
+    height: 2px;
+    background-color: var(--bs-primary);
+}
+
+.home .carousel-control-next {
+    right: -6rem;
+}
+
+.home .carousel-control-prev {
+    left: -6rem;
+}
+
+.home .feature {
+    width: 100px;
+    height: 100px;
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bs-body-bg);
+}
+
+.home .feature .bi {
+    transform: rotate(-45deg);
+    transition: all ease 0.5s;
+}
+
+.btn-play {
+    text-transform: uppercase;
+    padding: 1em 2.1em 1em 2.1em;
+    border-radius: 45px;
+}
+
+/* ------------------------ ANIMATIONS CLÉS ------------------------ */
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: scaleX(1.7) translateX(0);
+    }
+    50% {
+        transform: scaleX(1.7) translateX(1%) rotate(1deg);
+    }
+    100% {
+        transform: scaleX(1.7) translateX(0);
+    }
+}
+
+@keyframes boat {
+    0% {
+        left: -15%;
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: translateY(20px) rotate(0);
+    }
+    100% {
+        left: 100%;
+        transform: rotate(-10deg);
+    }
+}
+
+/* ------------------------ LOGO ------------------------ */
+
+
+.navbar .navbar-logo {
+    max-height: 50px;
+}
+
+/* ------------------------ FOOTER ------------------------ */
+
+.footer-logo {
+    max-width: 275px;
+}
+
+/* ------------------------ PARTICLES & FADEOUT ------------------------ */
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.particle {
+    animation: fadeOut 4s forwards; /* Ajustez la durée selon vos besoins */
+}
+
+/* ------------------------ HOME : OVERRIDES ------------------------ */
+
+.home .feature {
+    overflow: visible;
+}
+
+.home .feature.fs-1.text-primary.mx-auto.rounded img {
+    max-width: none !important;
+    width: 175px !important; /* ou la largeur désirée */
+    height: auto;
+}
+
+/* ------------------------ NAVBAR & OVERLAY ------------------------ */
+
+/* Overlay (barre) centrée, paramétrée à ta guise */
+.navbar-overlay {
+    min-height: 75px;
+    box-shadow: 0 0 13px rgba(0, 0, 0, 0.2);
+    background: rgba(32,47,61,0.5); /* Couleur semi-transparente */
+    border-radius: 10px;           /* Coins arrondis */
+
+    border: 2px solid #263746;       /* Liseré noir opaque */
+    backdrop-filter: blur(3px); /* Ajoute un flou de 10px sous l'overlay */
+    -webkit-backdrop-filter: blur(3px); /* Pour compatibilité Safari */
+}

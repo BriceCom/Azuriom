@@ -1,0 +1,13 @@
+#vote{
+    .vote-top__row {
+            td,th{
+                background-color: rgba(var(--di-top-vote-one-rgb), .17) !important;
+            }
+
+            &:hover{
+                td,th{
+                    background-color: rgba(var(--di-top-vote-one-rgb), .20) !important;
+                }
+            }
+        }
+}

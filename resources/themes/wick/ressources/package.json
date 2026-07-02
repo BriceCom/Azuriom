@@ -1,0 +1,35 @@
+{
+  "name": "theme-template",
+  "version": "1.0.0",
+  "description": "Theme template",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^5.3.0",
+    "lil-gui": "^0.19.2",
+    "terser-webpack-plugin": "^5.3.9",
+    "three": "^0.165.0"
+  },
+  "devDependencies": {
+    "bootstrap-icons": "^1.10.5",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-minimizer-webpack-plugin": "^5.0.1",
+    "laravel-mix": "^6.0.6",
+    "laravel-mix-clean": "^0.1.0",
+    "minify-html-webpack-plugin": "^1.1.7",
+    "postcss": "^8.2.6",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.32.7",
+    "sass-loader": "^8.0.0"
+  },
+  "scripts": {
+    "build": "mix build",
+    "development": "mix dev",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production"
+  },
+  "author": "Bricec6#6204",
+  "license": "ISC"
+}

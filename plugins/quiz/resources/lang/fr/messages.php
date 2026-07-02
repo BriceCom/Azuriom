@@ -1,0 +1,30 @@
+<?php
+
+return [
+    'title' => 'Quiz',
+    'no_quiz' => 'Il n\'y a pas de quiz actif pour aujourd\'hui.',
+    'already_answered' => 'Vous avez déjà répondu au quiz d\'aujourd\'hui.',
+    'correct_answer' => 'Félicitations ! Votre réponse est correcte. Vous avez reçu :reward.',
+    'wrong_answer' => 'Désolé, ce n\'est pas la bonne réponse.',
+    'time_expired' => 'Temps écoulé. Le quiz a été marqué comme échoué.',
+    'time_limit' => 'Temps restant',
+    'delay_not_elapsed' => 'Prochain quiz disponible dans :remaining.',
+    'admin_not_allowed' => 'Les administrateurs ne sont pas autorisés à participer au quiz.',
+    'login_to_participate' => 'Veuillez vous connecter pour participer au quiz.',
+    'score' => 'Votre score total : :score',
+    'leaderboard' => 'Classement',
+    'rank' => 'Rang',
+    'player' => 'Joueur',
+    'points' => 'Points',
+    'back_to_quiz' => 'Retour au Quiz',
+    'submit' => 'Valider la réponse',
+    'no_reward' => 'aucune récompense',
+    'reward_points' => ':value points',
+    'reward_money' => ':value monnaie',
+    'reward_item' => 'Objet : :value',
+    'difficulty' => [
+        'easy' => 'Facile',
+        'medium' => 'Moyen',
+        'hard' => 'Difficile',
+    ],
+];

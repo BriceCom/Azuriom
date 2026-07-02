@@ -1,0 +1,12 @@
+.stat-card{
+    width: 100%;
+
+
+    @media (min-width: 576px){
+        width: calc(50% - 16px);
+    }
+
+    @media (min-width: 767px) {
+        width: 300px;
+    }
+}

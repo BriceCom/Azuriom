@@ -1,0 +1,10 @@
+footer{
+    a {
+        transition: transform .3s;
+
+        &:hover{
+            @extend .anim-up;
+        }
+    }
+
+}

@@ -1,0 +1,53 @@
+#gjs {
+  position: fixed;
+  inset: 0;
+  z-index: 1045;
+  display: none;
+  height: 100vh;
+  background: #f8f9fa;
+  border-top: 1px solid #d9dde3;
+}
+
+#gjs .gjs-editor-cont,
+#gjs .gjs-cv-canvas {
+  height: 100% !important;
+}
+
+#gjs .gjs-frame-wrapper {
+  background-color: #ffffff;
+}
+
+#gjs .gjs-pn-views-container {
+  display: block !important;
+}
+
+#gjs .gjs-pn-options {
+  right: 0;
+  display: flex !important;
+}
+
+#gjs .gjs-pn-buttons {
+  justify-content: space-around;
+}
+
+#gjs .gjs-block {
+  width: auto;
+  font-size: 13px;
+}
+
+#gpsActions {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1055;
+  display: none;
+  gap: 0.5rem;
+}
+
+#gpsActions.is-open {
+  display: flex !important;
+}
+
+body.pagebuilder-editor-open {
+  overflow: hidden;
+}

@@ -1,0 +1,32 @@
+@import
+'abstracts/mixins',
+"abstracts/variables";
+
+@import
+'base/plugins-normalize',
+'base/typography';
+
+@import
+'utils/ui.scss',
+'utils/utils.scss';
+
+@import
+'components/Components.scss';
+
+@import
+"views/layouts/header",
+"views/layouts/footer",
+"views/_page",
+"views/_shop",
+"views/_vote",
+"views/_home";
+
+
+@media (max-width: 1400px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 767px) {
+}
+@media (max-width: 576px){
+}
