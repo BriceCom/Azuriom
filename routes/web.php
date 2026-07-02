@@ -82,7 +82,7 @@ Route::prefix('notifications')->name('notifications.')->middleware('auth')->grou
 
 Route::prefix('news')->name('posts.')->group(function () {
     Route::get('/', [PostController::class, 'index'])->name('index');
-    Route::get('/{post:slug}', [PostController::class, 'show'])->name('show');
+    Route::get('/{post:slug}', [PostController::class, 'shobrew install redisw'])->name('show');
 
     Route::prefix('/{post}/like')->middleware('auth')->group(function () {
         Route::post('/', [PostLikeController::class, 'addLike'])->name('like');

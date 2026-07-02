@@ -1,0 +1,4 @@
+interface:
+  display_name: "Azuriom Theme Factory"
+  short_description: "Create Azuriom themes fast with Bootstrap-first setup"
+  default_prompt: "Use $azuriom-theme-on-the-fly to build an Azuriom theme quickly with a Bootstrap-first, plugin-compatible architecture."

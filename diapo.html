@@ -1,0 +1,1411 @@
+<html lang="fr"><head><script>(function(){'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+    function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+    p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+    function u(a,b){var d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);var c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{var a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){var b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+    function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{var c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+    function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+    function D(a,b,d){return t(function*(){var c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+    var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{var c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+    function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){var c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);var e=yield c.blob();return new Promise((f,g)=>{var k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){var c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+    function L(a,b,d){return t(function*(){var c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());try{let f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});var e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){var b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");let c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+    function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+    function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;var c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+        return b})}function ea(a,b,d){var c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{var g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+    function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+    function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){let g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+        c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+    function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){var b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+    function la(a,b,d,c){return t(function*(){try{let e=d?(new URL(b,d||void 0)).toString():b,f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){let [c,,e]=ia.exec(d)||[];if(!e)return"";if(e===b)return`src: ${c};`}}):a}
+    function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;var c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c,e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+    function oa(a,b){return t(function*(){var d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+    function pa(a,b){return t(function*(){var d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){var d=a.cssText,c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){var g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+    function X(a){if(a==null)return[];var b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+        d.lastIndex;b.push(e[0])}return b}
+    function qa(a,b){return t(function*(){var d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){let g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+    {}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+    function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}var d=new Set;b(a);return d}function ua(a,b){return t(function*(){var d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+    function va(a,b){return t(function*(){var d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){let c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){var {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+    function xa(a,b={}){return t(function*(){var {width:d,height:c}=A(a,b),e=yield wa(a,b);e=yield B(e);var f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384));
+        f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;let c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+    function Aa(){return t(function*(){var a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+    function Ba(a){return t(function*(){var b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){var b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+    window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+})();</script><script>(function() {
+    // Ensure this script is executed only once
+    if (window.firebaseAuthBridgeScriptLoaded) {
+        return;
+    }
+    window.firebaseAuthBridgeScriptLoaded = true;
+
+    let nextTokenPromiseId = 0;
+
+    // Stores { resolve, reject } for ongoing token requests
+    const pendingTokenPromises = {};
+
+    // Listen for messages from the Host Application
+    window.addEventListener('message', function(event) {
+
+        const messageData = event.data;
+
+        if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+            const { success, token, error, promiseId } = messageData ?? {};
+            if (pendingTokenPromises[promiseId]) {
+                if (success) {
+                    pendingTokenPromises[promiseId].resolve(token);
+                } else {
+                    pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+                }
+                delete pendingTokenPromises[promiseId];
+            }
+        }
+    });
+
+    // Expose a function for the Generated App to request a new Firebase token
+    window.requestNewFirebaseToken = function() {
+        const currentPromiseId = nextTokenPromiseId++;
+        const promise = new Promise((resolve, reject) => {
+            pendingTokenPromises[currentPromiseId] = { resolve, reject };
+        });
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({
+                type: 'REQUEST_NEW_FIREBASE_TOKEN',
+                promiseId: currentPromiseId
+            }, '*');
+        } else {
+            pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+            delete pendingTokenPromises[currentPromiseId];
+        }
+        return promise;
+    };
+})();</script><script>
+    let realOriginalGetUserMedia = null;
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+    }
+
+    (function() {
+        if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+            try {
+                Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+                    get: function() {
+                        return undefined; // Or throw an error
+                    },
+                    configurable: false
+                });
+            } catch (error) {
+                console.error("Error defining prototype getter:", error);
+            }
+        }
+    })();
+
+    (function() {
+        const pendingMediaResolvers = {};
+        let nextMediaPromiseId = 0;
+
+        function requestMediaPermissions(constraints) {
+            const mediaPromiseId = nextMediaPromiseId++;
+            const promise = new Promise((resolve, reject) => {
+                pendingMediaResolvers[mediaPromiseId] = (granted) => {
+                    delete pendingMediaResolvers[mediaPromiseId];
+                    resolve(granted);
+                };
+            });
+
+            window.parent.postMessage({
+                type: 'requestMediaPermission',
+                constraints: constraints,
+                promiseId: mediaPromiseId,
+            }, '*');
+
+            return promise;
+        }
+
+        let originalGetUserMedia = realOriginalGetUserMedia;
+
+        function interceptGetUserMedia() {
+            if (navigator.mediaDevices) {
+                Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+                    value: function(constraints) {
+                        return requestMediaPermissions(constraints).then((granted) => {
+                            if (granted) {
+                                if (originalGetUserMedia) {
+                                    return originalGetUserMedia(constraints);
+                                } else {
+                                    throw new Error("Original getUserMedia not available.");
+                                }
+                            } else {
+                                throw new DOMException('Permission denied', 'NotAllowedError');
+                            }
+                        });
+                    },
+                    writable: false,
+                    configurable: false
+                });
+            }
+        }
+
+        interceptGetUserMedia();
+
+        const observer = new MutationObserver(function(mutationsList, observer) {
+            for (const mutation of mutationsList) {
+                if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+                    interceptGetUserMedia();
+                } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+                    interceptGetUserMedia();
+                } else if (mutation.type === 'childList' && mutation.addedNodes) {
+                    mutation.addedNodes.forEach(node => {
+                        if (node === navigator.mediaDevices) {
+                            interceptGetUserMedia();
+                        }
+                    });
+                }
+            }
+        });
+
+        function interceptSpeechRecognition() {
+            if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+                return;
+            }
+
+            const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+            const SpeechRecognitionWrapper = function(...args) {
+                const recognizer = new OriginalSpeechRecognition(...args);
+                const originalStart = recognizer.start.bind(recognizer);
+
+                recognizer.start = function() {
+                    requestMediaPermissions({ audio: true }).then(granted => {
+                        if (granted) {
+                            originalStart();
+                        } else {
+                            const errorEvent = new SpeechRecognitionErrorEvent('error');
+                            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+                            recognizer.dispatchEvent(errorEvent);
+                        }
+                    });
+                };
+
+                return recognizer;
+            };
+
+            SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+            SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+            if (window.SpeechRecognition) {
+                window.SpeechRecognition = SpeechRecognitionWrapper;
+            }
+            if (window.webkitSpeechRecognition) {
+                window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+            }
+        }
+
+        interceptSpeechRecognition();
+
+        window.addEventListener('message', function(event) {
+            if (event.data) {
+                if (event.data.type === 'resolveMediaPermission') {
+                    const { promiseId, granted } = event.data;
+                    if (pendingMediaResolvers[promiseId]) {
+                        pendingMediaResolvers[promiseId](granted);
+                    }
+                }
+            }
+        });
+
+    })();</script><script ws-interception-config="{&quot;parentOrigin&quot;:&quot;https://gemini.google.com&quot;,&quot;proxiedDomains&quot;:[]}">(function(){'use strict';var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,d,e){if(b==Array.prototype||b==Object.prototype)return b;b[d]=e.value;return b};function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var d=0;d<b.length;++d){var e=b[d];if(e&&e.Math==Math)return e}throw Error("Cannot find global object");}var w=v(this);
+    function y(b,d){if(d)a:{var e=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var k=b[h];if(!(k in e))break a;e=e[k]}b=b[b.length-1];h=e[b];d=d(h);d!=h&&d!=null&&u(e,b,{configurable:!0,writable:!0,value:d})}}function z(b){function d(h){return b.next(h)}function e(h){return b.throw(h)}return new Promise(function(h,k){function m(n){n.done?h(n.value):Promise.resolve(n.value).then(d,e).then(m,k)}m(b.next())})}y("globalThis",function(b){return b||w});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+    function A(b,d){function e(){}e.prototype=d.prototype;b.i=d.prototype;b.prototype=new e;b.prototype.constructor=b;b.g=function(h,k,m){for(var n=Array(arguments.length-2),p=2;p<arguments.length;p++)n[p-2]=arguments[p];return d.prototype[k].apply(h,n)}};function B(b,d,e="*"){function h(a){if(typeof a==="string")return F.encode(a).buffer;if(a instanceof ArrayBuffer)return a.slice(0);if(ArrayBuffer.isView(a))return a.buffer.slice(a.byteOffset,a.byteOffset+a.byteLength);throw Error("Invalid data type");}function k(a){a=h(a);var f={type:"send",data:new Uint8Array(a)},g;(g=r)==null||g.postMessage(f,[a])}function m(){if(!r)throw Error("Data port not captured yet.");r.onmessage=a=>{if(a.data.type==="message"){a=new MessageEvent("message",{data:G.decode(a.data.data)});
+        let f;(f=c.onmessage)==null||f.call(c,a);c.dispatchEvent(a)}}}function n(){if(!t)throw Error("Control port not captured yet.");t.onmessage=a=>{switch(a.data.type){case "open":l=1;var f=new Event("open"),g;(g=c.onopen)==null||g.call(c,f);c.dispatchEvent(f);q.forEach(H=>{k(H)});q=[];break;case "close":g=a.data;l=3;g=new CloseEvent("close",{code:g.code,reason:g.reason,wasClean:g.wasClean});(f=c.onclose)==null||f.call(c,g);c.dispatchEvent(g);break;case "error":l=3;f=new Event("error");let x;(x=c.onerror)==
+    null||x.call(c,f);c.dispatchEvent(f)}}}function p(a){return z(function*(){var f=new MessageChannel;t=f.port1;var g=new MessageChannel;r=g.port1;n();m();window.parent.postMessage({type:"websocket_open",portOrdering:["control","data"],url:b,protocols:a||[],connectionId:I},e,[f.port2,g.port2])}())}var c=Reflect.construct(EventTarget,[],new.target);c.CONNECTING=0;c.OPEN=1;c.CLOSING=2;c.CLOSED=3;c.url=b;c.binaryType="arraybuffer";c.protocol="";c.h="";var l=0,t=null,r=null,q=[],F=new TextEncoder,G=new TextDecoder;
+        c.onopen=null;c.onmessage=null;c.onclose=null;c.onerror=null;Object.defineProperty(c,"readyState",{get:()=>l,enumerable:!0,configurable:!0});Object.defineProperty(c,"bufferedAmount",{get:()=>{var a=0;q.forEach(f=>{a+=typeof f==="string"?f.length:f.byteLength});return a},enumerable:!0,configurable:!0});var I=function(){var a;return((a=globalThis.crypto)==null?0:a.randomUUID)?globalThis.crypto.randomUUID():"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,f=>{var g=Math.random()*16|0;return(f===
+        "x"?g:g&3|8).toString(16)})}();c.send=a=>{if(l===1)a instanceof Blob?a.arrayBuffer().then(f=>{k(f)}):k(a);else if(l===0)if(typeof a==="string")q.push(a);else if(a instanceof ArrayBuffer||ArrayBuffer.isView(a))q.push(h(a));else throw Error("Sending Blob is not supported before the connection is open.");else console.debug("WebSocket send called in CLOSING or CLOSED state; ignored.")};c.close=(a=1E3,f="")=>{if(l!==2&&l!==3){l=2;a={type:"close",code:a,reason:f,wasClean:a===1E3};var g;(g=t)==null||g.postMessage(a)}};
+        Promise.resolve().then(()=>p(d));return c}A(B,EventTarget);var C=document.currentScript,D=C==null?void 0:C.getAttribute("ws-interception-config");if(!D)throw Error("WebSocket Interceptor: Missing ws-interception-config attribute in the script tag.");var E=JSON.parse(D);if(!E.parentOrigin||typeof E.parentOrigin!=="string")throw Error("WebSocket Interceptor: Invalid parentOrigin in ws-interception-config");
+    (function(b){var d=Object.getOwnPropertyDescriptor(window,"WebSocket");if(!d||d.writable||d.configurable)d=Object.assign(function(e,h){try{let k=(new URL(e)).hostname;if(b.proxiedDomains.some(m=>k===m||k.endsWith(`.${m}`)))return new B(e,h,b.parentOrigin)}catch(k){throw window.parent.postMessage({type:"websocket_blocked",url:e,reason:"blocked_invalid_url"},b.parentOrigin),new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");}window.parent.postMessage({type:"websocket_blocked",
+        url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");},{CONNECTING:0,OPEN:1,CLOSING:2,CLOSED:3}),Object.defineProperty(window,"WebSocket",{value:d,writable:!1,configurable:!1})})({proxiedDomains:E.proxiedDomains||[],parentOrigin:E.parentOrigin});}).call(this);
+</script><script>((function(modelInformation) {
+    const originalFetch = window.fetch;
+    // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+    let googleLlmBaseApiUrls = [
+        'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+        'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+        'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+        'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+        'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+        'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+        'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+        'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+        'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+    ];
+    modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+        googleLlmBaseApiUrls.push(
+            'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+            'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+        );
+    });
+    modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+        googleLlmBaseApiUrls.push(
+            'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+            'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+            'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+            'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+        );
+    });
+
+    const pendingFetchResolvers = {};
+    let nextPromiseId = 0;
+
+    function handleStringInput(input, optionsArgument) {
+        const actualUrl = input;
+        const fetchCallArgs = [actualUrl, optionsArgument];
+        const effectiveOptions = optionsArgument || {};
+        const bodyForApiKeyCheck = effectiveOptions.body;
+        const bodyForPostMessage = effectiveOptions.body;
+        return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+    }
+
+    function handleRequestInput(input, optionsArgument) {
+        const actualUrl = input.url;
+        const fetchCallArgs = [input, optionsArgument];
+        const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+        let bodyForApiKeyCheck;
+        let bodyForPostMessage;
+
+        if (optionsArgument) {
+            if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+            if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+            if ('body' in optionsArgument) {
+                bodyForApiKeyCheck = optionsArgument.body;
+                bodyForPostMessage = optionsArgument.body;
+            } else {
+                bodyForApiKeyCheck = undefined;
+                bodyForPostMessage = input.body;
+            }
+        } else {
+            bodyForApiKeyCheck = undefined;
+            bodyForPostMessage = input.body;
+        }
+        return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+    }
+
+    window.fetch = function(input, optionsArgument) {
+        let actualUrl;
+        let fetchCallArgs;
+        let effectiveOptions = {};
+        let bodyForApiKeyCheck;
+        let bodyForPostMessage;
+
+        if (typeof input === 'string') {
+            ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+        } else if (input instanceof Request) {
+            ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+        } else {
+            return originalFetch.apply(window, [input, optionsArgument]);
+        }
+
+        effectiveOptions.method = effectiveOptions.method || 'GET';
+        if (!effectiveOptions.headers) {
+            effectiveOptions.headers = new Headers();
+        }
+
+
+        if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+            let apiKeyIsNull = true;
+
+            const regex = new RegExp("models/([^:]+)");
+            const modelNameMatch = actualUrl.match(regex);
+            const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+            try {
+                const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+                const apiKeyParam = urlObject.searchParams.get('key');
+                if (apiKeyParam) {
+                    apiKeyIsNull = false;
+                }
+            } catch (e) {
+                // Continue checks even if URL parsing fails
+            }
+
+            if (apiKeyIsNull && effectiveOptions.headers) {
+                const h = new Headers(effectiveOptions.headers);
+                const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+                if (apiKeyHeaderValue) {
+                    apiKeyIsNull = false;
+                    return originalFetch.apply(window, fetchCallArgs);
+                }
+            }
+
+            if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+                try {
+                    const bodyData = JSON.parse(bodyForApiKeyCheck);
+                    if (bodyData && bodyData.apiKey) {
+                        apiKeyIsNull = false;
+                        return originalFetch.apply(window, fetchCallArgs);
+                    }
+                } catch (e) {
+                    // Ignore JSON parsing errors
+                }
+            }
+
+            if(apiKeyIsNull) {
+                const promiseId = nextPromiseId++;
+                const promise = new Promise((resolve) => {
+                    pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+                        delete pendingFetchResolvers[promiseId];
+                        resolve(resolvedResponse);
+                    };
+                });
+
+                let serializedBodyForPostMessage;
+                if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+                    serializedBodyForPostMessage = bodyForPostMessage;
+                } else if (bodyForPostMessage instanceof ReadableStream) {
+                    serializedBodyForPostMessage = null;
+                } else {
+                    try {
+                        serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+                    } catch (e) {
+                        serializedBodyForPostMessage = null;
+                    }
+                }
+
+                const messageOptions = {
+                    method: effectiveOptions.method,
+                    headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+                    body: serializedBodyForPostMessage
+                };
+
+                window.parent.postMessage({
+                    type: 'requestFetch',
+                    url: actualUrl,
+                    modelName: modelName,
+                    options: messageOptions,
+                    promiseId: promiseId,
+                }, '*');
+
+                return promise;
+            }
+            return originalFetch.apply(window, fetchCallArgs);
+        }
+        return originalFetch.apply(window, fetchCallArgs);
+    };
+
+    window.addEventListener('message', function(event) {
+        if (event.data && event.data.type === 'resolveFetch') {
+            const { promiseId, response } = event.data;
+            if (pendingFetchResolvers[promiseId]) {
+                try {
+                    const reconstructedResponse = new Response(response.body, {
+                        status: response.status,
+                        statusText: response.statusText,
+                        headers: new Headers(response.headers),
+                    });
+                    pendingFetchResolvers[promiseId](reconstructedResponse);
+                } catch (error) {
+                    pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+                }
+            }
+        }
+    });
+
+}))({"textModelName":"gemini-3-flash-preview","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-2.5-flash-image-preview","imageTransformModelName":"gemini-3-pro-image-preview-11-2025","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20","gemini-2.5-flash-preview-09-2025"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"]})</script><script>(function(){'use strict';function a(){window.parent.postMessage({type:"interaction"},"*")}window.addEventListener("click",a,{capture:!0,passive:!0});window.addEventListener("touchstart",a,{capture:!0,passive:!0});window.addEventListener("keydown",a,{capture:!0,passive:!0});}).call(this);
+</script><script>(function() {
+    const originalConsoleLog = console.log;
+    const originalConsoleError = console.error;
+
+    /**
+     * Normalizes an error event or a promise rejection reason into a structured error object.
+     * @param {*} errorEventOrReason The error object or reason.
+     * @return {object} Structured error data { message, name, stack }.
+     */
+    function getErrorObject(errorEventOrReason) {
+        if (errorEventOrReason instanceof Error) {
+            return {
+                message: errorEventOrReason.message,
+                name: errorEventOrReason.name,
+                stack: errorEventOrReason.stack,
+            };
+        }
+        // Fallback for non-Error objects.
+        try {
+            return {
+                message: JSON.stringify(errorEventOrReason),
+                name: 'UnknownErrorType',
+                stack: null,
+            };
+        } catch (e) {
+            return {
+                message: String(errorEventOrReason),
+                name: 'UnknownErrorTypeNonStringifiable',
+                stack: null,
+            };
+        }
+    }
+
+    /**
+     * Converts an array of arguments (from log/error) into a single string.
+     * Handles Error objects specially to include their message and stack.
+     * @param {Array<*>} args - Arguments passed to console methods.
+     * @return {string} A string representation of the arguments.
+     */
+    function stringifyArgs(args) {
+        return args
+            .map((arg) => {
+                if (arg instanceof Error) {
+                    const {message, stack} = arg;
+                    return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+                }
+                if (typeof arg === 'object' && arg !== null) {
+                    try {
+                        return JSON.stringify(arg);
+                    } catch (error) {
+                        return '[Circular Object]';
+                    }
+                } else {
+                    return String(arg);
+                }
+            })
+            .join(' ');
+    }
+
+    console.log = function(...args) {
+        const logString = stringifyArgs(args);
+        window.parent.postMessage({ type: 'log', message: logString }, '*');
+        originalConsoleLog.apply(console, args);
+    };
+
+    console.error = function(...args) {
+        let errorData;
+        if (args.length > 0 && args[0] instanceof Error) {
+            const err = args[0];
+            // If the first arg is an Error, capture its details.
+            errorData = {
+                type: 'error',
+                source: 'CONSOLE_ERROR',
+                ...getErrorObject(err),
+                rawArgsString: stringifyArgs(args.slice(1)),
+                timestamp: new Date().toISOString(),
+            };
+        } else {
+            // If not an Error object, treat all args as a general error message.
+            errorData = {
+                type: 'error',
+                source: 'CONSOLE_ERROR',
+                message: stringifyArgs(args),
+                name: 'ConsoleLoggedError',
+                stack: null,
+                timestamp: new Date().toISOString(),
+            };
+        }
+        window.parent.postMessage(errorData, '*');
+        originalConsoleError.apply(console, args);
+    };
+
+    // Listen for global unhandled synchronous errors.
+    window.addEventListener('error', function(event) {
+        const errorDetails = event.error ? getErrorObject(event.error) : {
+            message: event.message,
+            name: 'GlobalError',
+            stack: null,
+            filename: event.filename,
+            lineno: event.lineno,
+            colno: event.colno,
+        };
+
+        window.parent.postMessage({
+            type: 'error',
+            source: 'global',
+            ...errorDetails,
+            message: errorDetails.message || event.message,
+            timestamp: new Date().toISOString(),
+        }, '*');
+    });
+
+    // Listen for unhandled promise rejections (asynchronous errors).
+    window.addEventListener('unhandledrejection', function(event) {
+        const errorDetails = getErrorObject(event.reason);
+
+        window.parent.postMessage({
+            type: 'error',
+            source: 'unhandledrejection',
+            ...errorDetails,
+            message: errorDetails.message || 'Unhandled Promise Rejection',
+            timestamp: new Date().toISOString(),
+        }, '*');
+    });
+
+})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soutenance Master 2 DRH - Synlab Biofrance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* 1. SETUP & THEME */
+        * { box-sizing: border-box; }
+        body { background-color: #e2e8f0; margin: 0; display: grid; place-items: center; gap: 20px; padding: 20px 0; font-family: 'Open Sans', sans-serif; }
+
+        .slide {
+            width: 1280px; height: 720px;
+            background-color: #ffffff;
+            overflow: hidden; padding: 40px 60px;
+            position: relative; display: flex; flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-radius: 8px;
+        }
+
+        /* En-tête de la diapositive */
+        .slide-header {
+            border-bottom: 3px solid #0ea5e9; /* Bleu clair dynamique */
+            padding-bottom: 15px; margin-bottom: 30px;
+            display: flex; justify-content: space-between; align-items: flex-end;
+        }
+        .slide-title { font-family: 'Poppins', sans-serif; color: #0f172a; font-size: 36px; font-weight: 700; margin: 0; text-transform: uppercase; letter-spacing: 0.5px; }
+        .slide-module { color: #0ea5e9; font-size: 20px; font-weight: 600; text-transform: uppercase; }
+
+        /* Typographie du contenu */
+        h3 { font-family: 'Poppins', sans-serif; color: #0369a1; font-size: 26px; margin: 0 0 15px 0; font-weight: 600; }
+        p { font-size: 21px; line-height: 1.5; color: #334155; margin: 0 0 15px 0; }
+        ul { margin: 0 0 20px 0; padding-left: 30px; }
+        li { font-size: 21px; line-height: 1.5; color: #334155; margin-bottom: 12px; }
+        .highlight { color: #0ea5e9; font-weight: 700; }
+        .alert { color: #e11d48; font-weight: 700; }
+        .success { color: #10b981; font-weight: 700; }
+
+        /* Grilles et Layouts */
+        .content { flex-grow: 1; display: flex; flex-direction: column; z-index: 2; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; }
+
+        /* Tuiles / Cartes pour structurer les mots clés */
+        .card { background: #f8fafc; border: 1px solid #e2e8f0; border-left: 6px solid #0ea5e9; padding: 25px; border-radius: 8px; }
+        .card.alert-card { border-left-color: #e11d48; background: #fff1f2; }
+        .card.success-card { border-left-color: #10b981; background: #ecfdf5; }
+
+        .card-icon { font-size: 32px; color: #0369a1; margin-bottom: 15px; }
+
+        /* Tableaux */
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 19px; }
+        th { background: #0f172a; color: white; padding: 12px 15px; text-align: left; }
+        td { padding: 12px 15px; border-bottom: 1px solid #cbd5e1; color: #334155; }
+        tr:nth-child(even) td { background: #f8fafc; }
+
+        /* Chiffres clés */
+        .kpi-container { display: flex; align-items: center; gap: 20px; background: #f0f9ff; padding: 20px; border-radius: 12px; border: 1px solid #bae6fd; }
+        .kpi-number { font-family: 'Poppins', sans-serif; font-size: 50px; font-weight: 700; color: #0369a1; line-height: 1; }
+        .kpi-text { font-size: 20px; color: #334155; font-weight: 600; }
+
+        /* Footer */
+        .footer { position: absolute; bottom: 20px; left: 60px; right: 60px; display: flex; justify-content: space-between; font-size: 14px; color: #94a3b8; border-top: 1px solid #e2e8f0; padding-top: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="slide" style="justify-content: center; text-align: center; background: #0f172a;">
+    <div class="content" style="align-items: center;">
+        <h1 style="color: white; font-family: 'Poppins', sans-serif; font-size: 60px; line-height: 1.2; margin-bottom: 30px;">
+            Développer l'attractivité et fidéliser les talents <br>dans un secteur en tension
+        </h1>
+        <div style="width: 100px; height: 5px; background: #0ea5e9; margin-bottom: 30px;"></div>
+        <h2 style="color: #cbd5e1; font-weight: 400; font-size: 30px;">Sécuriser la stratégie globale de Synlab Biofrance</h2>
+        <p style="color: #94a3b8; font-size: 24px; margin-top: 50px;">
+            Présenté par <strong>Maëva MARTINEZ</strong><br>
+            Master 2 Développement des Ressources Humaines | 2026
+        </p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Mon Parcours &amp; Ma Vocation</h2>
+        <span class="slide-module">Introduction</span>
+    </div>
+    <div class="content grid-2">
+        <div>
+            <h3>Cheminement académique</h3>
+            <ul>
+                <li><strong>Bac STMG</strong> (Option RH et Communication)</li>
+                <li><strong>BTS SAM</strong> (Support à l'Action Managériale)</li>
+                <li><strong>Bachelor RH</strong> (Pigier - Découverte de Synlab Biofrance en saisonnier)</li>
+                <li><strong>Master 2 DRH</strong> (Consolidation vision stratégique)</li>
+            </ul>
+            <h3 style="margin-top: 30px;">Objectif professionnel</h3>
+            <ul>
+                <li>Évoluer vers des fonctions de <strong>Responsable RH</strong>.</li>
+                <li>Conjuguer expertise opérationnelle et pilotage stratégique.</li>
+                <li>Remerciements : M. Herbreteau (PDG) et Mme Bertrand (DGA).</li>
+            </ul>
+        </div>
+        <div class="card">
+            <i class="fa-solid fa-briefcase card-icon"></i>
+            <h3>3 Ans d'Immersion : Assistante RH Multisite</h3>
+            <ul>
+                <li><strong>Gestion administrative :</strong> Contrats, arrêts maladie, paie (éléments variables).</li>
+                <li><strong>Recrutement :</strong> Sourcing (Eolia), entretiens, intégration.</li>
+                <li><strong>Développement RH :</strong> Entretiens pro, plans de formation.</li>
+                <li><strong>Social :</strong> Tableaux de bord, climat social.</li>
+                <li><em>Une vision 360° du quotidien opérationnel aux enjeux stratégiques.</em></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 2</span></div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Synlab Biofrance : Un géant de proximité</h2>
+        <span class="slide-module">Partie I - Analyse Interne</span>
+    </div>
+    <div class="content grid-2">
+        <div>
+            <h3>L'organisation territoriale</h3>
+            <ul>
+                <li>Réseau intégré au <strong>groupe paneuropéen Synlab</strong>.</li>
+                <li><strong>8 sites de prélèvement</strong> (SEL) + 1 plateau technique central.</li>
+                <li>Ancrage fort : Val de Sambre, Avesnois, Thiérache (Maubeuge, Fourmies, Le Quesnoy...).</li>
+                <li><strong>Activité :</strong> 470 728 dossiers patients gérés en 2025.</li>
+            </ul>
+            <h3 style="margin-top: 30px;">Le Modèle "Navette"</h3>
+            <ul>
+                <li>Flux logistique tendu entre les sites périphériques et le plateau.</li>
+                <li>Interdépendance totale : <span class="alert">"Un prélèvement mal étiqueté à Hirson bloque la chaîne à Fourmies"</span>.</li>
+                <li>Exigence d'harmonisation absolue (Accréditation COFRAC ISO 15189).</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Cartographie des Effectifs (117 salariés)</h3>
+            <ul>
+                <li><strong>Statut :</strong> 89,74% de Non-cadres / 10,24% de Cadres.</li>
+                <li><strong>Contrat :</strong> 80% de CDI (Volonté de sécuriser les compétences).</li>
+                <li><strong>Genre :</strong> 90 Femmes / 27 Hommes.</li>
+            </ul>
+            <table style="margin-top: 15px; font-size: 16px;">
+                <tbody><tr><th>Métier</th><th>Effectif</th><th>Part (%)</th></tr>
+                <tr><td>Tech + Prélèvement (IDE)</td><td>42</td><td>35,8%</td></tr>
+                <tr><td>Secrétariat</td><td>38</td><td>32,4%</td></tr>
+                <tr><td>Agents de liaison</td><td>15</td><td>12,8%</td></tr>
+                <tr><td>Biologistes (Cadres)</td><td>8</td><td>6,8%</td></tr>
+                </tbody></table>
+        </div>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 3</span></div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Un environnement externe sous contrainte (PESTEL)</h2>
+        <span class="slide-module">Partie I - Analyse Externe</span>
+    </div>
+    <div class="content grid-3">
+        <div class="card alert-card">
+            <i class="fa-solid fa-gavel card-icon" style="color: #e11d48;"></i>
+            <h3 style="color: #e11d48;">Politique / Légal</h3>
+            <ul>
+                <li><strong>Loi Ballereau (2010) :</strong> Industrialisation et concentration massive.</li>
+                <li><strong>Grands Groupes :</strong> 80% des sites contrôlés par Cerba, Eurofins, Inovie, Synlab.</li>
+                <li>RGPD : Sécurisation des données de santé.</li>
+            </ul>
+        </div>
+        <div class="card alert-card">
+            <i class="fa-solid fa-chart-line card-icon" style="color: #e11d48;"></i>
+            <h3 style="color: #e11d48;">Économique</h3>
+            <ul>
+                <li>Dépendance 100% à l'<strong>Assurance Maladie</strong>.</li>
+                <li>Baisses tarifaires successives (LFSS 2023-2024).</li>
+                <li><strong>Choc post-Covid :</strong> CA passé de 26,3 M€ (2021) à 15,3 M€ (2024) = <span class="alert">-42% de baisse</span>.</li>
+            </ul>
+        </div>
+        <div class="card alert-card">
+            <i class="fa-solid fa-users card-icon" style="color: #e11d48;"></i>
+            <h3 style="color: #e11d48;">Social / Démographique</h3>
+            <ul>
+                <li><strong>Papyboomers :</strong> Hausse des maladies chroniques = + de besoins.</li>
+                <li><strong>Pénurie aiguë :</strong> Désintérêt des jeunes pour les métiers techniques (Tech, IDE).</li>
+                <li>Concurrence féroce privé/public/hôpital.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="content grid-2" style="margin-top: 20px;">
+        <div class="card">
+            <h3>Technologique</h3>
+            <ul style="margin-bottom:0;">
+                <li>Automatisation &amp; SI centralisés (SIL/LIMS, Kalilab, Octime, Eolia).</li>
+                <li>Plateforme Doctolib = digitalisation patient.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Environnemental</h3>
+            <ul style="margin-bottom:0;">
+                <li>Gestion stricte des DASRI (Déchets d'Activités de Soins).</li>
+                <li>Attentes RSE grandissantes.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 4</span></div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Vision stratégique &amp; Freins au déploiement</h2>
+        <span class="slide-module">Partie II - Stratégie</span>
+    </div>
+    <div class="content grid-2">
+        <div>
+            <h3>La Vision du PDG (Janvier 2026)</h3>
+            <p><em>"Offrir un haut niveau de qualité, de fiabilité et d'engagement humain."</em></p>
+            <ul>
+                <li><strong>Axe 1 :</strong> Renforcer les partenariats prescripteurs (Renouvellement CH Fourmies).</li>
+                <li><strong>Axe 2 :</strong> Améliorer l'expérience &amp; satisfaction Patient (Site Patient First Maubeuge).</li>
+                <li><strong>Axe 3 :</strong> Développement territorial (Étude de nouvelles implantations à 5 ans).</li>
+            </ul>
+            <div class="kpi-container" style="margin-top: 20px;">
+                <span class="kpi-number">42%</span>
+                <span class="kpi-text">Baisse du CA. La stratégie RH ne peut plus s'appuyer sur l'augmentation de la masse salariale fixe.</span>
+            </div>
+        </div>
+        <div class="card alert-card">
+            <h3 style="color: #e11d48;">Les Freins Identifiés</h3>
+            <p><strong>Freins Externes :</strong></p>
+            <ul>
+                <li>Pénurie de main-d'œuvre.</li>
+                <li>Déficit d'image des zones rurales vs. Métropoles (Lille).</li>
+                <li>Évolution des attentes des patients (rapidité).</li>
+            </ul>
+            <p><strong>Freins Internes :</strong></p>
+            <ul>
+                <li><span class="alert">Fracture identitaire :</span> Plateau technique vs. Sites périphériques.</li>
+                <li>Dilution de l'information due à la distance.</li>
+                <li>Recrutement "en urgence" et manque de transmission.</li>
+                <li>Absence de SIRH pour piloter les données sociales.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 5</span></div>
+</div>
+
+<div class="slide" style="background: #f8fafc;">
+    <div class="slide-header">
+        <h2 class="slide-title">La Problématique RH</h2>
+        <span class="slide-module">Partie II</span>
+    </div>
+    <div class="content" style="align-items: center; justify-content: center; text-align: center;">
+        <i class="fa-solid fa-quote-left" style="font-size: 60px; color: #cbd5e1; margin-bottom: 20px;"></i>
+        <h1 style="font-family: 'Poppins', sans-serif; font-size: 45px; color: #0f172a; line-height: 1.4; max-width: 1000px;">
+            " Dans quelle mesure les leviers RH peuvent-ils permettre à Synlab Biofrance de <span class="highlight">développer son attractivité</span> et de <span class="highlight">fidéliser les talents</span> dans un secteur en tension, tout en <span class="highlight">sécurisant le déploiement</span> de sa stratégie globale ? "
+        </h1>
+        <i class="fa-solid fa-quote-right" style="font-size: 60px; color: #cbd5e1; margin-top: 20px;"></i>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 6</span></div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Plan de résolution : 5 modules complémentaires</h2>
+        <span class="slide-module">Partie III</span>
+    </div>
+    <div class="content">
+        <p style="text-align: center; margin-bottom: 30px;">Une approche systémique où l'attractivité n'est pas un concept isolé, mais une chaîne de valeur RH.</p>
+        <div class="grid-3">
+            <div class="card" style="border-left-color: #3b82f6;">
+                <h3>1. Onboarding (Politique RH)</h3>
+                <p>Sécuriser la prise de poste, transmettre les standards COFRAC et stopper le turnover des 12 premiers mois.</p>
+            </div>
+            <div class="card" style="border-left-color: #10b981;">
+                <h3>2. Motivation (Management RH)</h3>
+                <p>Redonner du sens au travail face à l'automatisation. Combattre le micro-désengagement et l'absentéisme.</p>
+            </div>
+            <div class="card" style="border-left-color: #f59e0b;">
+                <h3>3. Rémunération</h3>
+                <p>Passer d'une rémunération transactionnelle fixe à une reconnaissance globale et contextuelle (sans plomber la masse salariale).</p>
+            </div>
+            <div class="card" style="border-left-color: #8b5cf6;">
+                <h3>4. Dialogue Social</h3>
+                <p>Dépasser le CSE "défensif/légal". Casser les silos inter-sites et co-construire la marque employeur.</p>
+            </div>
+            <div class="card" style="border-left-color: #ec4899;">
+                <h3>5. GEPP &amp; Compétences</h3>
+                <p>Anticiper la vague de départs à la retraite (30%). Construire un vivier interne via les relations écoles (BTS ABM).</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 7</span></div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Bloc 1 : Élaborer la stratégie - L'Onboarding</h2>
+        <span class="slide-module">Contexte &amp; Diagnostic</span>
+    </div>
+    <div class="content grid-2">
+        <div>
+            <h3>Contexte initial</h3>
+            <ul>
+                <li>Phase d'intégration "sur le tas" et informelle.</li>
+                <li>Accueil délégué au manager de proximité (orienté technique/COFRAC).</li>
+                <li>Hétérogénéité des pratiques : pas de processus RH commun.</li>
+                <li>Managers non formés à l'onboarding stratégique.</li>
+                <li><strong>Risque :</strong> Délaissement perçu par la nouvelle recrue.</li>
+            </ul>
+        </div>
+        <div class="card alert-card">
+            <h3>Diagnostic Chiffré</h3>
+            <div class="kpi-container" style="background: white; border-color: #fda4af;">
+                <span class="kpi-number" style="color: #e11d48;">11%</span>
+                <span class="kpi-text">Taux de départs précoces (&lt; 12 mois).</span>
+            </div>
+            <p style="margin-top: 15px;"><strong>Enquête RH :</strong> 17 recrutés (2 ans) | Taux de participation 75%.</p>
+            <ul>
+                <li>Score Qualité de l'accueil : <span class="alert">3,4 / 5</span> (Mitigé).</li>
+                <li>Score Accompagnement managérial : <span class="alert">2,9 / 5</span>.</li>
+                <li>Priorités du poste peu claires pour 37% des répondants.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 8</span></div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Bloc 1 : Analyse des risques (Les 5 Pourquoi)</h2>
+        <span class="slide-module">Diagnostic Approfondi</span>
+    </div>
+    <div class="content">
+        <div class="card" style="margin-bottom: 20px;">
+            <h3>Méthode de la Racine du problème (Root Cause)</h3>
+            <p><strong>1. Pourquoi y a-t-il 11% de départs la première année ?</strong><br>
+                <i class="fa-solid fa-arrow-turn-down highlight"></i> Parce que les nouvelles recrues se sentent délaissées (Score 2,9/5).</p>
+            <p><strong>2. Pourquoi se sentent-elles délaissées ?</strong><br>
+                <i class="fa-solid fa-arrow-turn-down highlight"></i> Parce que l'accueil repose uniquement sur le manager de proximité.</p>
+            <p><strong>3. Pourquoi le manager ne gère-t-il pas bien l'accueil ?</strong><br>
+                <i class="fa-solid fa-arrow-turn-down highlight"></i> Parce qu'il priorise la production technique et n'a pas de référentiel.</p>
+            <p><strong>4. Pourquoi n'y a-t-il pas de référentiel ?</strong><br>
+                <i class="fa-solid fa-arrow-turn-down highlight"></i> Parce que la fonction RH ne pilotait pas le processus d'intégration.</p>
+            <p><strong>5. Pourquoi la RH ne pilotait-elle pas ?</strong><br>
+                <i class="fa-solid fa-arrow-turn-down highlight"></i> Parce que l'intégration était vue comme une étape "administrative" et non un outil de fidélisation.</p>
+        </div>
+        <div class="kpi-container" style="background: #fff1f2; border-color: #fda4af;">
+            <i class="fa-solid fa-triangle-exclamation" style="font-size: 30px; color: #e11d48;"></i>
+            <span class="kpi-text" style="color: #e11d48;"><strong>Risque de l'inaction (Tonneau des Danaïdes) :</strong> Dépenser massivement en recrutement pour pallier la pénurie, mais perdre les candidats immédiatement. Dégradation de la marque employeur sur le bassin local.</span>
+        </div>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 9</span></div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Bloc 1 : Préconisation &amp; Rentabilité</h2>
+        <span class="slide-module">Solution &amp; ROI</span>
+    </div>
+    <div class="content grid-2">
+        <div>
+            <h3>Processus formalisé et piloté par les RH</h3>
+            <ul>
+                <li><strong>Pré-boarding :</strong> Envoi du Starter Pack (livret d'accueil institutionnel).</li>
+                <li><strong>Arrivée :</strong> Désignation systématique d'un <em>Tuteur Référent</em> (Transmission des process COFRAC).</li>
+                <li><strong>Jalon J+30 (Appropriation) :</strong> Rapport d'étonnement digitalisé + Entretien court manager.</li>
+                <li><strong>Jalon J+90 (Consolidation) :</strong> Bilan d'autonomie avec RH et manager. Détection des besoins en formation.</li>
+                <li><strong>Formation :</strong> Sensibilisation des managers à la posture d'accueil.</li>
+            </ul>
+        </div>
+        <div class="card success-card">
+            <h3 style="color: #059669;">Budget &amp; Retour sur Investissement</h3>
+            <table>
+                <tbody><tr><td>Coût moyen d'un départ</td><td><strong>7 000 €</strong> (Recrutement, perte prod)</td></tr>
+                <tr><td>Volume recrutement/an</td><td>~15 (12% turnover sur 117)</td></tr>
+                <tr><td><strong>Investissement Total/an</strong></td><td><strong>2 500 €</strong> (Kits, évènements, temps RH)</td></tr>
+                </tbody></table>
+            <div style="margin-top: 20px; font-weight: 700; color: #059669; font-size: 22px;">
+                <i class="fa-solid fa-check-circle"></i> Seuil de rentabilité : 0.36 départ à éviter.<br>
+                <span style="font-size: 18px; color: #334155; font-weight: normal;">(Éviter 1 seul départ précoce génère 4 500 € de gain net).</span>
+            </div>
+            <p style="margin-top: 15px; font-size: 16px;"><strong>KPI suivi :</strong> Taux de satisfaction J30/J90 (&gt;80%), Turnover à 6 mois (&lt;15%).</p>
+        </div>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 10</span></div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Bloc 2 : Manager l'activité RH - La Motivation</h2>
+        <span class="slide-module">Contexte &amp; Diagnostic</span>
+    </div>
+    <div class="content grid-2">
+        <div>
+            <h3>Le contexte : La quête de sens</h3>
+            <ul>
+                <li><strong>Théorie d'Herzberg :</strong> Le sentiment d'utilité sociale est le 1er "facteur moteur" dans la santé.</li>
+                <li><strong>Évolution métier :</strong> Industrialisation, automates ultra-performants, standardisation des activités.</li>
+                <li><strong>Conséquence :</strong> Le lien entre le tube manipulé et le patient final devient "invisible" pour les techniciens.</li>
+                <li>Attentes des nouvelles générations (RSE, utilité sociétale).</li>
+            </ul>
+        </div>
+        <div class="card alert-card">
+            <h3>Diagnostic : Baromètre Synlab Dialogue</h3>
+            <p><strong>Participation massive : 82%</strong></p>
+            <ul>
+                <li><span class="alert">27%</span> des collaborateurs déclarent ressentir une <strong>perte partielle du sens de leur métier</strong>.</li>
+                <li><span class="alert">40%</span> signalent un manque de liens interservices (logique de silos).</li>
+            </ul>
+            <p><strong>Échelle d'engagement interne :</strong></p>
+            <ul>
+                <li>60% Motivés (Moteurs).</li>
+                <li>25% Neutres (Passifs).</li>
+                <li><span class="alert">15% Démotivés</span> (Actifs dans le désengagement).</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 11</span></div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Bloc 2 : Analyse des risques (Effet Domino)</h2>
+        <span class="slide-module">Diagnostic Approfondi</span>
+    </div>
+    <div class="content">
+        <div class="card" style="margin-bottom: 20px;">
+            <h3>L'Arbre des causes du désengagement</h3>
+            <div style="display: flex; align-items: center; justify-content: space-between; text-align: center; margin-top: 20px;">
+                <div style="flex: 1; padding: 15px; background: #e2e8f0; border-radius: 8px;"><strong>Cause Racine</strong><br>Industrialisation des processus</div>
+                <i class="fa-solid fa-arrow-right highlight"></i>
+                <div style="flex: 1; padding: 15px; background: #bae6fd; border-radius: 8px;"><strong>Fait Générateur</strong><br>Perte de vue du patient (27%)</div>
+                <i class="fa-solid fa-arrow-right highlight"></i>
+                <div style="flex: 1; padding: 15px; background: #fca5a5; border-radius: 8px;"><strong>Symptôme</strong><br>Micro-désengagement (Arrêts courts)</div>
+            </div>
+            <p style="margin-top: 20px;"><strong>Indicateur RH :</strong> Taux d'absentéisme global à 6%. <br>
+                <span class="alert">Dont 35% d'arrêts de courte durée (Indicateur clé de désengagement).</span></p>
+        </div>
+        <div class="kpi-container" style="background: #fff1f2; border-color: #fda4af;">
+            <i class="fa-solid fa-triangle-exclamation" style="font-size: 30px; color: #e11d48;"></i>
+            <span class="kpi-text" style="color: #e11d48;"><strong>Risque de l'inaction (Quiet Quitting) :</strong> La "démission silencieuse". Dans un environnement ISO 15189, le désengagement passif augmente les erreurs pré-analytiques, menaçant la fiabilité médicale et la réputation du laboratoire.</span>
+        </div>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 12</span></div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Bloc 2 : Préconisation &amp; Rentabilité</h2>
+        <span class="slide-module">Solution &amp; ROI</span>
+    </div>
+    <div class="content grid-2">
+        <div>
+            <h3>L'Engagement Sociétal : "Villages Santé"</h3>
+            <p><strong>Principe :</strong> Reconnecter les collaborateurs à la finalité sociale de leur métier via des actions territoriales de santé publique.</p>
+            <ul>
+                <li>Dépistage et prévention auprès de publics en précarité.</li>
+                <li>Participation basée strictement sur le <strong>volontariat</strong>.</li>
+                <li><strong>5 étapes :</strong> Campagne interne → Candidatures → Logistique RH/Managers → Action terrain → Valorisation média (Radio locale).</li>
+                <li><strong>Objectifs :</strong> Redonner du sens, casser la routine "machine", valoriser la marque employeur RSE.</li>
+            </ul>
+        </div>
+        <div class="card success-card">
+            <h3 style="color: #059669;">Budget &amp; Retour sur Investissement</h3>
+            <table>
+                <tbody><tr><td>Coût 1 jour d'absence</td><td><strong>250 €</strong> (Salaire chargé + désorganisation)</td></tr>
+                <tr><td>Coût Stand/Logistique</td><td>1 000 €</td></tr>
+                <tr><td>Temps présence (5 col.)</td><td>1 500 €</td></tr>
+                <tr><td><strong>Investissement Total/an</strong></td><td><strong>3 500 €</strong></td></tr>
+                </tbody></table>
+            <div style="margin-top: 20px; font-weight: 700; color: #059669; font-size: 22px;">
+                <i class="fa-solid fa-check-circle"></i> Seuil de rentabilité : 14 jours d'absence économisés sur l'année.<br>
+                <span style="font-size: 18px; color: #334155; font-weight: normal;">(Soit éviter un arrêt court par mois pour l'ensemble des 117 salariés).</span>
+            </div>
+            <p style="margin-top: 15px; font-size: 16px;"><strong>Limite :</strong> Effet limité aux seuls participants volontaires si la communication interne ne relaie pas l'événement à tous.</p>
+        </div>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 13</span></div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Bloc 3 : Processus administratifs - Rémunération</h2>
+        <span class="slide-module">Contexte &amp; Diagnostic</span>
+    </div>
+    <div class="content grid-2">
+        <div>
+            <h3>Contexte Économique</h3>
+            <ul>
+                <li>Marché paramédical extrêmement tendu (chasse aux profils).</li>
+                <li>Chute du CA (-42% en 3 ans) interdisant les augmentations générales.</li>
+                <li>Rythme intense : multi-sites, pics d'activité, audits COFRAC.</li>
+                <li><strong>Évolution des attentes :</strong> Le salaire n'est plus qu'un "revenu transactionnel", c'est devenu un signal de considération.</li>
+            </ul>
+        </div>
+        <div class="card alert-card">
+            <h3>Diagnostic : Le Benchmark du marché local</h3>
+            <table style="font-size: 16px;">
+                <tbody><tr><th>Poste</th><th>Moy. Concurrence (Biopath/Hôpital)</th><th>Synlab Biofrance</th><th>Écart</th></tr>
+                <tr><td>Technicien(ne)</td><td>2 200 €</td><td>2 350 €</td><td class="success">+6,82%</td></tr>
+                <tr><td>Infirmier(ère)</td><td>2 350 €</td><td>2 400 €</td><td class="success">+2,13%</td></tr>
+                <tr><td>Biologiste Conf.</td><td>6 666 €</td><td>7 200 €</td><td class="success">+8,00%</td></tr>
+                </tbody></table>
+            <p style="margin-top: 15px;"><strong>Bilan :</strong> Notre salaire fixe est dans le 1er quartile supérieur (+5,13% en moyenne globale).</p>
+        </div>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 14</span></div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Bloc 3 : Analyse des attentes (Synlab Dialogue)</h2>
+        <span class="slide-module">Diagnostic Approfondi</span>
+    </div>
+    <div class="content grid-2">
+        <div>
+            <h3>Enquête Interne (Rémunération)</h3>
+            <ul>
+                <li><span class="success">72%</span> des collaborateurs sont <strong>satisfaits du fixe</strong>.</li>
+                <li>18% sont neutres.</li>
+                <li><span class="alert">10%</span> sont insatisfaits (sentiment de manque de reconnaissance).</li>
+                <li><strong>Le chiffre clé :</strong> <span class="highlight">55% des répondants</span> exigent des <strong>primes exceptionnelles</strong>.</li>
+            </ul>
+            <p>Notre atout (le fixe) ne répond plus au besoin actuel (reconnaissance de l'effort ponctuel).</p>
+        </div>
+        <div class="card" style="border-left-color: #f59e0b; background: #fffbeb;">
+            <h3 style="color: #d97706;">Risque de l'inaction (Théorie de l'Équité)</h3>
+            <p><strong>Principe d'Adams :</strong> Le collaborateur compare sa "contribution" à sa "rétribution".</p>
+            <ul>
+                <li>Si nous restons sur le "tout fixe", nous sanctionnons implicitement l'effort supplémentaire (ceux qui gèrent les audits COFRAC).</li>
+                <li><strong>Le risque majeur :</strong> Perte de nos 10% de "profils moteurs". Ils partiront vers des concurrents qui, à défaut de payer mieux le fixe, offrent des primes de sujétion ou de la reconnaissance contextualisée.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 15</span></div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Bloc 3 : Préconisation &amp; Rentabilité</h2>
+        <span class="slide-module">Solution &amp; ROI</span>
+    </div>
+    <div class="content grid-2">
+        <div>
+            <h3>Politique de Rémunération Globale</h3>
+            <p>Passer d'une rémunération transactionnelle fixe à une approche agile, via des primes exceptionnelles ciblées.</p>
+            <ul>
+                <li><strong>Primes de Performance Orga :</strong> Pour les équipes portant les audits COFRAC ou projets stratégiques.</li>
+                <li><strong>Primes Contextuelles :</strong> Pour pallier les pics d'activité exceptionnels ou crises.</li>
+                <li><strong>Primes Individuelles :</strong> Validées par les RH sur proposition managériale.</li>
+                <li><strong>Avantages Sociaux :</strong> Partenariats sport/bien-être, mutuelle AON (60%).</li>
+                <li><strong>Gouvernance :</strong> Création d'une "Charte de rémunération variable" pour objectiver l'attribution (Éviter l'inéquité).</li>
+            </ul>
+        </div>
+        <div class="card success-card">
+            <h3 style="color: #059669;">Budget &amp; Retour sur Investissement</h3>
+            <table>
+                <tbody><tr><td>Enveloppe Primes</td><td>15 000 € (Audits, Pics, Individuel)</td></tr>
+                <tr><td>Enveloppe Avantages</td><td>3 000 € (Sport/Bien-être)</td></tr>
+                <tr><td><strong>Investissement Total/an</strong></td><td><strong>18 000 €</strong> (soit ~1% du CA)</td></tr>
+                </tbody></table>
+            <div style="margin-top: 20px; font-weight: 700; color: #059669; font-size: 22px;">
+                <i class="fa-solid fa-check-circle"></i> Seuil de rentabilité : 2.57 départs évités.<br>
+                <span style="font-size: 18px; color: #334155; font-weight: normal;">(Si cette politique fidélise 3 profils critiques/an qui partaient à la concurrence, l'opération est rentable).</span>
+            </div>
+            <p style="margin-top: 15px; font-size: 16px;"><strong>Limite :</strong> Risque de comparaison sociale si les critères de la charte sont opaques.</p>
+        </div>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 16</span></div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Bloc 4 : Organiser &amp; Animer le Dialogue Social</h2>
+        <span class="slide-module">Contexte &amp; Diagnostic</span>
+    </div>
+    <div class="content grid-2">
+        <div>
+            <h3>Contexte : Le CSE "Réglementaire"</h3>
+            <ul>
+                <li>Héritage de la Loi Ballereau : focus sur la stricte conformité.</li>
+                <li>CSE très actif : 12 réunions/an, 90% de participation. Consultations légales (projets, formation, CSSCT) respectées.</li>
+                <li><strong>Problème :</strong> Posture défensive, réactive (traitement de plaintes), déconnectée des enjeux proactifs d'attractivité.</li>
+                <li>Éloignement physique de la Direction face aux 8 sites (Avesnois, Thiérache).</li>
+            </ul>
+        </div>
+        <div class="card alert-card">
+            <h3>Diagnostic : La fracture inter-sites</h3>
+            <p><strong>Données Synlab Dialogue :</strong></p>
+            <ul>
+                <li><span class="alert">74%</span> des salariés estiment que les départements/services <strong>ne coopèrent pas efficacement</strong>.</li>
+                <li><span class="alert">48%</span> jugent la circulation de l'information difficile entre les 8 sites.</li>
+                <li>Conséquences : Sentiment de dilution de l'information, "silotisation", la Direction sur le plateau vs. les sites périphériques exécutants.</li>
+                <li>Communication externe (LinkedIn) : Quasi-nulle.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 17</span></div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Bloc 4 : Analyse Stratégique (SWOT)</h2>
+        <span class="slide-module">Diagnostic Approfondi</span>
+    </div>
+    <div class="content">
+        <div class="grid-2">
+            <div class="card" style="border-left-color: #10b981;">
+                <h3 style="color: #059669;">Forces (Internes)</h3>
+                <ul>
+                    <li>Expertise des IRP sur la conformité légale.</li>
+                    <li>Capacité de résolution des situations individuelles de travail.</li>
+                    <li>Stabilité et régularité des instances.</li>
+                </ul>
+            </div>
+            <div class="card alert-card">
+                <h3 style="color: #e11d48;">Faiblesses (Internes)</h3>
+                <ul>
+                    <li>Dialogue social 100% défensif, non proactif.</li>
+                    <li>Absence des enjeux de fidélisation dans les ordres du jour.</li>
+                    <li>Incapacité à capter les attentes informelles.</li>
+                </ul>
+            </div>
+            <div class="card" style="border-left-color: #3b82f6;">
+                <h3 style="color: #2563eb;">Opportunités (Externes)</h3>
+                <ul>
+                    <li>Attentes des jeunes générations (transparence, culture).</li>
+                    <li>Développement d'outils digitaux de communication (Réseaux).</li>
+                    <li>Transformer les IRP en partenaires business.</li>
+                </ul>
+            </div>
+            <div class="card" style="border-left-color: #f59e0b;">
+                <h3 style="color: #d97706;">Menaces (Externes/Risques)</h3>
+                <ul>
+                    <li><strong>Risque de l'inaction :</strong> Un dialogue social perçu comme inutile par les équipes. Perte de crédibilité stratégique du CSE.</li>
+                    <li>Incapacité à lutter contre les agences de com' des concurrents (Cerba, Biogroup) pour la marque employeur.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 18</span></div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Bloc 4 : Préconisation &amp; Rentabilité</h2>
+        <span class="slide-module">Solution &amp; ROI</span>
+    </div>
+    <div class="content grid-2">
+        <div>
+            <h3>Création du "Comité Attractivité"</h3>
+            <p><strong>Structure :</strong> Comité paritaire co-construit (RH, Élus CSE, Collaborateurs Ambassadeurs). Réunions éditoriales mensuelles.</p>
+            <ul>
+                <li><strong>Axe Interne (Cohésion) :</strong> Rituels inter-sites (petits-déjeuners), Newsletter interne (Focus succès), Dispositif <em>"Vis ma vie"</em> pour décloisonner plateau/périphérie.</li>
+                <li><strong>Axe Externe (Marque Employeur) :</strong> Création de vidéos métiers, témoignages authentiques filmés par les collaborateurs. Diffusion sur LinkedIn, forums écoles et écrans salles d'attente.</li>
+            </ul>
+        </div>
+        <div class="card success-card">
+            <h3 style="color: #059669;">Budget &amp; Retour sur Investissement</h3>
+            <table>
+                <tbody><tr><td>Évènements de cohésion</td><td>2 500 € (Rituels, Soirée du perso)</td></tr>
+                <tr><td>Outils (Canva, matériel)</td><td>500 €</td></tr>
+                <tr><td>Temps RH/Comité valorisé</td><td>1 500 €</td></tr>
+                <tr><td><strong>Investissement Total/an</strong></td><td><strong>5 000 €</strong></td></tr>
+                </tbody></table>
+            <div style="margin-top: 20px; font-weight: 700; color: #059669; font-size: 22px;">
+                <i class="fa-solid fa-check-circle"></i> Économie immédiate : 3 000 €/an <span style="font-size: 16px; font-weight: normal;">(Internalisation de la com' vs Agence).</span><br>
+                <i class="fa-solid fa-check-circle"></i> Seuil de rentabilité : 0.29 départ évité.<br>
+            </div>
+            <p style="margin-top: 15px; font-size: 16px;"><strong>Limite :</strong> Risque de "Social Washing" si les contenus vidéo ne reflètent pas la réalité du terrain.</p>
+        </div>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 19</span></div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Bloc 5 : Manager les compétences - La GEPP</h2>
+        <span class="slide-module">Contexte &amp; Diagnostic</span>
+    </div>
+    <div class="content grid-2">
+        <div>
+            <h3>De la gestion réactive à l'anticipation</h3>
+            <ul>
+                <li><strong>Inversion du rapport de force :</strong> Les laboratoires ne choisissent plus, ce sont les talents qui choisissent.</li>
+                <li><strong>Concurrence :</strong> Les diplômés (BTS ABM, Licences Pro) sont "chassés" par l'industrie pharmaceutique ou la recherche fondamentale.</li>
+                <li><strong>Attractivité Territoriale :</strong> Déficit d'image du Val de Sambre et de la Thiérache par rapport à la métropole lilloise.</li>
+                <li><strong>Notre modèle historique :</strong> Un départ = une offre Pôle Emploi (Modèle court-termiste "au fil de l'eau").</li>
+            </ul>
+        </div>
+        <div class="card alert-card">
+            <h3>Diagnostic : Une vulnérabilité démographique</h3>
+            <div class="kpi-container" style="background: white; border-color: #fda4af;">
+                <span class="kpi-number" style="color: #e11d48;">30%</span>
+                <span class="kpi-text">Des effectifs critiques (Experts) partiront à la retraite d'ici 5 à 8 ans.</span>
+            </div>
+            <p style="margin-top: 15px;"><strong>La relève absente :</strong></p>
+            <ul>
+                <li>Moins de 20% des salariés ont &lt; 30 ans.</li>
+                <li>Seulement <span class="alert">2%</span> d'alternants/stagiaires.</li>
+            </ul>
+            <p><strong>L'échec du recrutement réactif :</strong> <br>Moyenne de 7 à 10 candidatures/offre, pour seulement <strong>2 profils qualifiés</strong> (Délais très longs). Ex: ABE-03-2026-004459 Avesnes.</p>
+        </div>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 20</span></div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Bloc 5 : L'Analyse GEPP (Ishikawa / 5M)</h2>
+        <span class="slide-module">Diagnostic Approfondi</span>
+    </div>
+    <div class="content">
+        <div class="grid-2">
+            <div>
+                <h3>Analyse des Freins au renouvellement (5M)</h3>
+                <table style="font-size: 16px;">
+                    <tbody><tr><th>Facteur</th><th>Constat Terrain</th></tr>
+                    <tr><td><strong>Main-d'œuvre</strong></td><td>Tuteurs surchargés, vieillissement des experts.</td></tr>
+                    <tr><td><strong>Méthodes</strong></td><td>Recrutement 100% externe, déclenché dans l'urgence. Absence de vivier.</td></tr>
+                    <tr><td><strong>Milieu</strong></td><td>Isolement rural (Thiérache) face aux grandes villes.</td></tr>
+                    <tr><td><strong>Matériel</strong></td><td>Automatisation requérant de la culture digitale (IT).</td></tr>
+                    <tr><td><strong>Matière</strong></td><td>Candidats de la Gen Z très volatiles (quête de sens).</td></tr>
+                    </tbody></table>
+            </div>
+            <div class="card" style="border-left-color: #e11d48; background: #fff1f2;">
+                <h3 style="color: #e11d48;">Les 3 Risques de l'Inaction (La "Bombe à retardement")</h3>
+                <ol>
+                    <li><strong>Risque Opérationnel (Rupture) :</strong> L'arrêt d'une ligne d'analyse spécialisée faute d'expert formé. Effondrement du modèle "Navette".</li>
+                    <li><strong>Risque de Conformité (Dérive Qualité) :</strong> Perte des savoir-faire non documentés, entraînant des non-conformités lors de l'audit COFRAC (perte de l'autorisation d'exercer).</li>
+                    <li><strong>Risque Économique :</strong> Surcharge des recrutements d'urgence (coût intérim, cabinets, épuisement des restants).</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 21</span></div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Bloc 5 : Préconisation &amp; Rentabilité</h2>
+        <span class="slide-module">Solution &amp; ROI</span>
+    </div>
+    <div class="content grid-2">
+        <div>
+            <h3>Stratégie Proactive : Vivier "Relations Écoles"</h3>
+            <p><strong>Phase 1 : Inspirer (Marque Employeur).</strong> Interventions régulières en BTS ABM. Prises de parole de nos Collaborateurs Ambassadeurs pour créer l'identification.</p>
+            <p><strong>Phase 2 : Évaluer (Le "Lab Game").</strong> Simulation immersive de <em>"L'urgence analytique"</em>. Les étudiants traitent des tubes virtuels. <strong>Objectif :</strong> Évaluer les <em>soft skills</em> (rigueur, stress) et séduire par la technicité.</p>
+            <p><strong>Phase 3 : Transformer (GEPP).</strong> Job/Stage dating immédiat. Accueil des alternants avec un nombre limité et un <strong>Tutorat d'excellence</strong> valorisant pour les seniors.</p>
+        </div>
+        <div class="card success-card">
+            <h3 style="color: #059669;">Budget &amp; Retour sur Investissement</h3>
+            <table>
+                <tbody><tr><td>Économie recrutement ext.</td><td><strong>5 000 € / poste</strong></td></tr>
+                <tr><td>Lab Game / Matériel</td><td>1 500 €</td></tr>
+                <tr><td>Frais Forums / Écoles</td><td>1 500 €</td></tr>
+                <tr><td>Temps valorisé (Tuteurs)</td><td>3 000 €</td></tr>
+                <tr><td><strong>Investissement Total/an</strong></td><td><strong>6 000 €</strong></td></tr>
+                </tbody></table>
+            <div style="margin-top: 20px; font-weight: 700; color: #059669; font-size: 22px;">
+                <i class="fa-solid fa-check-circle"></i> Seuil de rentabilité : 1.2 recrue transformée.<br>
+                <span style="font-size: 18px; color: #334155; font-weight: normal;">(Si on transforme 2 stagiaires/alternants en CDI par an, ROI de 66%).</span>
+            </div>
+            <p style="margin-top: 15px; font-size: 16px;"><strong>Limite :</strong> Demande un investissement en temps pour les tuteurs (à intégrer dans leurs plannings).</p>
+        </div>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 22</span></div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Conclusion : Synthèse Stratégique &amp; Financière</h2>
+        <span class="slide-module">Bilan</span>
+    </div>
+    <div class="content">
+        <p>L'attractivité n'est pas un concept isolé, c'est une chaîne de valeur RH cohérente qui répond à la problématique globale : <strong>Sécuriser les talents dans un secteur sous pression.</strong></p>
+        <table>
+            <thead><tr><th>Levier Stratégique</th><th>Action Implémentée</th><th>Seuil d'autofinancement (ROI)</th></tr></thead>
+            <tbody>
+            <tr><td><strong>1. Fidéliser dès l'entrée</strong></td><td>Onboarding piloté RH (J+30/J+90)</td><td>0,36 départ précoce évité.</td></tr>
+            <tr><td><strong>2. Redonner du sens</strong></td><td>Villages Santé (Engagement sociétal)</td><td>14 jours d'absentéisme économisés.</td></tr>
+            <tr><td><strong>3. Reconnaissance agile</strong></td><td>Rémunération globale (Primes)</td><td>2,57 départs d'experts évités.</td></tr>
+            <tr><td><strong>4. Cohésion interne</strong></td><td>Comité Attractivité &amp; Ambassadeurs</td><td>0,29 départ (et 3K€ de frais com' évités).</td></tr>
+            <tr><td><strong>5. Pérennité GEPP</strong></td><td>Relations Écoles &amp; Lab Game</td><td>1,2 recrue issue du vivier interne.</td></tr>
+            </tbody>
+        </table>
+        <p style="margin-top: 20px; font-style: italic; color: #0ea5e9; text-align: center;">Chaque action propose un ROI démontrant que la politique RH est un investissement rentable, et non un centre de coûts.</p>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 23</span></div>
+</div>
+
+<div class="slide">
+    <div class="slide-header">
+        <h2 class="slide-title">Ma Posture Professionnelle (Modèle Dave Ulrich)</h2>
+        <span class="slide-module">Bilan de Compétences</span>
+    </div>
+    <div class="content grid-2">
+        <div>
+            <h3>L'Évolution durant mon Alternance</h3>
+            <ul>
+                <li><strong>Expert Administratif :</strong> Maîtrise des process paie, indicateurs sociaux et conformité réglementaire.</li>
+                <li><strong>Champion des Employés :</strong> Création de "Synlab Dialogue", écoute active (27% de perte de sens).</li>
+                <li><strong>Agent de Changement :</strong> Déploiement de nouvelles cultures (Lab Game, Comité attractivité, Rituels inter-sites).</li>
+                <li><strong>Partenaire Stratégique :</strong> Aligner la GEPP sur l'objectif de développement territorial de la Direction Générale.</li>
+            </ul>
+        </div>
+        <div class="card" style="border: 2px solid #0f172a; border-left: none;">
+            <h3 style="text-align: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 10px;">Le Professionnel RH (Ulrich)</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; text-align: center;">
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px;">
+                    <i class="fa-solid fa-chess-knight" style="color: #0ea5e9; font-size: 24px; margin-bottom: 10px;"></i><br><strong>Partenaire<br>Stratégique</strong>
+                </div>
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px;">
+                    <i class="fa-solid fa-arrows-rotate" style="color: #10b981; font-size: 24px; margin-bottom: 10px;"></i><br><strong>Agent de<br>Changement</strong>
+                </div>
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px;">
+                    <i class="fa-solid fa-file-signature" style="color: #f59e0b; font-size: 24px; margin-bottom: 10px;"></i><br><strong>Expert<br>Administratif</strong>
+                </div>
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px;">
+                    <i class="fa-solid fa-hands-holding-child" style="color: #e11d48; font-size: 24px; margin-bottom: 10px;"></i><br><strong>Champion des<br>Employés</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer"><span>Soutenance Master 2 DRH</span><span>Page 24</span></div>
+</div>
+
+<div class="slide" style="background: #0f172a; justify-content: center; text-align: center;">
+    <div class="content" style="align-items: center;">
+        <i class="fa-solid fa-users" style="font-size: 60px; color: #0ea5e9; margin-bottom: 30px;"></i>
+        <h1 style="color: white; font-family: 'Poppins', sans-serif; font-size: 45px; line-height: 1.4;">
+            L'attractivité de Synlab Biofrance ne se jouera plus seulement sur le bulletin de paie, mais sur sa capacité à offrir un environnement apprenant, stimulant et profondément humain.
+        </h1>
+        <p style="color: #cbd5e1; font-size: 24px; margin-top: 40px;">
+            <strong>Perspectives :</strong> La transformation digitale RH et l'implémentation d'un SIRH global.
+        </p>
+        <h2 style="color: #0ea5e9; font-size: 40px; margin-top: 50px;">Je vous remercie pour votre attention.</h2>
+    </div>
+    <div class="footer" style="border:none;"><span>Soutenance Master 2 DRH</span><span>Page 25</span></div>
+</div>
+
+
+</body></html>

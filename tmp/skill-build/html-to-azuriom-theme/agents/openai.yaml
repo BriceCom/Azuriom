@@ -1,0 +1,4 @@
+interface:
+  display_name: "HTML to Azuriom Theme"
+  short_description: "Convert static HTML sites into plugin-safe Azuriom themes"
+  default_prompt: "Use $html-to-azuriom-theme to convert a static HTML website into an Azuriom theme using Nova structural conventions."
